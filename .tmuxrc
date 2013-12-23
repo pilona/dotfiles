@@ -1,0 +1,7 @@
+#! /bin/sh
+
+cat ~/.tmux.conf
+
+if ! tty | grep -Eq '^/dev/tty[0-9]+$'; then
+    echo set-option -g default-terminal screen-256color
+fi

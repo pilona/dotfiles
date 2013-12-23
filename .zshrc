@@ -3,11 +3,6 @@ case "$(cat /proc/$PPID/comm)" in
     xterm|xfce4-terminal)
         export TERM=xterm-256color
         ;;
-    tmux)
-        if ! tty | grep -Eq '^/dev/tty[0-9]+$'; then
-            export TERM=screen-256color
-        fi
-        ;;
     st)
         export TERM=st-256color
         ;;
@@ -129,6 +124,8 @@ alias ll='ls -l'
 alias la='ls -a'
 
 alias sshfs='sshfs -o idmap=user -o uid=1000 -o gid=100'
+
+alias tmux='tmux -f <(~/.tmuxrc)'
 
 lll() {
     ls --color=always "$@" | less -R
