@@ -1,0 +1,3 @@
+defaults.pcm.slave "dmix"
+pcm.!default "plughw:0,0"
+#pcm.!default "hw:2,0"
