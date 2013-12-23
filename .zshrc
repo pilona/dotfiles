@@ -180,41 +180,32 @@ mbsync() {
 }
 
 rc() {
-    if [ $# -eq 0 ]; then
-        echo 'zsh: rc(): USAGE: rc <list>|<reload>|<start|stop|enable|disable <service(s)>>' 1>&2
-        return 1
+    if [ $# = 0 ]; then
+        action=list-units
     else
-        case "$1" in
-            list)
-                shift
-                systemctl list-units "$@"
-                ;;
-            reload)
-                systemctl --system daemon-reload
-                ;;
-            restart)
-                shift
-                rc stop "$@"
-                rc start "$@"
-                ;;
-            start|stop|enable|disable|status)
-                if [ $# -le 1 ]; then
-                    echo "zsh: rc(): ERROR: '$1' requires 1 or more arguments of type service name without '.service' suffix." 1>&2
-                    return 1
-                else
-                    action=$1
-                    shift
-                    for arg in "$@"; do
-                        $([ $1 = status ] || echo sudo) systemctl $action "$arg.service"
-                    done
-                fi
-                ;;
-            *)
-                echo "zsh: rc(): Unknown action '$1'. Action must be one of start, stop, or list." 1>&2
-                return 2
-                ;;
-        esac
+        action="$1"
+        shift
     fi
+    case "$action" in
+        l|lu) action=list-units ;;
+        ls) action=list-sockets ;;
+    esac
+    case "$action" in
+        list*|status)
+            systemctl "$action" "$@"
+            ;;
+        log)
+            if ! [ $# = 1 ]; then
+                echo "Only 1 argument supported to 'log' for now." 1>&2
+                return 1
+            else
+                sudo journalctl -u "$1"
+            fi
+            ;;
+        *)
+            sudo systemctl "$action" "$@"
+            ;;
+    esac
 }
 
 SafeLDD() {
