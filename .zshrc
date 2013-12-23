@@ -299,29 +299,32 @@ hexlify() {
 
 set bell-style visual
 
-if echo $0 | grep zsh >/dev/null; then
-    unset MAILCHECK
+case "$(cat /proc/$$/comm)" in
+    zsh)
+        unset MAILCHECK
 
-    setopt beep notify
-    unsetopt autocd
-    # Because zsh has a decent vi line editing mode, unlike bash
-    bindkey -v # set -o vi
+        setopt beep notify
+        unsetopt autocd
+        # Because zsh has a decent vi line editing mode, unlike bash
+        bindkey -v # set -o vi
 
-    # Disable beep
-    setterm -blength 0
+        # Disable beep
+        setterm -blength 0
 
-    autoload -U bashcompinit && bashcompinit
-    autoload -U compinit && compinit
+        autoload -U bashcompinit && bashcompinit
+        autoload -U compinit && compinit
 
-    autoload -U colors && colors
-    PROMPT="[%{$fg[cyan]%}%n%{$fg[blue]%}@%{$fg[green]%}%m %{$fg[red]%}%1~%{$reset_color%}]%# "
-    RPROMPT="%{$reset_color%}[%{$fg[yellow]%}\$?=%?%{$reset_color%}]"
-    # 2-level prompt
-    #PROMPT="┌─[%{$fg[cyan]%}%n%{$reset_color%}][%{$fg[red]%}%1~%{$reset_color%}][%?]
-    #└→ "
-elif [ $0 = bash ]; then
-    PS1="\[$txtwht\][\[$txtcyn\]\u\[$txtblu\]@\[$txtgrn\]\h \[$txtred\]\W\[$txtwht\]]\$ "
-    #PS1='[\['${txtcyn}'\]\u\['${txtblu}'\]@\['${txtgrn}'\]\h \['${txtred}'\]\W\['${txtrst}'\]]\$ '
+        autoload -U colors && colors
+        PROMPT="[%{$fg[cyan]%}%n%{$fg[blue]%}@%{$fg[green]%}%m %{$fg[red]%}%1~%{$reset_color%}]%# "
+        RPROMPT="%{$reset_color%}[%{$fg[yellow]%}\$?=%?%{$reset_color%}]"
+        # 2-level prompt
+        #PROMPT="┌─[%{$fg[cyan]%}%n%{$reset_color%}][%{$fg[red]%}%1~%{$reset_color%}][%?]
+        #└→ "
+        ;;
+    bash)
+        PS1="\[$txtwht\][\[$txtcyn\]\u\[$txtblu\]@\[$txtgrn\]\h \[$txtred\]\W\[$txtwht\]]\$ "
+        #PS1='[\['${txtcyn}'\]\u\['${txtblu}'\]@\['${txtgrn}'\]\h \['${txtred}'\]\W\['${txtrst}'\]]\$ '
 
-    set -o vi
-fi
+        set -o vi
+        ;;
+esac
