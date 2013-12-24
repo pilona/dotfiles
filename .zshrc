@@ -297,6 +297,32 @@ hexlify() {
     fi
 }
 
+Pydoc() {
+    prefix=/usr/share/doc/python/html/library
+    for arg in "$@"; do
+        local target
+        target="${prefix}/${arg}.html"
+        if ! [ -f  "$target" ]; then
+            echo "Pydoc: No such file or directory: \"$target\"" 1>&2
+            return 1
+        fi
+    done
+    while [ $# -gt 0 ]; do
+        "$BROWSER" "file://${prefix}/${1}.html"
+        shift
+        while [ -z "$response" ] && [ $# -gt 0 ]; do
+            # Emulate man
+            echo "--Pydoc-- next: $1 [ view (return) | skip (Ctrl-D) | quit (Ctrl-C) ]"
+            local response
+            if ! read response; then
+                shift
+            else
+                break
+            fi
+        done
+    done
+}
+
 set bell-style visual
 
 case "$(cat /proc/$$/comm)" in
