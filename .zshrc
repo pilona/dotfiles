@@ -127,6 +127,8 @@ alias sshfs='sshfs -o idmap=user -o uid=1000 -o gid=100'
 
 alias tmux='tmux -f <(~/.tmuxrc)'
 
+alias DisplaySensors="sensors | osd_cat --offset=25 -f '-*-terminus-medium-r-*-*-18-*-*-*-*-*-*-*' --lines=34 --align=right -"
+
 lll() {
     ls --color=always "$@" | less -R
 }
