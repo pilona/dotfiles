@@ -332,6 +332,8 @@ set bell-style visual
 
 case "$(cat /proc/$$/comm)" in
     zsh)
+        HISTSIZE=4096
+
         unset MAILCHECK
 
         setopt beep notify
