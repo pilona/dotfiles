@@ -1,0 +1,35 @@
+#browser chromium --proxy-server=socks5://localhost:1080 %u
+#browser chromium %u
+browser firefox %u
+feed-sort-order title
+
+use-proxy no
+proxy localhost:1080
+proxy-type socks5
+
+unbind-key j feedlist
+unbind-key j filebrowser
+unbind-key j help
+unbind-key j articlelist
+unbind-key k feedlist
+unbind-key k filebrowser
+unbind-key k help
+unbind-key k articlelist
+
+unbind-key J
+unbind-key K
+
+bind-key j next feedlist
+bind-key j next filebrowser
+bind-key j next help
+bind-key j next articlelist
+
+bind-key k prev feedlist
+bind-key k prev filebrowser
+bind-key k prev help
+bind-key k prev articlelist
+
+# Or for a simple alternative that doesn't go to the prev/next feed when
+# 'scrolling' past boundaries...
+#bind-key j down
+#bind-key k up
