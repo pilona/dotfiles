@@ -129,6 +129,8 @@ alias tmux='tmux -f <(~/.tmuxrc)'
 
 alias DisplaySensors="sensors | osd_cat --offset=25 -f '-*-terminus-medium-r-*-*-18-*-*-*-*-*-*-*' --lines=34 --align=right -"
 
+alias win32='WINEARCH=win32 WINEPREFIX=~/.wine'
+
 lll() {
     ls --color=always "$@" | less -R
 }
