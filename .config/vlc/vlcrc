@@ -1,0 +1,4 @@
+[avcodec] # FFmpeg audio/video decoder
+# Hardware decoding (string)
+avcodec-hw=vaapi
+
