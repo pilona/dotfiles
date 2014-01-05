@@ -1,0 +1,18 @@
+[user]
+	email = alp@alexpilon.ca
+	name = Alex Pilon
+
+[core]
+	editor = vim
+
+[alias]
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	type = cat-file -t
+	dump = cat-file -p
+	difff = diff --color --ignore-all-space --minimal
+
+[push]
+	default = current
+
+[http]
+	postBuffer = 10485760
