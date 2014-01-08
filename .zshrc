@@ -266,7 +266,7 @@ ModPaths() {
 }
 
 FilterShellComment() {
-    grep -v -e '^[[:space:]]*#' -e '^[[:space:]]*$'
+    grep -v -e '^[[:space:]]*#' -e '^[[:space:]]*$' "$@"
 }
 
 FindDupes() {
