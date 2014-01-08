@@ -1,0 +1,39 @@
+source ~/.mutt/accounts/$MAIL_ACCOUNT
+
+set realname              = "Alex Pilon"
+set pgp_sign_as           = 0x2BBC29B3
+set sort                  = threads
+
+set certificate_file      = ~/.mutt/certificates
+set mailcap_path          = ~/.mutt/mailcap
+set header_cache          = ~/.mutt/cache
+
+# Not modifying files in mail dir except with Maildir-aware programs
+set maildir_header_cache_verify = no
+
+#auto_view text/calendar
+auto_view text/html # view html automatically
+auto_view application/msword
+alternative_order text/plain text/enriched text/html # save html for last
+bind attach <return> view-mailcap
+
+bind pager j next-line
+bind pager k previous-line
+
+`if [ $(tput colors) = 256 ]; then echo source ~/.mutt/color/solarized-dark-256; else echo source /dev/null; fi`
+
+source ~/.mutt/aliases
+
+set ignore_list_reply_to
+
+source ~/.mutt/crypto
+# Above is a generic script from upstream. Override **here**, not there.
+# specify the uid to use when encrypting/signing
+set pgp_sign_as              = 0xEE98BA43
+set crypt_autosign           = yes
+set crypt_autoencrypt        = no
+set crypt_replysign          = yes
+set crypt_replyencrypt       = yes
+set crypt_replysignencrypted = yes
+
+unset markers
