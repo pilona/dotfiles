@@ -331,6 +331,21 @@ Pydoc() {
     done
 }
 
+ImageSize() {
+    if [ $# = 0 ]; then
+        echo /dev/stdin
+    else
+        for pic in "$@"; do
+            echo "$pic"
+        done
+    fi \
+      | while read line; do
+            identify "$line" \
+              | cut -c $(($(expr length "$line") + 1))-
+        done 2>/dev/null \
+      | awk '{ print $2 }'
+}
+
 set bell-style visual
 
 case "$(cat /proc/$$/comm)" in
