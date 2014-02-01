@@ -346,6 +346,13 @@ ImageSize() {
       | awk '{ print $2 }'
 }
 
+UT2004() {
+    pushd .
+    cd /opt/ut2004/System
+    xinit ./ut2004-bin-linux-amd64 -- :${1:-0}
+    popd .
+}
+
 set bell-style visual
 
 case "$(cat /proc/$$/comm)" in
