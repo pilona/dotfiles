@@ -376,6 +376,11 @@ UT2004() {
     popd .
 }
 
+pacman() {
+    echo "${bldred}WARNING:${txtrst} Invoking pacman directly; use pacmatic instead!" 1>&2
+    command pacman "$@"
+}
+
 set bell-style visual
 
 case "$(cat /proc/$$/comm)" in
