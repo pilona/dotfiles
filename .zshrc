@@ -158,7 +158,7 @@ PQESize() {
 }
 
 mail_account() {
-    if [ -z "$MAIL_ACCOUNT" ]; then
+    if [ -z "$M" ]; then
         local HOUR=`date +%H`
         local DAY=`date +%u`
         if [ $HOUR -ge 8 ] && [ $HOUR -lt 18 ] && [ $DAY -le 5 ]
@@ -168,7 +168,7 @@ mail_account() {
             echo alexpilon.ca
         fi
     else
-        echo "$MAIL_ACCOUNT"
+        echo "$M"
     fi
 }
 alias mutt='MAIL_ACCOUNT=$(mail_account) mutt'
