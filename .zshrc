@@ -305,22 +305,27 @@ hexlify() {
     fi
 }
 
-Pydoc() {
-    prefix=/usr/share/doc/python/html/library
+_webdoc() {
+    docs="$1"
+    shift
+    prefix="$2"
+    shift
+
     for arg in "$@"; do
         local target
-        target="${prefix}/${arg}.html"
+        target="${docs}/${arg}.html"
         if ! [ -f  "$target" ]; then
-            echo "Pydoc: No such file or directory: \"$target\"" 1>&2
+            echo "${prefix}: No such file or directory: \"$target\"" 1>&2
             return 1
         fi
     done
+
     while [ $# -gt 0 ]; do
-        "$BROWSER" "file://${prefix}/${1}.html"
+        "$BROWSER" "file://${docs}/${1}.html"
         shift
         while [ -z "$response" ] && [ $# -gt 0 ]; do
             # Emulate man
-            echo "--Pydoc-- next: $1 [ view (return) | skip (Ctrl-D) | quit (Ctrl-C) ]"
+            echo "--${prefix}-- next: $1 [ view (return) | skip (Ctrl-D) | quit (Ctrl-C) ]"
             local response
             if ! read response; then
                 shift
@@ -330,6 +335,10 @@ Pydoc() {
         done
     done
 }
+
+# TODO: Handle member references in first argument.
+# TODO: Handle builtins: constants, functions, classes, etc.
+alias Pydoc='_webdoc /usr/share/doc/python/html/library Pydoc'
 
 ImageSize() {
     if [ $# = 0 ]; then
