@@ -98,7 +98,7 @@ alias DumpID3Tags='id3 -q "title=\"%t\",\nartist=\"%a\",\nalbum=\"%l\",\ntrack=\
 alias cscope='EDITOR=$VISUAL cscope'
 
 alias gcc='gcc -std=c99'
-alias gdb='gdb -silent -tui'
+alias gdb='gdb -silent'
 
 alias ghci='ghci -v0'
 alias gpg='GPG_TTY="$TTY" gpg'
