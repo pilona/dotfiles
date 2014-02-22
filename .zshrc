@@ -340,6 +340,20 @@ _webdoc() {
 # TODO: Handle builtins: constants, functions, classes, etc.
 alias Pydoc='_webdoc /usr/share/doc/python/html/library Pydoc'
 
+# TODO: Catch member references in first argument and jump to first instance if
+#       type not specified.
+Javadoc() {
+    _webdoc /usr/share/doc/openjdk7-doc/api \
+            Javadoc \
+            $(for arg in "$@"; do
+                  if grep -qF . <<< "$arg"; then
+                      echo "$(tr . / <<< "$arg")"
+                  else
+                      echo "java/lang/${arg}"
+                  fi
+              done)
+}
+
 ImageSize() {
     if [ $# = 0 ]; then
         echo /dev/stdin
