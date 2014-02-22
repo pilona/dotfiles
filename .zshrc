@@ -95,8 +95,6 @@ export SDL_VIDEO_FULLSCREEN_HEAD=0
 
 alias DumpID3Tags='id3 -q "title=\"%t\",\nartist=\"%a\",\nalbum=\"%l\",\ntrack=\"%n\",\nyear=\"%y\",\ngenre=\"%g\",\ncomment=\"%c\""'
 
-alias GitPrettyLog='git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
-
 alias cscope='EDITOR=$VISUAL cscope'
 
 alias gcc='gcc -std=c99'
