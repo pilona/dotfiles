@@ -414,3 +414,5 @@ case "$(cat /proc/$$/comm)" in
         set -o vi
         ;;
 esac
+
+remind -h ~/.reminders
