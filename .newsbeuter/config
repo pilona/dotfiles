@@ -1,6 +1,6 @@
 #browser chromium --proxy-server=socks5://localhost:1080 %u
 #browser chromium %u
-browser firefox %u
+browser $BROWSER %u
 feed-sort-order title
 
 use-proxy no
