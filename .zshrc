@@ -130,6 +130,8 @@ alias DisplaySensors="sensors | osd_cat --offset=25 -f '-*-terminus-medium-r-*-*
 
 alias win32='WINEARCH=win32 WINEPREFIX=~/.wine'
 
+alias Startpage='$BROWSER "https://startpage.com/do/mypage.pl?prf=42d1c9d47b691682365d62362ea73b49"'
+
 lll() {
     ls --color=always "$@" | less -R
 }
