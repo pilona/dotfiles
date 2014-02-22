@@ -171,7 +171,7 @@ mail_account() {
         echo "$MAIL_ACCOUNT"
     fi
 }
-alias mutt='MAIL_ACCOUNT=${MAIL_ACCOUNT:-`mail_account`} mutt'
+alias mutt='MAIL_ACCOUNT=$(mail_account) mutt'
 
 mbsync() {
     if [ $# = 0 ]; then
