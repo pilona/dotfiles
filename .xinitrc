@@ -10,7 +10,7 @@ xsetroot -solid '#7f7f7f'
 xset fp+ /usr/share/fonts/local
 xset fp rehash
 
-wmname "$WM"
+wmname "${WM:=$1}"
 case "$WM" in
     dwm)
         # Set date, time, and remaining battery in DWM toolbar.
