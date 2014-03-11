@@ -199,7 +199,7 @@ rc() {
         ls) action=list-sockets ;;
     esac
     case "$action" in
-        list*|status|-*)
+        list*|status|show|-*)
             systemctl "$action" "$@"
             ;;
         log)
