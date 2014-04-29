@@ -392,6 +392,19 @@ Termium() {
     fi
 }
 
+OPL() {
+    # TODO: Support other search forms
+    local _base
+    local _type
+    local _query
+    local _locale
+    _base=http://ottawa.bibliocommons.com/search
+    _type=keyword
+    _locale=en_CA
+    _query="$(python -c 'from sys import argv; print("+".join(argv[1:]))' "$@")"
+    "$BROWSER" "${_base}?locale=${_locale}&t=${_type}&q=${_query}"
+}
+
 set bell-style visual
 
 case "$(cat /proc/$$/comm)" in
