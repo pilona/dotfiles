@@ -134,6 +134,8 @@ alias win32='WINEARCH=win32 WINEPREFIX=~/.wine'
 
 alias Startpage='$BROWSER "https://startpage.com/do/mypage.pl?prf=42d1c9d47b691682365d62362ea73b49"'
 
+alias steam='STEAM_FRAME_FORCE_CLOSE=1 steam'
+
 lll() {
     ls --color=always "$@" | less -R
 }
