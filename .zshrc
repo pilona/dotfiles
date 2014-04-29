@@ -436,6 +436,7 @@ case "$(cat /proc/$$/comm)" in
         #PS1='[\['${txtcyn}'\]\u\['${txtblu}'\]@\['${txtgrn}'\]\h \['${txtred}'\]\W\['${txtrst}'\]]\$ '
 
         set -o vi
+        set +o histexpand
         ;;
 esac
 
