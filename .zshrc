@@ -380,6 +380,18 @@ UT2004() {
     popd .
 }
 
+Termium() {
+    local _lang
+    local _base
+    _lang=eng
+    _base="http://www.btb.termiumplus.gc.ca/tpv2alpha/alpha-eng.html?lang=${_lang}"
+    if [ $# = 0 ]; then
+        "$BROWSER"  "$_base"
+    else
+        "$BROWSER" "${_base}&i=&index=alt&__index=alt&srchtxt=$(python -c "import urllib.request; print(urllib.request.quote(\"$*\"))")&comencsrch.x=0&comencsrch.y=0"
+    fi
+}
+
 set bell-style visual
 
 case "$(cat /proc/$$/comm)" in
