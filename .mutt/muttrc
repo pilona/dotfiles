@@ -26,7 +26,8 @@ source ~/.mutt/aliases
 
 set ignore_list_reply_to
 
-source ~/.mutt/crypto
+source /etc/Muttrc.gpg.dist
+
 # Above is a generic script from upstream. Override **here**, not there.
 # specify the uid to use when encrypting/signing
 set pgp_sign_as              = 0xEE98BA43
