@@ -183,7 +183,7 @@ mbsync() {
         if [ -n "$MAIL_ACCOUNT" ] && [ -d "$HOME/Documents/Mail/$MAIL_ACCOUNT" ]; then
             command mbsync "$MAIL_ACCOUNT"
         else
-            echo "Cannot sync '$MAIL_ACCOUNT': No such file or directory" 2>&1
+            echo "Cannot sync '$MAIL_ACCOUNT': No such file or directory" 1>&2
             return 1
         fi
     else
