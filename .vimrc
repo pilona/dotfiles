@@ -5,8 +5,18 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'bling/vim-airline'
+Bundle 'tomasr/molokai'
+Bundle 'altercation/vim-colors-solarized'
 
 filetype plugin indent on
+syntax on
+
+if has("gui_running")
+    set background=dark
+    colorscheme solarized
+else
+    colorscheme molokai
+endif
 
 set laststatus=2
 
