@@ -27,7 +27,17 @@ else
     colorscheme molokai
 endif
 
+set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+set autoindent smartindent
+set hlsearch
+set wildmenu
+set wildmode=longest:full
+set wmh=0
 set laststatus=2
+set foldmethod=syntax
+
+set guifont=Terminus\ 14
 
 let g:airline_powerline_fonts = 1
 "let g:airline#extensions#tabline#enabled = 1
+let mapleader=','
