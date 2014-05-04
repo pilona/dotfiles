@@ -114,7 +114,7 @@ alias du='du -h'
 alias pdb='python -m pdb'
 alias pudb='python -m pudb'
 alias pytrace='python -m trace --ignore-dir=/usr/lib/python3.3 --trace'
-alias python='PYTHONSTARTUP=~/.pythonstartup.py python'
+alias python='PYTHONSTARTUP=~/.pystartup.py python'
 
 alias info='info --vi-keys'
 
