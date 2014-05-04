@@ -1,0 +1,34 @@
+"gmux_brightness -dec"
+    XF86MonBrightnessDown
+
+"gmux_brightness -inc"
+    XF86MonBrightnessUp
+
+"keyboard_brightness -dec"
+    XF86KbdBrightnessDown
+
+"keyboard_brightness -inc"
+    XF86KbdBrightnessUp
+
+"cmus-remote --pause"
+	XF86AudioPlay
+
+"cmus-remote --next"
+	XF86AudioNext
+    #XF86Forward
+
+"cmus-remote --prev"
+	XF86AudioPrev
+    #XF86Back
+
+"eject"
+	XF86Eject
+
+"amixer set Master 5%-"
+	XF86AudioLowerVolume
+
+"amixer set Master 5%+"
+	XF86AudioRaiseVolume
+
+"amixer set PCM toggle"
+	XF86AudioMute
