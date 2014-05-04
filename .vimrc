@@ -16,6 +16,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
+Bundle 'kien/ctrlp.vim'
 
 filetype plugin indent on
 syntax on
@@ -40,4 +41,7 @@ set guifont=Terminus\ 14
 
 let g:airline_powerline_fonts = 1
 "let g:airline#extensions#tabline#enabled = 1
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlPMRU'
+let g:ctrlp_working_path_mode = 'c'
 let mapleader=','
