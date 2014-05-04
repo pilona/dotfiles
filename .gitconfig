@@ -6,6 +6,7 @@
 	editor = vim
 
 [alias]
+	graph = log --graph --decorate --all --patch
 	logg = log --graph --decorate --all --oneline
 	type = cat-file -t
 	dump = cat-file -p
