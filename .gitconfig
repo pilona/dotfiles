@@ -6,7 +6,7 @@
 	editor = vim
 
 [alias]
-	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	logg = log --graph --decorate --all --oneline
 	type = cat-file -t
 	dump = cat-file -p
 	difff = diff --color --ignore-all-space --minimal
