@@ -5,6 +5,7 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'bling/vim-airline'
+Bundle 'edkolev/promptline.vim'
 Bundle 'tomasr/molokai'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'ervandew/supertab'

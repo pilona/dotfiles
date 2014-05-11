@@ -405,6 +405,11 @@ OPL() {
 
 set bell-style visual
 
+if ! [ -f ~/.promptline.sh ]; then
+    vim +':PromptlineSnapshot ~/.promptline.sh airline' +qall
+fi
+. ~/.promptline.sh
+
 case "$(cat /proc/$$/comm)" in
     zsh)
         HISTSIZE=4096
@@ -423,14 +428,14 @@ case "$(cat /proc/$$/comm)" in
         autoload -U compinit && compinit
 
         autoload -U colors && colors
-        PROMPT="[%{$fg[cyan]%}%n%{$fg[blue]%}@%{$fg[green]%}%m %{$fg[red]%}%1~%{$reset_color%}]%# "
-        RPROMPT="%{$reset_color%}[%{$fg[yellow]%}\$?=%?%{$reset_color%}]"
+        #PROMPT="[%{$fg[cyan]%}%n%{$fg[blue]%}@%{$fg[green]%}%m %{$fg[red]%}%1~%{$reset_color%}]%# "
+        #RPROMPT="%{$reset_color%}[%{$fg[yellow]%}\$?=%?%{$reset_color%}]"
         # 2-level prompt
         #PROMPT="┌─[%{$fg[cyan]%}%n%{$reset_color%}][%{$fg[red]%}%1~%{$reset_color%}][%?]
         #└→ "
         ;;
     bash)
-        PS1="\[$txtwht\][\[$txtcyn\]\u\[$txtblu\]@\[$txtgrn\]\h \[$txtred\]\W\[$txtwht\]]\$ "
+        #PS1="\[$txtwht\][\[$txtcyn\]\u\[$txtblu\]@\[$txtgrn\]\h \[$txtred\]\W\[$txtwht\]]\$ "
         #PS1='[\['${txtcyn}'\]\u\['${txtblu}'\]@\['${txtgrn}'\]\h \['${txtred}'\]\W\['${txtrst}'\]]\$ '
 
         set -o vi
