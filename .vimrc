@@ -22,6 +22,7 @@ filetype plugin indent on
 syntax on
 
 if has("gui_running")
+    set guifont=Terminus\ 14
     set background=dark
     colorscheme solarized
 else
@@ -36,8 +37,6 @@ set wildmode=longest:full
 set wmh=0
 set laststatus=2
 set foldmethod=syntax
-
-set guifont=Terminus\ 14
 
 let g:airline_powerline_fonts = 1
 "let g:airline#extensions#tabline#enabled = 1
