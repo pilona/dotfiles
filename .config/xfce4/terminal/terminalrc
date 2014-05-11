@@ -1,0 +1,13 @@
+[Configuration]
+FontName=Terminess Powerline 14
+MiscAlwaysShowTabs=FALSE
+MiscBordersDefault=FALSE
+MiscCursorBlinks=FALSE
+MiscMenubarDefault=FALSE
+MiscToolbarDefault=FALSE
+ScrollingBar=TERMINAL_SCROLLBAR_NONE
+ScrollingLines=65535
+ScrollingOnOutput=FALSE
+ShortcutsNoMnemonics=TRUE
+ShortcutsNoMenukey=TRUE
+TitleMode=TERMINAL_TITLE_REPLACE
