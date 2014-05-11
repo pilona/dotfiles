@@ -37,6 +37,9 @@ set wildmode=longest:full
 set wmh=0
 set laststatus=2
 set foldmethod=syntax
+set hidden
+set incsearch
+set autoread
 
 let g:airline_powerline_fonts = 1
 "let g:airline#extensions#tabline#enabled = 1
