@@ -6,6 +6,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'bling/vim-airline'
 Bundle 'edkolev/promptline.vim'
+Bundle 'paranoida/vim-airlineish'
 Bundle 'tomasr/molokai'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'ervandew/supertab'
@@ -28,6 +29,7 @@ if has("gui_running")
     colorscheme solarized
 else
     colorscheme molokai
+    let g:airline_theme = 'airlineish'
 endif
 
 set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
