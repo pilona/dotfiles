@@ -25,6 +25,7 @@ syntax on
 
 if has("gui_running")
     set guifont=Terminus\ 14
+    set guioptions=
     set background=dark
     colorscheme solarized
 else
