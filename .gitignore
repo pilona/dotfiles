@@ -6,4 +6,6 @@
 .mutt/cache
 .reminders
 .vim/bundle
+.vim/.*
+.viminfo*
 .promptline.sh
