@@ -2,7 +2,9 @@
 
 set -e
 
-setxkbmap -option ctrl:nocaps -option compose:rwin
+setxkbmap -option ctrl:nocaps \
+          -option compose:ralt \
+          -option compose:rwin
 # Now handled directly by DWM.
 #xbindkeys
 keynav &
