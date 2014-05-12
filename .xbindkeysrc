@@ -32,3 +32,6 @@
 
 "amixer set PCM toggle"
 	XF86AudioMute
+
+"xfce4-terminal -e dc"
+    XF86Calculator
