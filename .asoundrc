@@ -1,3 +1,17 @@
-defaults.pcm.slave "dmix"
-pcm.!default "plughw:0,0"
+#defaults.pcm.slave "dmix"
+#pcm.!default "plughw:0,0"
 #pcm.!default "hw:2,0"
+
+ctl.equal {
+    type equal;
+}
+
+pcm.plugequal {
+    type equal;
+    slave.pcm "plug:dmix";
+}
+
+pcm.!default {
+    type plug;
+    slave.pcm plugequal;
+}
