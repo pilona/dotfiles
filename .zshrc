@@ -413,6 +413,22 @@ OPL() {
     "$BROWSER" "${_base}?locale=${_locale}&t=${_type}&q=${_query}"
 }
 
+Github() {
+    local _base
+    local _user
+    local _repo
+
+    _base="https://github.com"
+    _user="${${1%%/*}:-pilona}"
+    if grep -qF / <<< "$1"; then
+        _repo="${1##*/}"
+    else
+        _repo=
+    fi
+
+    "$BROWSER" "${_base}/${_user}/${_repo}"
+}
+
 set bell-style visual
 
 if ! [ -f ~/.promptline.sh ]; then
