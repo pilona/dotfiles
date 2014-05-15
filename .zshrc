@@ -431,11 +431,6 @@ Github() {
 
 set bell-style visual
 
-if ! [ -f ~/.promptline.sh ]; then
-    vim +':PromptlineSnapshot ~/.promptline.sh airline' +qall
-fi
-. ~/.promptline.sh
-
 case "$(cat /proc/$$/comm)" in
     zsh)
         HISTSIZE=4096
@@ -453,20 +448,35 @@ case "$(cat /proc/$$/comm)" in
         autoload -U bashcompinit && bashcompinit
         autoload -U compinit && compinit
 
-        autoload -U colors && colors
-        #PROMPT="[%{$fg[cyan]%}%n%{$fg[blue]%}@%{$fg[green]%}%m %{$fg[red]%}%1~%{$reset_color%}]%# "
-        #RPROMPT="%{$reset_color%}[%{$fg[yellow]%}\$?=%?%{$reset_color%}]"
-        # 2-level prompt
-        #PROMPT="┌─[%{$fg[cyan]%}%n%{$reset_color%}][%{$fg[red]%}%1~%{$reset_color%}][%?]
-        #└→ "
         ;;
     bash)
-        #PS1="\[$txtwht\][\[$txtcyn\]\u\[$txtblu\]@\[$txtgrn\]\h \[$txtred\]\W\[$txtwht\]]\$ "
-        #PS1='[\['${txtcyn}'\]\u\['${txtblu}'\]@\['${txtgrn}'\]\h \['${txtred}'\]\W\['${txtrst}'\]]\$ '
-
         set -o vi
         set +o histexpand
         ;;
 esac
+
+# TODO: Figure out how to query if terminal supports UTF-8
+if [ "$TERM" = linux ] || [ "$(tput colors)" -lt 256 ]; then
+    case "$(cat /proc/$$/comm)" in
+        zsh)
+            autoload -U colors && colors
+            PROMPT="[%{$fg[cyan]%}%n%{$fg[blue]%}@%{$fg[green]%}%m %{$fg[red]%}%1~%{$reset_color%}]%# "
+            RPROMPT="%{$reset_color%}[%{$fg[yellow]%}\$?=%?%{$reset_color%}]"
+            # 2-level prompt
+            #PROMPT="┌─[%{$fg[cyan]%}%n%{$reset_color%}][%{$fg[red]%}%1~%{$reset_color%}][%?]
+            #└→ "
+            ;;
+        bash)
+            PS1="\[$txtwht\][\[$txtcyn\]\u\[$txtblu\]@\[$txtgrn\]\h \[$txtred\]\W\[$txtwht\]]\$ "
+            ;;
+    esac
+else
+    # TODO: Only do this if 256-colour and UTF-8 support present in terminal,
+    #       not necessarily because in a Linux console.
+    if ! [ -f ~/.promptline.sh ]; then
+        vim +':PromptlineSnapshot ~/.promptline.sh airline' +qall
+    fi
+    . ~/.promptline.sh
+fi
 
 remind -h ~/.reminders
