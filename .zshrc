@@ -6,6 +6,16 @@ case "$(cat /proc/$PPID/comm)" in
     st)
         export TERM=st-256color
         ;;
+    tmux)
+        # Yes, we want to save to a file, and risk being out of date, whereas
+        # just using :Tmuxline means that we see, however short, the old tmux
+        # status bar.
+        if ! [ -f ~/.tmuxline.conf ]; then
+            vim +'Tmuxline jellybeans' \
+                +'TmuxlineSnapshot ~/.tmuxline.conf' \
+                +qall 2>/dev/null
+        fi
+        ;;
 esac
 
 if [ $TERM = linux ]; then

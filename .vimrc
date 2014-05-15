@@ -6,6 +6,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'bling/vim-airline'
 Bundle 'edkolev/promptline.vim'
+Bundle 'edkolev/tmuxline.vim'
 Bundle 'paranoida/vim-airlineish'
 Bundle 'tomasr/molokai'
 Bundle 'altercation/vim-colors-solarized'
@@ -56,6 +57,10 @@ let g:airline#extensions#tabline#tab_min_count = 2
 " TODO: Show buffer tabline when no tabs and when multiple buffers
 let g:airline#extensions#tabline#buffer_min_count = 2
 let g:airline#extensions#whitespace#checks = ['indent', 'trailing']
+
+" Don't override external colour scheme choice upon startup
+let g:airline#extensions#tmuxline#enabled = 0
+
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_working_path_mode = 'c'

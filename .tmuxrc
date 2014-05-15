@@ -2,6 +2,13 @@
 
 cat ~/.tmux.conf
 
+# TODO: Check for Unicode support
+if [ -f ~/.tmuxline.conf ] &&
+   [ $(tput colors) -ge 256 ]; then
+    # shell profile will set anyhow if not created
+    cat ~/.tmuxline.conf
+fi
+
 if ! tty | grep -Eq '^/dev/tty[0-9]+$'; then
     echo set-option -g default-terminal screen-256color
 fi
