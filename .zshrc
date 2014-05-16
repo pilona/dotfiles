@@ -459,6 +459,8 @@ case "$(cat /proc/$$/comm)" in
     bash)
         set -o vi
         set +o histexpand
+
+        complete -cf sudo
         ;;
 esac
 
