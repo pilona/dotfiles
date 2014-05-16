@@ -144,6 +144,13 @@ alias Startpage='$BROWSER "https://startpage.com/do/mypage.pl?prf=42d1c9d47b6916
 
 alias steam='STEAM_FRAME_FORCE_CLOSE=1 steam'
 
+alias xterm='xterm -rv -cr red'
+alias uxterm='uxterm -rv -cr red'
+alias emacs='emacs -nw'
+alias mplayer='mplayer -msglevel all=2'
+alias clisp='clisp --quiet'
+alias javadebug='java -Xdebug -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=y'
+
 lll() {
     ls --color=always "$@" | less -R
 }
