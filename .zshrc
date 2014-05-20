@@ -54,6 +54,13 @@ if [ -n "$DISPLAY" ]; then
     tabbed() {
         command tabbed "$@" st -w
     }
+
+    ClearClipboard() {
+        for selection in clipboard primary secondary; do
+            xclip -selection $selection < /dev/null
+        done
+        killall xclip
+    }
 else
     export BROWSER=links
 
