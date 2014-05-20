@@ -8,6 +8,9 @@ set certificate_file      = ~/.mutt/certificates
 set mailcap_path          = ~/.mutt/mailcap
 set header_cache          = ~/.mutt/cache
 
+# Don't need to leak what I run
+set user_agent = no
+
 # Not modifying files in mail dir except with Maildir-aware programs
 set maildir_header_cache_verify = no
 
