@@ -141,6 +141,8 @@ alias pscgroups='ps xawf -eo pid,user,cgroup,args'
 alias ls='ls --color=auto'
 alias ll='ls -l'
 alias la='ls -a'
+alias l='ls'
+alias c='cd'
 
 alias sshfs='sshfs -o idmap=user -o uid=1000 -o gid=100'
 
