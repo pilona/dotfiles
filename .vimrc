@@ -50,6 +50,8 @@ set foldmethod=syntax
 set hidden
 set incsearch
 set autoread
+set spelllang=en_ca
+"set spelllang=fr_ca
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
