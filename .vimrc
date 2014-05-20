@@ -77,3 +77,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_enable_balloons          = 1
 
 let mapleader=','
+
+iabbrev Teh The
+iabbrev teh the
+
+cabbrev W w
+cabbrev Q q
