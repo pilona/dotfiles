@@ -502,4 +502,4 @@ else
     . ~/.promptline.sh
 fi
 
-remind -h ~/.reminders
+remind -a -h ~/.reminders
