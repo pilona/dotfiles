@@ -24,6 +24,7 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'michaeljsmith/vim-indent-object'
+Bundle 'ap/vim-css-color'
 
 filetype plugin indent on
 syntax on
