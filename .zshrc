@@ -155,6 +155,10 @@ lll() {
     ls --color=always "$@" | less -R
 }
 
+PQE() {
+    pacman -Qe | cut -d ' ' -f 1 | column -c $COLUMNS | less
+}
+
 PQESize() {
     pacman -Qie \
       | grep -e ^Name -e Installed\ Size \
