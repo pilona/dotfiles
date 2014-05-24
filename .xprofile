@@ -18,6 +18,9 @@ keynav &
 
 xsetroot -solid '#7f7f7f'
 
+remind -h -a -f -k'notify-send Reminder %s' .reminders &
+export REMIND_PID="$!"
+
 wmname "${WM:=$1}"
 case "$WM" in
     dwm)
@@ -26,34 +29,6 @@ case "$WM" in
             xsetroot -name "$(date) | $(acpi -b | cut -d ' ' -f 5-)"
             sleep 1
         done &
-
-        # FIXME: Currently using EXIT hack to make remind exit immediately when
-        #        run on shell startup. Interferes with the expected daemon
-        #        nature of this code.
-        # FIXME: Multiple beeps if line is split by fmt.
-        # FIXME: Racy hack to work around X11 startup delay.
-        # FIXME: Set opaque background of colour equivalent to DWM bar.
-        # FIXME: No width constraint is a hack. May not be pretty on smaller
-        #        screens.
-        # TODO: Distinct bell frequency?
-        {
-            sleep 5
-            remind -h -f -a .reminders \
-              | fmt \
-              | while read line; do
-                    if [ -n "$line" ]; then
-                        echo $line
-                        beep
-                        sleep 5
-                    fi
-                done \
-              | osd_cat --pos top \
-                        --offset 2 \
-                        --align center \
-                        --font '-*-terminus-medium-r-*-*-24-*-*-*-*-*-*-*' \
-                        --lines 1 \
-                        --wait
-        } &
 
         screenlocker
 
