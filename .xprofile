@@ -5,8 +5,6 @@ set -e
 setxkbmap -option ctrl:nocaps \
           -option compose:ralt \
           -option compose:rwin
-# Now handled directly by DWM.
-#xbindkeys
 keynav &
 
 xsetroot -solid '#7f7f7f'
@@ -52,5 +50,9 @@ case "$WM" in
         } &
 
         export _JAVA_AWT_WM_NONREPARENTING=1
+        ;;
+
+    *)
+        xbindkeys
         ;;
 esac
