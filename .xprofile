@@ -2,6 +2,15 @@
 
 set -e
 
+
+screenlocker() {
+    # Lock screen on 5 minutes of inactivity
+    while true; do
+        sinac ${1:-300} && slock
+    done &
+}
+
+
 setxkbmap -option ctrl:nocaps \
           -option compose:ralt \
           -option compose:rwin
@@ -49,10 +58,13 @@ case "$WM" in
                         --wait
         } &
 
+        screenlocker
+
         export _JAVA_AWT_WM_NONREPARENTING=1
         ;;
 
     *)
         xbindkeys
+        screenlocker
         ;;
 esac
