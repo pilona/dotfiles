@@ -172,14 +172,13 @@ PQE() {
 
 PQESize() {
     pacman -Qie \
-      | grep -e ^Name -e Installed\ Size \
       | awk 'BEGIN {
                  ORS=" "
                  OFMT="%.2f"
              }
 
              $1 == "Name" { print $3 }
-             $1 == "Installed" {
+             $1 " " $2 == "Installed Size" {
                  if ($4 > 1024) {
                      printf OFMT " %s\n", $4/1024, "MiB"
                  } else {
