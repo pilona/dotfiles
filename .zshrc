@@ -302,29 +302,6 @@ FilterShellComment() {
     grep -v -e '^[[:space:]]*#' -e '^[[:space:]]*$' "$@"
 }
 
-FindDupes() {
-    if [ $# = 0 ]; then
-        md5sum * 2>/dev/null
-    else
-        md5sum "$@"
-    fi \
-      | sort \
-      | awk '{
-                  if (NR > 1 && hash==$1) {
-                      if (!system("test \"" $2 "\" -nt \"" file "\""))
-                          print $2
-                      else
-                          print file
-                  }
-                  hash=$1
-                  last=$2
-             }'
-}
-
-DelDupes() {
-    FindDupes | xargs rm
-}
-
 UnicodeLookup() {
     [ -n "$BROWSER" ] && "$BROWSER" "http://unicode.org/cldr/utility/character.jsp?a=$1"
 }
