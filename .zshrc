@@ -162,6 +162,9 @@ alias mplayer='mplayer -msglevel all=2'
 alias clisp='clisp --quiet'
 alias javadebug='java -Xdebug -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=y'
 
+alias ipa='ip -4 address show scope global'
+alias ipr='ip -4 route show scope global'
+
 lll() {
     ls --color=always "$@" | less -R
 }
