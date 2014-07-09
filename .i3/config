@@ -1,0 +1,111 @@
+set $mod Mod4
+
+font pango:Terminus 24px
+# Font to match remainder of text
+set $dmenu_font "-*-terminus-medium-r-*-*-24-*-*-*-*-*-*-*"
+# Font to scale dmenu to i3 bar
+#set $dmenu_font "-*-terminus-medium-r-*-*-32-*-*-*-*-*-*-*"
+
+floating_modifier $mod
+
+bindsym $mod+Shift+Return exec xfce4-terminal
+
+bindsym $mod+Shift+c kill
+
+set $normbgcolor "#101010"
+set $normfgcolor "#dddddd"
+set $selbgcolor  "#224488"
+set $selfgcolor  "#cc9a1c"
+bindsym $mod+p exec dmenu_run -fn $dmenu_font -nb $normbgcolor -nf $normfgcolor -sb $selbgcolor -sf $selfgcolor
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+bindsym $mod+Ctrl+h move to output left
+bindsym $mod+Ctrl+j move to output down
+bindsym $mod+Ctrl+k move to output up
+bindsym $mod+Ctrl+l move to output right
+
+# DWM-ish keybindings. Correspond to the layout one would have in my config
+# with the bstack patches applied, and a 0-master tag (*cough* workspace
+# *cough*).
+#bindsym $mod+Shift+z split h
+#bindsym $mod+Shift+x split v
+# More intuitive keybindings than the DWM ones. This set is like the S and D in
+# WASD, in that they point to where to put the next window.
+bindsym $mod+Shift+z split v
+bindsym $mod+Shift+x split h
+
+bindsym $mod+m fullscreen
+
+bindsym $mod+t layout stacking
+bindsym $mod+u layout tabbed
+# DWM-ish keybindings
+#bindsym $mod+z layout splith
+#bindsym $mod+x layout splitv
+# More intuitive keybindings than the DWM ones. This set is like the S and D in
+# WASD, in that they are on the axis on which windows are arranged.
+bindsym $mod+z layout splitv
+bindsym $mod+x layout splith
+
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+# DWM-like snap to last tag set/workspace
+bindsym $mod+Tab workspace back_and_forth
+# Traditional WM-like workspace cycling bindings
+#bindsym $mod+Shift+Tab workspace prev
+#bindsym $mod+Tab workspace next
+
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+bindsym $mod+Shift+q exit
+
+bindsym $mod+r reload
+
+for_window [class="mupen64plus"]   floating enable
+for_window [class="SDLJoytest-GL"] floating enable
+for_window [class="Vlc"]           floating enable
+for_window [class="vbam"]          floating enable
+for_window [class="XClock"]        floating enable
+for_window [class="xzoom"]         floating enable
+for_window [class="Notify-osd"]    floating enable
+
+set $borderpx 4
+new_window pixel $borderpx
+new_float pixel  $borderpx
+
+set $selbordercolor  "#ff5800"
+client.focused $selbordercolor $selbordercolor $selbordercolor $selbordercolor
+
+bar {
+    mode dock
+    position top
+    workspace_buttons yes
+}
