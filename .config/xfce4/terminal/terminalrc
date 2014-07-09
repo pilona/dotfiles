@@ -1,7 +1,7 @@
 [Configuration]
 FontName=Terminess Powerline 14
 MiscAlwaysShowTabs=FALSE
-MiscBordersDefault=FALSE
+MiscBordersDefault=TRUE
 MiscCursorBlinks=FALSE
 MiscMenubarDefault=FALSE
 MiscToolbarDefault=FALSE
