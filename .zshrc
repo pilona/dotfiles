@@ -430,6 +430,16 @@ Github() {
     "$BROWSER" "${_base}/${_user}/${_repo}"
 }
 
+LinuxGitMsg() {
+    local _base
+    local _qs
+
+    _base="http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/log/"
+    _qs="$(python -c "from urllib.parse import urlencode; print(urlencode({'qt': 'grep', 'q': '$*'}))")"
+
+    "$BROWSER" "${_base}?${_qs}"
+}
+
 set bell-style visual
 
 case "$(cat /proc/$$/comm)" in
