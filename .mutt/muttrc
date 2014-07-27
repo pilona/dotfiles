@@ -3,6 +3,7 @@ source ~/.mutt/accounts/$MAIL_ACCOUNT
 set realname              = "Alex Pilon"
 set pgp_sign_as           = 0x2BBC29B3
 set sort                  = threads
+set sort_aux              = reverse-last-date-received
 
 set certificate_file      = ~/.mutt/certificates
 set mailcap_path          = ~/.mutt/mailcap
