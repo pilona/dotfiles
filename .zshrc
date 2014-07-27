@@ -144,6 +144,7 @@ alias la='ls -a'
 alias l='ls'
 alias c='cd'
 alias d='cd'
+alias t='cat'
 
 alias sshfs='sshfs -o idmap=user -o uid=1000 -o gid=100'
 
