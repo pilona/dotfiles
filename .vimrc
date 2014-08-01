@@ -65,8 +65,9 @@ let g:airline#extensions#whitespace#checks = ['indent', 'trailing']
 let g:airline#extensions#tmuxline#enabled = 0
 
 let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlPMRU'
+let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_working_path_mode = 'c'
+let g:ctrlp_extensiosn = ['tag', 'mixed']
 
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
