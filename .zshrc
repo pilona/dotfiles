@@ -445,18 +445,17 @@ StableQueue() {
     "$BROWSER" 'http://git.kernel.org/cgit/linux/kernel/git/stable/stable-queue.git/tree/'
 }
 
-set bell-style visual
+set -o vi
+
+unset MAILCHECK
+unset HISTFILE
+HISTSIZE=4096
 
 case "$(cat /proc/$$/comm)" in
     zsh)
-        HISTSIZE=4096
-
-        unset MAILCHECK
-
         setopt beep notify
         unsetopt autocd
-        # Because zsh has a decent vi line editing mode, unlike bash
-        bindkey -v # set -o vi
+        set bell-style visual
 
         # Disable beep
         setterm -blength 0
@@ -466,7 +465,6 @@ case "$(cat /proc/$$/comm)" in
 
         ;;
     bash)
-        set -o vi
         set +o histexpand
 
         complete -cf sudo
