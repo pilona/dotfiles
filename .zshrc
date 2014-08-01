@@ -441,6 +441,10 @@ LinuxGitMsg() {
     "$BROWSER" "${_base}?${_qs}"
 }
 
+StableQueue() {
+    "$BROWSER" 'http://git.kernel.org/cgit/linux/kernel/git/stable/stable-queue.git/tree/'
+}
+
 set bell-style visual
 
 case "$(cat /proc/$$/comm)" in
