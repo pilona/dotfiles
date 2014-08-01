@@ -463,6 +463,7 @@ case "$(cat /proc/$$/comm)" in
         autoload -U bashcompinit && bashcompinit
         autoload -U compinit && compinit
 
+        bindkey '^R' history-incremental-search-backward
         ;;
     bash)
         set +o histexpand
