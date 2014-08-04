@@ -13,8 +13,15 @@ import sys
 import atexit
 
 import readline
+import rlcompleter
 import curses
 
+
+# Make this work properly in Darwin and Linux
+if 'libedit' in readline.__doc__:
+    readline.parse_and_bind("bind ^I rl_complete")
+else:
+    readline.parse_and_bind("tab: complete")
 
 histfile = expanduser(environ["HOME"] + "/.pyhistory")
 readline.read_history_file(histfile)
