@@ -170,5 +170,24 @@ if curses.tigetnum("colors") >= 8:
     sys.ps1 = '>>> '.join([sgr("green"), sgr(mode="normal")])
     sys.ps2 = '... '.join([sgr("red"),   sgr(mode="normal")])
 
-EditableBufferInteractiveConsole().interact('')
+
+try:
+    from pygments import highlight
+    from pygments.lexers.agile import Python3TracebackLexer
+    from pygments.formatters import Terminal256Formatter
+    from pygments.styles.monokai import MonokaiStyle
+except ImportError:
+    class MyConsole(EditableBufferInteractiveConsole):
+        pass
+else:
+    class ColorizingConsole(InteractiveConsole):
+        def showtraceback(self):
+            print(highlight(''.join(format_exception(*sys.exc_info())),
+                            Python3TracebackLexer(),
+                            Terminal256Formatter(style=MonokaiStyle)),
+                  file=sys.stderr)
+    class MyConsole(EditableBufferInteractiveConsole, ColorizingConsole):
+        pass
+console = MyConsole()
+console.interact('')
 sys.exit()  # Normally no exit. Force it.
