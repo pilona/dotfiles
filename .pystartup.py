@@ -8,8 +8,10 @@ Your ~/.inputrc file can greatly complement this file.
 from os import environ
 from os.path import expanduser
 from code import InteractiveConsole
+from pprint import pprint
 from tempfile import NamedTemporaryFile
 from itertools import count
+from traceback import format_exception
 from subprocess import check_call
 
 import sys
@@ -170,6 +172,11 @@ if curses.tigetnum("colors") >= 8:
     sys.ps1 = '>>> '.join([sgr("green"), sgr(mode="normal")])
     sys.ps2 = '... '.join([sgr("red"),   sgr(mode="normal")])
 
+# FIXME: Pretty-printing doesn't result in very readable lists. They should
+#        be columnized, not span hundreds of lines when they contain hundreds
+#        of items.
+# TODO: Limit number of items to print in collections to one screen height
+sys.displayhook = pprint
 
 try:
     from pygments import highlight
