@@ -7,7 +7,10 @@ Your ~/.inputrc file can greatly complement this file.
 
 from os import environ
 from os.path import expanduser
+from code import InteractiveConsole
+from tempfile import NamedTemporaryFile
 from itertools import count
+from subprocess import check_call
 
 import sys
 import atexit
@@ -15,6 +18,33 @@ import atexit
 import readline
 import rlcompleter
 import curses
+
+
+# TODO: Track last runnable code in last_buffer, or find out if
+#       parent classes expose that service.
+# TODO: Add pager function.
+# Cleaned up http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/438813/.
+class EditableBufferInteractiveConsole(InteractiveConsole):
+    EDITOR = environ.get("VISUAL", environ.get("EDITOR", "vi"))
+    EDIT_CMD = r'\e'
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+    def raw_input(self, *args):
+        line = super().raw_input(*args)
+        if line == self.EDIT_CMD:
+            with NamedTemporaryFile(suffix='.py') as tmpfl:
+                check_call([self.EDITOR, tmpfl.name])
+                lines = tmpfl.read().decode().splitlines()
+                for line in lines[:-1]:
+                    self.push(line)
+                try:
+                    return lines[-1]
+                except IndexError:
+                    return ""
+        else:
+            return line
 
 
 # Make this work properly in Darwin and Linux
@@ -47,3 +77,6 @@ if curses.tigetnum("colors") >= 8:
     # Enable Color Prompts
     sys.ps1 = '>>> '.join([sgr("green"), sgr(mode="normal")])
     sys.ps2 = '... '.join([sgr("red"),   sgr(mode="normal")])
+
+EditableBufferInteractiveConsole().interact('')
+sys.exit()  # Normally no exit. Force it.
