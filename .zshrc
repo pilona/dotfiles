@@ -296,8 +296,7 @@ ModPaths() {
     lsmod \
       | sed 1d \
       | awk '{print $1}' \
-      | xargs -L 1 modinfo \
-      | grep ^filename: \
+      | xargs -L 1 modinfo -F filename \
       | cut -d / -f 6- \
       | sort \
       | cut -d . -f 1
