@@ -161,6 +161,7 @@ alias xterm='xterm -rv -cr red'
 alias uxterm='uxterm -rv -cr red'
 alias emacs='emacs -nw'
 alias mplayer='mplayer -msglevel all=2'
+alias vlc='vlc --qt-minimal-view'
 alias clisp='clisp --quiet'
 alias javadebug='java -Xdebug -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=y'
 
