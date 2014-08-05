@@ -484,7 +484,7 @@ if [ "$TERM" = linux ] || [ "$(tput colors)" -lt 256 ]; then
             #└→ "
             ;;
         bash)
-            PS1="\[$txtwht\][\[$txtcyn\]\u\[$txtblu\]@\[$txtgrn\]\h \[$txtred\]\W\[$txtwht\]]\$ "
+            PS1="\[$txtrst\][\[$txtcyn\]\u\[$txtblu\]@\[$txtgrn\]\h \[$txtred\]\W\[$txtrst\]]\$ "
             ;;
     esac
 else
