@@ -84,3 +84,6 @@ iabbrev teh the
 
 cabbrev W w
 cabbrev Q q
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
