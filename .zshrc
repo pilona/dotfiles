@@ -445,6 +445,14 @@ StableQueue() {
     "$BROWSER" 'http://git.kernel.org/cgit/linux/kernel/git/stable/stable-queue.git/tree/'
 }
 
+Quote() {
+    python -c "from urllib.parse import quote; print(quote('$*'))"
+}
+
+UnQuote() {
+    python -c "from urllib.parse import unquote; print(unquote('$*'))"
+}
+
 set -o vi
 
 unset MAILCHECK
