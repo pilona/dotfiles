@@ -139,10 +139,6 @@ alias info='info --vi-keys'
 
 alias pscgroups='ps xawf -eo pid,user,cgroup,args'
 
-alias ls='ls --color=auto'
-alias ll='ls -l'
-alias la='ls -a'
-alias l='ls'
 alias c='cd'
 alias d='cd'
 alias t='cat'
@@ -168,8 +164,18 @@ alias javadebug='java -Xdebug -Xrunjdwp:transport=dt_socket,address=8000,server=
 alias ipa='ip -4 address show scope global'
 alias ipr='ip -4 route show scope global'
 
-lll() {
-    ls --color=always "$@" | less -R
+alias l='ls -C'
+alias lt='ls -t'
+alias lx='ls -X'
+alias la='ls -A'
+alias ll='ls -l'
+alias lg='ls --group-directories-first'
+alias lD='ls -d'
+ls() {
+    command ls --human-readable \
+               --escape \
+               --width=$COLUMNS \
+               --color=always "$@" | less
 }
 
 PQE() {
