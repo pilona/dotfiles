@@ -17,3 +17,6 @@
 
 [http]
 	postBuffer = 10485760
+
+[diff "nodiff"]
+	command = true
