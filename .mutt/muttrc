@@ -24,10 +24,12 @@ bind attach <return> view-mailcap
 bind pager j next-line
 bind pager k previous-line
 
-`if [ $(tput colors) = 256 ]; then echo source ~/.mutt/color/solarized-dark-256; else echo source /dev/null; fi`
-
 set alias_file = ~/.mutt/aliases
 source $alias_file
+
+source 'if [ $(tput colors) = 256 ]; then \
+            cat ~/.mutt/color/solarized-dark-256; \
+        fi |'
 
 set ignore_list_reply_to
 
