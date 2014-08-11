@@ -17,6 +17,8 @@ set $normfgcolor "#dddddd"
 set $selbgcolor  "#224488"
 set $selfgcolor  "#cc9a1c"
 bindsym $mod+p exec dmenu_run -fn $dmenu_font -nb $normbgcolor -nf $normfgcolor -sb $selbgcolor -sf $selfgcolor
+bindsym $mod+o       exec --no-startup-id ~/.i3/dmenu_tag -fn $dmenu_font -nb $normbgcolor -nf $normfgcolor -sb $selbgcolor -sf $selfgcolor | xargs i3-msg workspace
+bindsym $mod+Shift+o exec --no-startup-id ~/.i3/dmenu_tag -fn $dmenu_font -nb $normbgcolor -nf $normfgcolor -sb $selbgcolor -sf $selfgcolor | xargs i3-msg move to workspace
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down

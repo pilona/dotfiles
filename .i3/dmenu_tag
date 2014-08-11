@@ -1,0 +1,21 @@
+#! /usr/bin/python
+
+from subprocess import Popen, check_output, check_call, PIPE
+from json import loads
+import sys
+
+workspaces = loads(check_output(["i3-msg", "-t", "get_workspaces"]).decode())
+names = sorted(map(lambda workspace: workspace["name"], workspaces))
+
+dmenu = Popen(["dmenu"] + sys.argv[1:], stdin=PIPE, stdout=PIPE)
+for name in names:
+    dmenu.stdin.write(name.encode() + b'\n')
+
+stdout, stderr = dmenu.communicate()
+if dmenu.returncode == 0:
+    message = stdout
+    file = sys.stdout
+else:
+    message = stderr
+    file = sys.stderr
+print(message.decode().strip(), file=file)
