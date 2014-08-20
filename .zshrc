@@ -467,6 +467,10 @@ UnQuote() {
     python -c "from urllib.parse import unquote; print(unquote('$*'))"
 }
 
+Weather() {
+    "$BROWSER" "http://weather.gc.ca/city/pages/on-118_metric_e.html"
+}
+
 set -o vi
 
 unset MAILCHECK
