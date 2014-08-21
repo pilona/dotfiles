@@ -23,6 +23,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'ap/vim-css-color'
+Plugin 'PotatoesMaster/i3-vim-syntax'
 
 filetype plugin indent on
 syntax on
