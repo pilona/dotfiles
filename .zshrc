@@ -178,6 +178,9 @@ ls() {
                --color=always "$@" | less
 }
 
+alias n='newsbeuter'
+alias m='mbsync && mutt'
+
 PQE() {
     pacman -Qe | cut -d ' ' -f 1 | column -c $COLUMNS | less
 }
