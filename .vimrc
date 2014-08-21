@@ -87,3 +87,4 @@ cabbrev Q q
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
+map <Leader>w :%s/\s\+$//<CR>
