@@ -85,6 +85,8 @@ iabbrev teh the
 cabbrev W w
 cabbrev Q q
 
+map Y y$
+
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 map <Leader>w :%s/\s\+$//<CR>
