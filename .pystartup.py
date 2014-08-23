@@ -116,20 +116,29 @@ class switch:
 
 # TODO: Track last runnable code in last_buffer, or find out if
 #       parent classes expose that service.
+#       Better yet, see if the last complete statement is tracked (.e.g, single
+#       line immediately evaluatable, while loop, for loop, etc).
+# TODO: History searching with bang.
 # TODO: Add pager function.
+# TODO: Class name shortening?
+# TODO: Move comment to pydoc?
 # Cleaned up http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/438813/.
 class EditableBufferInteractiveConsole(InteractiveConsole):
     EDITOR = environ.get("VISUAL", environ.get("EDITOR", "vi"))
     EDIT_CMD = r'\e'
 
     def __init__(self, *args, **kwargs):
+        self.last_buffer = []  # This holds the last executed statement
         super().__init__(*args, **kwargs)
 
     def raw_input(self, *args):
         line = super().raw_input(*args)
         if line == self.EDIT_CMD:
             with NamedTemporaryFile(suffix='.py') as tmpfl:
+                tmpfl.write(b'\n'.join(self.last_buffer))
+                tmpfl.flush()
                 check_call([self.EDITOR, tmpfl.name])
+                tmpfl.seek(0)
                 lines = tmpfl.read().decode().splitlines()
                 for line in lines[:-1]:
                     self.push(line)
@@ -178,23 +187,34 @@ if curses.tigetnum("colors") >= 8:
 # TODO: Limit number of items to print in collections to one screen height
 sys.displayhook = pprint
 
+# TODO: Retroactively apply this refactoring?
+console_mixins = [EditableBufferInteractiveConsole]
+# FIXME: Doesn't colour much of the traceback.
 try:
     from pygments import highlight
     from pygments.lexers.agile import Python3TracebackLexer
     from pygments.formatters import Terminal256Formatter
     from pygments.styles.monokai import MonokaiStyle
 except ImportError:
-    class MyConsole(EditableBufferInteractiveConsole):
-        pass
+    pass
 else:
-    class ColorizingConsole(InteractiveConsole):
+    class ColourizingInteractiveConsole(InteractiveConsole):
         def showtraceback(self):
             print(highlight(''.join(format_exception(*sys.exc_info())),
                             Python3TracebackLexer(),
                             Terminal256Formatter(style=MonokaiStyle)),
                   file=sys.stderr)
-    class MyConsole(EditableBufferInteractiveConsole, ColorizingConsole):
-        pass
+    console_mixins.append(ColourizingInteractiveConsole)
+try:
+    from flake8.main import check_code
+except ImportError:
+    pass
+else:
+    # TODO: check_code() on every line.
+    #       May need to sub subclass to get hook right.
+    pass
+class MyConsole(*console_mixins):
+    pass
 console = MyConsole()
 console.interact('')
 sys.exit()  # Normally no exit. Force it.
