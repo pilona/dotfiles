@@ -25,6 +25,7 @@ Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'ap/vim-css-color'
 Plugin 'majutsushi/tagbar'
 Plugin 'PotatoesMaster/i3-vim-syntax'
+Plugin 'https://github.com/thinca/vim-visualstar'
 
 filetype plugin indent on
 syntax on
