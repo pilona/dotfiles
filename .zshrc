@@ -575,7 +575,7 @@ case "$(cat /proc/$$/comm)" in
         set bell-style visual
 
         # Disable beep
-        setterm -blength 0
+        #setterm -blength 0
 
         autoload -U bashcompinit && bashcompinit
         autoload -U compinit && compinit
