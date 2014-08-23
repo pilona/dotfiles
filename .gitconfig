@@ -20,3 +20,6 @@
 
 [diff "nodiff"]
 	command = true
+
+[pretty]
+    fixes = Fixes: %h (\"%s\")
