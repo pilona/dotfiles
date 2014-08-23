@@ -8,6 +8,8 @@ set sort_aux              = reverse-last-date-received
 set certificate_file      = ~/.mutt/certificates
 set mailcap_path          = ~/.mutt/mailcap
 set header_cache          = ~/.mutt/cache
+#set history_file          = ~/.mutt/history
+#set save_history
 
 # Don't need to leak what I run
 set user_agent = no
@@ -81,10 +83,15 @@ unset markers
 # TODO: set crypto-hook for people for which PGP key choice is ambiguous, or
 #       otherwise fix using GnuPG?
 set help = no
+#set status_on_top = yes
 set forward_quote = yes
 set forward_format = "Fwd: %s"
+#set header = yes  # TODO: Figure out how to start in E, not e
 set edit_headers = yes
 set tilde = yes  # less emulation
+#set thorough_search = yes  # Sometimes want to percent-decode
+#set pager = "vim -R"
+#set prompt_after = no
 set pager_stop
 set mbox_type             = Maildir
 set confirmappend = no
@@ -93,6 +100,7 @@ set confirmcreate = no
 # prompt for the recipients and subject, because it's annoying to
 # unfold the headers in Vim.
 set fast_reply
+#set autoedit
 set hide_missing = yes  # want to see what it looks like
 set print = no
 set reverse_alias
