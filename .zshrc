@@ -172,6 +172,7 @@ ls() {
     command ls --human-readable \
                --escape \
                --width=$COLUMNS \
+               -C \
                --color=always "$@" | less
 }
 
