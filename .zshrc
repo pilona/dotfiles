@@ -496,6 +496,7 @@ case "$(cat /proc/$$/comm)" in
         autoload -U bashcompinit && bashcompinit
         autoload -U compinit && compinit
 
+        KEYTIMEOUT=1
         bindkey '^R' history-incremental-search-backward
         ;;
     bash)
