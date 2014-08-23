@@ -11,3 +11,4 @@
 .promptline.sh
 .*.pyc
 /[^.]*
+.pyhistory
