@@ -54,6 +54,7 @@ set autoread
 set spelllang=en_ca
 "set spelllang=fr_ca
 set cscopetag cscoperelative
+set diffopt+=vertical
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
