@@ -161,6 +161,9 @@ alias vlc='vlc --qt-minimal-view'
 alias clisp='clisp --quiet'
 alias javadebug='java -Xdebug -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=y'
 
+alias ping='ping -OD'
+alias ping6='ping6 -OD'
+
 alias ipa='ip -4 address show scope global'
 alias ipr='ip -4 route show scope global'
 
