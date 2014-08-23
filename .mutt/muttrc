@@ -21,8 +21,21 @@ auto_view application/msword
 alternative_order text/plain text/enriched text/html # save html for last
 bind attach <return> view-mailcap
 
+# Not bound to generic, because we want to *override* some bindings, whereas
+# generic is a fallback.
 bind pager j next-line
 bind pager k previous-line
+bind pager G bottom
+bind pager g top
+bind index H top-page
+bind index M middle-page
+bind index L bottom-page
+bind index G last-entry
+bind index g first-entry
+bind pager,index \Cf next-page
+bind pager,index \Cb previous-page
+bind pager,index \Ce next-line
+bind pager,index \Cy previous-line
 
 set alias_file = ~/.mutt/aliases
 source $alias_file
