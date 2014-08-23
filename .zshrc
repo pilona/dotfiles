@@ -471,6 +471,11 @@ Weather() {
     "$BROWSER" "http://weather.gc.ca/city/pages/on-118_metric_e.html"
 }
 
+Wiktionary() {
+    # TODO: percent-encode
+    "$BROWSER" "http://en.wiktionary.org/wiki/$1"
+}
+
 set -o vi
 
 unset MAILCHECK
