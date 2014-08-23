@@ -145,8 +145,22 @@ set $borderpx 4
 new_window pixel $borderpx
 new_float pixel  $borderpx
 
+set $normbordercolor "#333333"
 set $selbordercolor  "#ff5800"
+set $urgbordercolor  "#ff0000"
+
+# class                   border           background  text        indicator
+# TODO: blueish
+#client.focused           
+#client.focused_inactive  
+# TODO: usual grey
+#client.unfocused         
+# TODO: orangey
+#client.urgent            
+# If using border widths above, use following colours instead to emulate DWM
 client.focused $selbordercolor $selbordercolor $selbordercolor $selbordercolor
+# TODO: Independent colours
+#client.focused $selbordercolor $selbgcolor $selfgcolor $selindicator
 
 bar {
     mode dock
