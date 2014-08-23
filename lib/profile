@@ -1,0 +1,21 @@
+# Like bash's PS1='[\u@\h \W]$ '.
+fn cd {
+	prompt='['^`{id -un}^'@'^`{hostname}^' '
+	builtin cd $1 # Like cat, ***no flags!***
+
+	if (~ `{pwd} $HOME)
+		prompt=$prompt^'~'
+	if not {
+		prompt=$prompt^`{dirname `{pwd}}
+	}
+
+    prompt=$prompt^']'
+
+    if (~ `{id -u} 0)
+        prompt=$prompt^'# '
+    if not {
+        prompt=$prompt^'% '
+    }
+}
+
+cd .
