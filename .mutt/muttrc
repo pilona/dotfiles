@@ -78,3 +78,72 @@ set crypt_replyencrypt       = yes
 set crypt_replysignencrypted = yes
 
 unset markers
+# TODO: set crypto-hook for people for which PGP key choice is ambiguous, or
+#       otherwise fix using GnuPG?
+set help = no
+set forward_quote = yes
+set forward_format = "Fwd: %s"
+set edit_headers = yes
+set tilde = yes  # less emulation
+set pager_stop
+set mbox_type             = Maildir
+set confirmappend = no
+set confirmcreate = no
+# When creating a new message only. we do want to interactively
+# prompt for the recipients and subject, because it's annoying to
+# unfold the headers in Vim.
+set fast_reply
+set hide_missing = yes  # want to see what it looks like
+set print = no
+set reverse_alias
+set strict_threads = yes  # e.g., Subhect: Co-op report, joined both GENBAND and LiveQoS one
+
+# TODO: client-side spam filtering.
+# TODO: bind imap-fetch-mail
+# TODO: exec collapse-all; set sort_aux = reverse-data, so
+#       that the last message in a thread is the one shown on
+#       the crease. Make macro so that unfold also sets old
+#       sort_aux.
+# TODO: Get used to \t (complete—on aliases)
+#       ^T (complete-query) in editor menu
+# TODO: Under isync, make $ or something like that fetch
+#       and/or push changes to server. May want to make some
+#       of these unidirectional for the sake of speed. mbsync
+#       should support that.
+# TODO: Change folder bindings à la vim tpope-unimpaired
+# TODO: Make S (skip-quoted) a habit, esp. on fucking
+#       full-quoters on Metzdowd.
+# TODO: Source some scrypt-encrypted keychain?
+# TODO: my_hdr X-Message-Flag: Look, you're rude and making other email
+#                              users' out there's life hard. I'm not
+#                              apologizing for your email client messing up
+#                              formatting.
+# TODO: set tmpdir="~/.mutt/tmp" so as to not lose drafts during a crash?
+# TODO: set hidden_host or unset use_domain on kanataserver?
+# TODO: lower imap_keepalive for cmail?
+# TODO: Iff mailcap file is generic, move to home instead and
+#       unset mailcap_path?
+# TODO: unset mark_old?
+# TODO: set message_cachedir in .mutt accounts?
+# TODO: set message_cache_clean
+# TODO: set narrow_tree?
+# TODO: set sig for business correspondence
+# TODO: set simple_search to include other headers?
+# TODO: imap_passive + message_cachedir + macro for lazy online mode?
+# TODO: online-offline mode macros
+# TODO: cert pinning, preferrably automatic
+# TODO: See if ssl_force_tls is incompatible with STARTTLS
+# TODO: set strict_threads
+# TODO: Look into flowed text
+# TODO: tunnel for accounts with SSH access
+# TODO: bind <Ctrl>-f in editor mode to visual or something
+# TODO: See if wait_key=no still works with mailcap needsterminal
+# TODO: unset bounce_delivered because I use postfix?
+# TODO: Remove In-Reply-To header from the user-editables
+# TODO: http://shallowsky.com/blog/linux/mutt-fwd-attachments.html
+# TODO: Remove remaining forwarding decorations.
+# TODO: More Vim bindings.
+# TODO: Some sort of partial thread collapsing?
+# TODO: Redo last command, using some cheap macro and variable trick, if
+#       possible
+# TODO: Figure out how to make forwarded messages not include header
