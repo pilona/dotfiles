@@ -165,6 +165,7 @@ alias ping='ping -OD'
 alias ping6='ping6 -OD'
 
 alias ipa='ip -4 address show scope global'
+alias ip6='ip -6 address show scope global'
 alias ipr='ip -4 route show scope global'
 
 alias l='ls -C'
