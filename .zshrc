@@ -476,6 +476,8 @@ Wiktionary() {
     "$BROWSER" "http://en.wiktionary.org/wiki/$1"
 }
 
+alias sudo='sudo '  # Dirty trick to force alias expansion in sudo
+
 set -o vi
 
 unset MAILCHECK
