@@ -555,6 +555,10 @@ Manpages() {
       | column -c $COLUMNS
 }
 
+faketty() {
+    script --quiet --command "$*" /dev/null
+}
+
 alias sudo='sudo '  # Dirty trick to force alias expansion in sudo
 
 set -o vi
