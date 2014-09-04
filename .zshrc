@@ -1,5 +1,5 @@
-# stupid VTE library bug
 case "$(cat /proc/$PPID/comm)" in
+    # stupid VTE library bug
     xterm|xfce4-terminal)
         export TERM=xterm-256color
         ;;
