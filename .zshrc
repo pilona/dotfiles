@@ -142,6 +142,7 @@ alias cd...='cd ../..'
 alias cd....='cd ../../..'
 alias cd.....='cd ../../../..'
 alias cd......='cd ../../../../..'
+alias lcd='cd'
 alias d='cd'
 alias t='cat'
 
