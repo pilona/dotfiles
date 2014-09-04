@@ -185,6 +185,8 @@ ls() {
 alias n='newsbeuter'
 alias m='mbsync && mutt'
 
+alias grep='grep --color=auto'
+
 PQE() {
     pacman -Qe | cut -d ' ' -f 1 | column -c $COLUMNS | less
 }
