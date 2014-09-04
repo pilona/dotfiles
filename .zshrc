@@ -68,7 +68,7 @@ else
 fi
 alias sr='sr -browser="$BROWSER"'
 
-export PATH="$HOME/.cabal/bin:$PATH"
+export PATH="$HOME/.cabal/bin:$HOME/.local/bin:$PATH"
 export MANPATH="$HOME/.cabal/share/man:$MANPATH"
 
 export LESS='FRXS'
