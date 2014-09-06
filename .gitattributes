@@ -1,2 +1,3 @@
 .config/vlc/vlcrc                   diff=nodiff
 .config/xfce4/terminal/terminalrc   diff=nodiff
+.config/mupen64plus/mupen64plus.cfg diff=nodiff
