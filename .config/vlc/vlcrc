@@ -4,6 +4,9 @@
 # Start in minimal view (without menus) (boolean)
 qt-minimal-view=1
 
+# Ask for network policy at start (boolean)
+qt-privacy-ask=0
+
 [avcodec] # FFmpeg audio/video decoder
 # Hardware decoding (string)
 avcodec-hw=vaapi
