@@ -10,4 +10,4 @@
 .viminfo*
 .promptline.sh
 .*.pyc
-[^.]*
+/[^.]*
