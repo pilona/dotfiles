@@ -26,7 +26,7 @@ fi
 
 # 256-color colourscheme (Solarized or Molokai) mess up terminal; ugly
 # colours.
-if [ $(tput colors) -ge 256 ]; then
+if [ "$(tput colors)" -ge 256 ]; then
     export EDITOR=vim
 else
     export EDITOR=vi
