@@ -1,5 +1,5 @@
 export PATH="$HOME/.cabal/bin:$HOME/.local/bin:$PATH"
-export MANPATH="$HOME/.cabal/share/man:$MANPATH"
+export MANPATH="$HOME/.cabal/share/man:$HOME/.local/share/man:$MANPATH"
 
 export LESS='FRXS'
 export LESS_TERMCAP_mb=$'\E[01;31m'
