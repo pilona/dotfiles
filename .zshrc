@@ -197,6 +197,39 @@ PQESize() {
       | less
 }
 
+PQESize2() {
+    pacman -Qie \
+      | awk 'BEGIN { ORS = " " }
+
+             $1 == "Name" { print $3 }
+
+             $1 " " $2 == "Installed Size" {
+                 size = $(NF-1)
+                 size *= 1024
+                 print size "\n"
+             }' \
+      | sort -rnk 2 \
+      | awk 'BEGIN {
+                 suffix[0] = "B"
+                 suffix[1] = "KiB"
+                 suffix[2] = "MiB"
+                 suffix[3] = "GiB"
+             }
+             $0 !~ /^[[:space:]]*$/ {
+                 name = $1
+                 size = $2
+                 oom  = 0
+                 while (size > 1024) {
+                     size /= 1024
+                     oom++
+                 }
+                 printf "%s %.2f %s\n", name, size, suffix[oom]
+             }' \
+      | column -t \
+      | column -c $COLUMNS \
+      | less
+}
+
 mail_account() {
     if [ -z "$M" ]; then
         local HOUR=`date +%H`
