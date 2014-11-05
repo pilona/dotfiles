@@ -3,6 +3,7 @@ set $mod Mod4
 font pango:Terminess Powerline 24px
 # Requires XFT-patched dmenu
 set $dmenu_font "Terminess Powerline:pixelsize=24"
+set $dmenu_pad "3"
 
 floating_modifier $mod
 
@@ -14,9 +15,9 @@ set $normbgcolor "#101010"
 set $normfgcolor "#dddddd"
 set $selbgcolor  "#224488"
 set $selfgcolor  "#cc9a1c"
-bindsym $mod+p exec dmenu_run -fn $dmenu_font -nb $normbgcolor -nf $normfgcolor -sb $selbgcolor -sf $selfgcolor
-bindsym $mod+o       exec ~/.i3/dmenu_tag -fn $dmenu_font -nb $normbgcolor -nf $normfgcolor -sb $selbgcolor -sf $selfgcolor | xargs i3-msg workspace
-bindsym $mod+Shift+o exec ~/.i3/dmenu_tag -fn $dmenu_font -nb $normbgcolor -nf $normfgcolor -sb $selbgcolor -sf $selfgcolor | xargs i3-msg move to workspace
+bindsym $mod+p exec dmenu_run             -fn $dmenu_font -nb $normbgcolor -nf $normfgcolor -sb $selbgcolor -sf $selfgcolor -d $dmenu_pad
+bindsym $mod+o exec ~/.i3/dmenu_tag       -fn $dmenu_font -nb $normbgcolor -nf $normfgcolor -sb $selbgcolor -sf $selfgcolor -d $dmenu_pad | xargs i3-msg workspace
+bindsym $mod+Shift+o exec ~/.i3/dmenu_tag -fn $dmenu_font -nb $normbgcolor -nf $normfgcolor -sb $selbgcolor -sf $selfgcolor -d $dmenu_pad | xargs i3-msg move to workspace
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -fn $dmenu_font -nb $normbgcolor -nf $normfgcolor -sb $selbgcolor -sf $selfgcolor"
 
 bindsym $mod+h focus left
