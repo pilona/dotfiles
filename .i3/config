@@ -7,7 +7,7 @@ set $dmenu_pad "3"
 
 floating_modifier $mod
 
-bindsym $mod+Shift+Return exec xfce4-terminal
+bindsym $mod+Shift+Return exec st
 
 bindsym $mod+Shift+c kill
 
