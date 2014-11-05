@@ -94,6 +94,7 @@ bindsym $mod+r reload
 for_window [class="mupen64plus"]   floating enable
 for_window [class="SDLJoytest-GL"] floating enable
 for_window [class="Vlc"]           floating enable
+for_window [class="mpv"]           floating enable
 for_window [class="vbam"]          floating enable
 for_window [class="XClock"]        floating enable
 for_window [class="xzoom"]         floating enable
