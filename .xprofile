@@ -3,14 +3,6 @@
 set -e
 
 
-screenlocker() {
-    # Lock screen on 5 minutes of inactivity
-    while true; do
-        sinac ${1:-300} && slock
-    done &
-}
-
-
 setxkbmap -option ctrl:nocaps \
           -option compose:ralt \
           -option compose:rwin
@@ -30,16 +22,16 @@ case "$WM" in
             sleep 1
         done &
 
-        screenlocker
-
         export _JAVA_AWT_WM_NONREPARENTING=1
         ;;
 
     *)
         xbindkeys
-        screenlocker
         ;;
 esac
+
+xset s 300
+xss-lock -- slock &
 
 for key in TapButton{1,2,3}; do
     synclient ${key}=0
