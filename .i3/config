@@ -100,6 +100,8 @@ for_window [class="XClock"]        floating enable
 for_window [class="xzoom"]         floating enable
 for_window [class="Notify-osd"]    floating enable
 
+default_orientation vertical
+
 set $borderpx 4
 new_window pixel $borderpx
 new_float pixel  $borderpx
