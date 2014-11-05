@@ -1,4 +1,5 @@
 set $mod Mod4
+set $altmod Mod1
 
 font pango:Terminess Powerline 24px
 # Requires XFT-patched dmenu
@@ -90,6 +91,27 @@ bindsym $mod+Shift+0 move container to workspace 10
 bindsym $mod+Shift+q exit
 
 bindsym $mod+r reload
+
+bindsym XF86AudioRaiseVolume exec amixer --quiet set Master 5%+
+bindsym XF86AudioLowerVolume exec amixer --quiet set Master 5%-
+bindsym XF86AudioMute        exec amixer --quiet set Master toggle
+
+bindsym XF86MonBrightnessUp   exec gmux_brightness -inc
+bindsym XF86MonBrightnessDown exec gmux_brightness -dec
+bindsym XF86KbdBrightnessUp   exec keyboard_brightness -inc
+bindsym XF86KbdBrightnessDown exec keyboard_brightness -dec
+
+# pause and play inverted what I'd like them to be
+bindsym XF86AudioPlay  exec cmus-remote --pause
+bindsym XF86AudioPause exec cmus-remote --play
+bindsym XF86AudioNext exec cmus-remote --next
+bindsym XF86AudioPrev exec cmus-remote --prev
+bindsym Shift+XF86AudioNext exec cmus-remote --seek +1m
+bindsym Shift+XF86AudioPrev exec cmus-remote --seek -1m
+bindsym $altmod+XF86AudioNext exec cmus-remote --seek +5
+bindsym $altmod+XF86AudioPrev exec cmus-remote --seek -5
+
+bindsym XF86Eject exec eject
 
 for_window [class="mupen64plus"]   floating enable
 for_window [class="SDLJoytest-GL"] floating enable
