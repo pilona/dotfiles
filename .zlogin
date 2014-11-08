@@ -12,6 +12,7 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 
 export SDL_VIDEO_FULLSCREEN_HEAD=0
 
+export WM=dwm
 if [ $(tty) = /dev/tty1 ]; then
     exec startx
 fi

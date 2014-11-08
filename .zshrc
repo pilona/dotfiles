@@ -33,7 +33,6 @@ else
 fi
 export VISUAL=$EDITOR
 
-export WM=dwm
 if [ -n "$DISPLAY" ]; then
     export BROWSER=firefox
 
