@@ -3,9 +3,6 @@ case "$(cat /proc/$PPID/comm)" in
     xterm|xfce4-terminal)
         export TERM=xterm-256color
         ;;
-    st)
-        export TERM=st-256color
-        ;;
     tmux)
         # Yes, we want to save to a file, and risk being out of date, whereas
         # just using :Tmuxline means that we see, however short, the old tmux
