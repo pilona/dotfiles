@@ -16,7 +16,7 @@ export CPPFLAGS="-D_FORTIFY_SOURCE=2"
 export CFLAGS="-march=native -O2 -pipe -fstack-protector-strong --param=ssp-buffer-size=4"
 export CXXFLAGS="$CFLAGS"
 export LDFLAGS="-Wl,-O1,--sort-common,--as-needed,-z,now"
-export MAKEFLAGS="-j5"
+export MAKEFLAGS="-j"
 
 export WM=dwm
 if [ $(tty) = /dev/tty1 ]; then
