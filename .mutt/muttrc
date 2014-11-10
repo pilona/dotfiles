@@ -73,6 +73,7 @@ source /etc/Muttrc.gpg.dist
 # Above is a generic script from upstream. Override **here**, not there.
 # specify the uid to use when encrypting/signing
 set pgp_sign_as              = 0xEE98BA43
+set pgp_use_gpg_agent        = yes
 set crypt_autosign           = yes
 set crypt_autoencrypt        = no
 set crypt_replysign          = yes
