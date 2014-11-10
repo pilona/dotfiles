@@ -179,6 +179,7 @@ alias la='ls -A'
 alias ll='ls -l'
 alias lg='ls --group-directories-first'
 alias lD='ls -d'
+alias lu='ls -U'
 ls() {
     command ls --human-readable \
                --escape \
