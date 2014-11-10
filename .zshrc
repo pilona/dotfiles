@@ -192,6 +192,8 @@ alias n='newsbeuter -q'
 
 alias grep='grep -E --color=auto'
 
+alias MountFat='sudo mount -o uid=$(id -u),gid=$(id -g),fmask=7177,dmask=7077'
+
 PQE() {
     pacman -Qe | cut -d ' ' -f 1 | column -c $COLUMNS | less
 }
