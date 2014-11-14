@@ -500,6 +500,13 @@ NmapSSL() {
     nmap --script ssl-enum-ciphers -p "$@"
 }
 
+ReallyMute() {
+    for control in Master Headphone Speaker Bass\ Speaker PCM; do
+        [ "$control" = PCM ] || amixer --quiet set "$control" mute
+        amixer --quiet set "$control" 0
+    done
+}
+
 alias sudo='sudo '  # Dirty trick to force alias expansion in sudo
 
 set -o vi
