@@ -496,6 +496,10 @@ Wiktionary() {
     "$BROWSER" "http://en.wiktionary.org/wiki/$1"
 }
 
+NmapSSL() {
+    nmap --script ssl-enum-ciphers -p "$@"
+}
+
 alias sudo='sudo '  # Dirty trick to force alias expansion in sudo
 
 set -o vi
