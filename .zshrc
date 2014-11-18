@@ -394,7 +394,7 @@ Javadoc() {
     _webdoc /usr/share/doc/openjdk7-doc/api \
             Javadoc \
             $(for arg in "$@"; do
-                  if grep -qF . <<< "$arg"; then
+                  if command grep -qF . <<< "$arg"; then
                       echo "$(tr . / <<< "$arg")"
                   else
                       echo "java/lang/${arg}"
