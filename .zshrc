@@ -391,7 +391,7 @@ alias Pydoc='_webdoc /usr/share/doc/python/html/library Pydoc'
 # TODO: Catch member references in first argument and jump to first instance if
 #       type not specified.
 Javadoc() {
-    _webdoc /usr/share/doc/openjdk7-doc/api \
+    _webdoc /usr/share/doc/java8-openjdk/api \
             Javadoc \
             $(for arg in "$@"; do
                   if command grep -qF . <<< "$arg"; then
