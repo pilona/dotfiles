@@ -168,8 +168,7 @@ ls() {
                --color=always "$@" | less
 }
 
-alias n='newsbeuter'
-alias m='mbsync && mutt'
+alias n='newsbeuter -q'
 
 alias grep='grep -E --color=auto'
 
