@@ -514,6 +514,14 @@ ReallyMute() {
     done
 }
 
+MXToolBox() {
+    if [ $# = 1 ]; then
+        "$BROWSER" "http://mxtoolbox.com/domain/$1/?source=findmonitors"
+    else
+        echo 'usage: MXToolBox <domain>' 1>&2
+    fi
+}
+
 alias sudo='sudo '  # Dirty trick to force alias expansion in sudo
 
 set -o vi
