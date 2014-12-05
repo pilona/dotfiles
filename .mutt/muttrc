@@ -107,6 +107,8 @@ set print = no
 set reverse_alias
 set strict_threads = yes  # e.g., Subhect: Co-op report, joined both GENBAND and LiveQoS one
 
+set abort_unmodified = no
+
 # TODO: client-side spam filtering.
 # TODO: bind imap-fetch-mail
 # TODO: exec collapse-all; set sort_aux = reverse-data, so
