@@ -386,7 +386,14 @@ _webdoc() {
 
 # TODO: Handle member references in first argument.
 # TODO: Handle builtins: constants, functions, classes, etc.
-alias Pydoc='_webdoc /usr/share/doc/python/html/library Pydoc'
+Pydoc() {
+    local basedir='/usr/share/doc/python/html'
+    if [ $# = 0 ]; then
+        "$BROWSER" "${basedir}/index.html"
+    else
+        _webdoc "${basedir}/library" Pydoc "$@"
+    fi
+}
 
 # TODO: Catch member references in first argument and jump to first instance if
 #       type not specified.
