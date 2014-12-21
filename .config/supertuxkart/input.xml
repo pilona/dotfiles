@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<input version="1">
+  <gamepad name="Microsoft X-Box 360 pad" enabled="true">
+    <action name="steerLeft" id="0" event="2" character="0" direction="0" range="0"/>
+    <action name="steerRight" id="0" event="2" character="0" direction="1" range="0"/>
+    <action name="accel" id="1" event="3" direction="0"/>
+    <action name="brake" id="0" event="3" character="0"/>
+    <action name="nitro" id="3" event="3" character="0"/>
+    <action name="drift" id="5" event="3" character="0"/>
+    <action name="rescue" id="6" event="3" character="0" />
+    <action name="fire" id="4" event="3" character="0"/>
+    <action name="lookBack" id="2" event="3" character="0"/>
+    <action name="pauserace" id="7" event="3" character="0"/>
+    <action name="menuUp" id="1" event="2" character="0" direction="0" range="0"/>
+    <action name="menuDown" id="1" event="2" character="0" direction="1" range="0"/>
+    <action name="menuLeft" id="0" event="2" character="0" direction="0" range="0"/>
+    <action name="menuRight" id="0" event="2" character="0" direction="1" range="0"/>
+    <action name="menuSelect" id="1" event="3" character="0"/>
+    <action name="menuCancel" id="0" event="3" character="0"/>
+  </gamepad>
+</input>
