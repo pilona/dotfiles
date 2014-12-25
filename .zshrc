@@ -527,6 +527,12 @@ PDFCat() {
     gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile="$output" "$@"
 }
 
+NoFox() {
+    for comm in firefox chromium; do
+        killall --quiet -STOP $comm
+    done 2>&1
+}
+
 MXToolBox() {
     if [ $# = 1 ]; then
         "$BROWSER" "http://mxtoolbox.com/domain/$1/?source=findmonitors"
