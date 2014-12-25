@@ -1,3 +1,4 @@
+# vim: noet
 [user]
 	email = alp@alexpilon.ca
 	name = Alex Pilon
@@ -26,4 +27,4 @@
 	command = true
 
 [pretty]
-    fixes = Fixes: %h (\"%s\")
+	fixes = Fixes: %h (\"%s\")
