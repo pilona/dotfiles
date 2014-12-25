@@ -541,6 +541,20 @@ MXToolBox() {
     fi
 }
 
+Binaries() {
+    pacman -Ql "$@" \
+      | grep bin/ \
+      | awk -F / '{print $NF}' \
+      | column -c $COLUMNS
+}
+
+Manpages() {
+    pacman -Ql "$@" \
+      | grep man/ \
+      | awk -F / '{print $NF}' \
+      | column -c $COLUMNS
+}
+
 alias sudo='sudo '  # Dirty trick to force alias expansion in sudo
 
 set -o vi
