@@ -16,6 +16,8 @@
 	type = cat-file -t
 	dump = cat-file -p
 	difff = diff --color --ignore-all-space --minimal
+	changelog = shortlog @{1}..@
+	lastlog   = log      @{1}..@ --date-order
 
 [push]
 	default = current
