@@ -26,6 +26,8 @@ case "$WM" in
         export _JAVA_AWT_WM_NONREPARENTING=1
         ;;
 
+    i3)
+        ;;
     *)
         xbindkeys
         ;;
