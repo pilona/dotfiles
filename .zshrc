@@ -117,7 +117,15 @@ alias du='du -h'
 
 alias pdb='python -m pdb'
 alias pytrace='python -m trace --ignore-dir=/usr/lib/python3.* --trace'
-alias python='PYTHONSTARTUP=~/.pystartup.py python -q'
+Python() (
+    export PYTHONPATH="${HOME}/.python.d:${PYTHONPATH}"
+    export PYTHONSTARTUP="${HOME}/.python.d/rc.py"
+    if [ $# -gt 0 ]; then
+        pdb "$@"
+    else
+        command python -q
+    fi
+)
 
 alias info='info --vi-keys'
 
