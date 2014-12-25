@@ -521,6 +521,12 @@ ReallyMute() {
     done
 }
 
+PDFCat() {
+    local output="$1"
+    shift
+    gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile="$output" "$@"
+}
+
 MXToolBox() {
     if [ $# = 1 ]; then
         "$BROWSER" "http://mxtoolbox.com/domain/$1/?source=findmonitors"
