@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<stkconfig version="8">
+  <Video width="1680" height="1050"
+         fullscreen="true"
+         remember_window_location="false"
+         window_x="-1"
+         window_y="-1"
+         show_fps="false"
+         max_fps="60"/>
+  <!-- Graphics Quality Settings
+       fbo: use frame buffer objects
+       anim_gfx: scenery animations
+       christmas-mode: according to calendar
+       steering_animations: enabled for all
+       antialiasing: 8x
+       postprocess_enabled: motion blur, etc. -->
+  <GFX fbo="true"
+       anim_gfx="true"
+       christmas-mode="0"
+       weather_gfx="true"
+       steering_animations="2"
+       anisotropic="16"
+       trilinear="true"
+       antialiasing="3"
+       vsync="true"
+       pixel_shaders="true"
+       postprocess_enabled="true"/>
+</stkconfig>
