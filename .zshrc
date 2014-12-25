@@ -103,7 +103,7 @@ alias DumpID3Tags='id3 -q "title=\"%t\",\nartist=\"%a\",\nalbum=\"%l\",\ntrack=\
 
 alias cscope='EDITOR=$VISUAL cscope'
 
-alias gcc='gcc -fdiagnostics-color=auto -std=c11'
+alias gcc='gcc -fdiagnostics-color=auto -std=gnu11'
 alias gdb='gdb -silent'
 
 alias ghci='ghci -v0'
