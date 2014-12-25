@@ -116,7 +116,6 @@ alias df='df -h'
 alias du='du -h'
 
 alias pdb='python -m pdb'
-alias pudb='python -m pudb'
 alias pytrace='python -m trace --ignore-dir=/usr/lib/python3.* --trace'
 alias python='PYTHONSTARTUP=~/.pystartup.py python -q'
 
