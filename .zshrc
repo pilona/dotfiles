@@ -194,6 +194,11 @@ alias grep='grep -E --color=auto'
 
 alias MountFat='sudo mount -o uid=$(id -u),gid=$(id -g),fmask=7177,dmask=7077'
 
+if command -v bsdcpio >/dev/null 2>&1 && \
+   ! command -v cpio  >/dev/null 2>&1; then
+    alias cpio=bsdcpio
+fi
+
 PQE() {
     pacman -Qe | cut -d ' ' -f 1 | column -c $COLUMNS | less
 }
