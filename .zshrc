@@ -606,6 +606,10 @@ case "$(cat /proc/$$/comm)" in
         set +o histexpand
 
         complete -cf sudo
+
+        bind 'set show-all-if-ambiguous on'
+        bind 'set menu-complete-display-prefix on'
+        bind 'TAB:menu-complete'
         ;;
 esac
 
