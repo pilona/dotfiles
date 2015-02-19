@@ -18,6 +18,7 @@
 	difff = diff --color --ignore-all-space --minimal
 	changelog = shortlog @{1}..@
 	lastlog   = log      @{1}..@ --date-order
+	lastlogg  = log      @{1}..@ --graph --decorate --oneline
 
 [push]
 	default = current
