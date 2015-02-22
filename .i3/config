@@ -107,6 +107,7 @@ mode "resize" {
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
+    bindsym $mod+w mode "default"
 }
 
 bindsym XF86AudioRaiseVolume exec amixer --quiet set Master 5%+
