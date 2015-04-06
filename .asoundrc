@@ -1,13 +1,4 @@
-# Shorthand
-#pcm.!default "plughw:0,0"
-#pcm.!default "hw:2,0"
-# Longhand
-#defaults.pcm.card 0
-#defaults.pcm.device 0
-#defaults.ctl.card 0
-
-# TODO: Get dmix working instead.
-#defaults.pcm.slave "dmix"
+#defaults.pcm.!card "SoundSticks"
 
 ctl.equal {
     type equal;
