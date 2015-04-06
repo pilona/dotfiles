@@ -32,6 +32,7 @@ export VISUAL=$EDITOR
 
 if [ -n "$DISPLAY" ]; then
     export BROWSER=firefox
+    export QT_STYLE_OVERRIDE=gtk
 
     # These aliases are meaningless if not running under X11.
     # One can set DISPLAY explicitly and start them from a Linux VT
