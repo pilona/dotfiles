@@ -523,6 +523,10 @@ Weather() {
     "$BROWSER" "http://weather.gc.ca/city/pages/on-118_metric_e.html"
 }
 
+Canal() {
+    "$BROWSER" "http://www.ncc-ccn.gc.ca/rideau-canal-skateway/"
+}
+
 Wiktionary() {
     # TODO: percent-encode
     "$BROWSER" "http://en.wiktionary.org/wiki/$1"
