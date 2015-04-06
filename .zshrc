@@ -554,7 +554,7 @@ PDFCat() {
 
 NoFox() {
     for comm in firefox chromium; do
-        killall --quiet -STOP $comm
+        killall --quiet --process-group -STOP $comm
     done 2>&1
 }
 
