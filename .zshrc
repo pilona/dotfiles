@@ -17,6 +17,9 @@ esac
 
 if [ $TERM = linux ]; then
     export TMOUT=120
+
+    # Disable beep
+    setterm -blength 0
 else
     unset TMOUT
 fi
