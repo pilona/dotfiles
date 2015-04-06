@@ -581,6 +581,22 @@ faketty() {
     script --quiet --command "$*" /dev/null
 }
 
+Duration() {
+    mediainfo ${*:-*} \
+      | awk 'BEGIN {
+                 total=0
+             }
+             $0 ~ /Duration / && NR % 3 == 1 {
+                 total += $3 * 60 + $4
+             }
+             END {
+                if (total >= 3600)
+                    printf "%dh %dmn %ds", total/3600, total/60, total%60
+                else
+                    printf "%dmn %ds", total/60, total%60
+             }'
+}
+
 alias sudo='sudo '  # Dirty trick to force alias expansion in sudo
 
 set -o vi
