@@ -13,6 +13,9 @@ case "$(cat /proc/$PPID/comm)" in
                 +qall 2>/dev/null
         fi
         ;;
+    st)
+        stty ixon
+        ;;
 esac
 
 if [ $TERM = linux ]; then
