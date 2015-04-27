@@ -44,7 +44,7 @@ if [ -n "$DISPLAY" ]; then
     # One can set DISPLAY explicitly and start them from a Linux VT
     # but that'll likely rarely happen, if at all.
     alias FixCtrlCaps='setxkbmap -option ctrl:nocaps'
-    alias chromiump='chromium --proxy-server=socks5://localhost:1080'
+    alias chromiump='chromium --incognito --proxy-server=socks5://localhost:1080'
     alias mupen64plus='mupen64plus --windowed'
     alias xclock='xclock -update 1 -bg palegreen'
 
