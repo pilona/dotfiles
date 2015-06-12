@@ -1,4 +1,5 @@
 #defaults.pcm.!card "SoundSticks"
+#defaults.ctl.!card "SoundSticks"
 
 ctl.equal {
     type equal;
