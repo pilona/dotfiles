@@ -1,3 +1,5 @@
+defaults.pcm.!card "MID"
+defaults.ctl.!card "MID"
 #defaults.pcm.!card "SoundSticks"
 #defaults.ctl.!card "SoundSticks"
 
