@@ -35,6 +35,8 @@ bindsym $mod+Ctrl+h move to output left
 bindsym $mod+Ctrl+j move to output down
 bindsym $mod+Ctrl+k move to output up
 bindsym $mod+Ctrl+l move to output right
+bindsym $mod+Shift+comma move to output left
+bindsym $mod+Shift+period move to output right
 
 # DWM-ish keybindings. Correspond to the layout one would have in my config
 # with the bstack patches applied, and a 0-master tag (*cough* workspace
@@ -60,6 +62,9 @@ bindsym $mod+x layout splith
 
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
+
+bindsym $mod+comma focus output left
+bindsym $mod+period focus output right
 
 bindsym $mod+a focus parent
 
