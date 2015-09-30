@@ -8,7 +8,7 @@ set $dmenu_pad "3"
 
 floating_modifier $mod
 
-bindsym $mod+Shift+Return exec st
+bindsym $mod+Shift+Return exec --no-startup-id st
 
 bindsym $mod+Shift+c kill
 
