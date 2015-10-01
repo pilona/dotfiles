@@ -119,8 +119,11 @@ mode "resize" {
     bindsym $mod+w mode "default"
 }
 
-bindsym XF86AudioRaiseVolume exec amixer --quiet set Master 5%+
-bindsym XF86AudioLowerVolume exec amixer --quiet set Master 5%-
+set $volinc 3%
+bindsym XF86AudioRaiseVolume exec amixer --quiet set Master $volinc+
+bindsym XF86AudioLowerVolume exec amixer --quiet set Master $volinc-
+bindsym $altmod+XF86AudioRaiseVolume exec amixer --quiet set PCM $volinc+
+bindsym $altmod+XF86AudioLowerVolume exec amixer --quiet set PCM $volinc-
 bindsym XF86AudioMute        exec amixer --quiet set Master toggle
 
 bindsym XF86MonBrightnessUp   exec gmux_brightness -inc
