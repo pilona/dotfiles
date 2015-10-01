@@ -105,10 +105,14 @@ bindsym $mod+Shift+r restart
 
 bindsym $mod+w mode "resize"
 mode "resize" {
-    bindsym h resize shrink width  10 px or 10 ppt
-    bindsym j resize grow   height 10 px or 10 ppt
-    bindsym k resize shrink height 10 px or 10 ppt
-    bindsym l resize grow   width  10 px or 10 ppt
+    bindsym h resize grow left
+    bindsym j resize grow down
+    bindsym k resize grow up
+    bindsym l resize grow right
+    bindsym Shift+h resize shrink right
+    bindsym Shift+j resize shrink up
+    bindsym Shift+k resize shrink down
+    bindsym Shift+l resize shrink left
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
