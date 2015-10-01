@@ -182,8 +182,12 @@ client.focused $selbordercolor $selbordercolor $normbordercolor $selbordercolor
 # becomes so unambiguous which window is focused.
 #client.focused $selbordercolor $selbordercolor $selbordercolor $selbordercolor
 
+# TODO: move scratchpad; scratchpad show
+
+bindsym $mod+b bar mode toggle
 bar {
     mode dock
     position top
     workspace_buttons yes
+    status_command ~/.i3/status.py
 }
