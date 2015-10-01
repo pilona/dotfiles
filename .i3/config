@@ -176,9 +176,11 @@ set $urgbordercolor  "#ff0000"
 # TODO: orangey
 #client.urgent            
 # If using border widths above, use following colours instead to emulate DWM
-client.focused $selbordercolor $selbordercolor $selbordercolor $selbordercolor
-# TODO: Independent colours
-#client.focused $selbordercolor $selbgcolor $selfgcolor $selindicator
+client.focused $selbordercolor $selbordercolor $normbordercolor $selbordercolor
+# If you don't mind the asymmetry, and window titles are at least usually
+# noise, just make the text the same colour as the background, and it then
+# becomes so unambiguous which window is focused.
+#client.focused $selbordercolor $selbordercolor $selbordercolor $selbordercolor
 
 bar {
     mode dock
