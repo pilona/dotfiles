@@ -153,10 +153,11 @@ for_window [class="xzoom"]         floating enable
 for_window [class="Notify-osd"]    floating enable
 for_window [class="qemu-system-x86_64"] floating enable
 for_window [title="BattleWorldsKronos"] floating enable
+for_window [title="xzoom"] floating enable
 
 default_orientation vertical
 
-set $borderpx 4
+set $borderpx 3
 new_window pixel $borderpx
 new_float pixel  $borderpx
 
