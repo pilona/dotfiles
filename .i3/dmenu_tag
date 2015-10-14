@@ -5,7 +5,7 @@ from json import loads
 import sys
 
 workspaces = loads(check_output(["i3-msg", "-t", "get_workspaces"]).decode())
-names = sorted(map(lambda workspace: workspace["name"], workspaces))
+names = sorted(workspace['name'] for workspace in workspaces)
 
 dmenu = Popen(["dmenu"] + sys.argv[1:], stdin=PIPE, stdout=PIPE)
 for name in names:
