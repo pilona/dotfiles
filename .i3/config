@@ -16,10 +16,45 @@ set $normbgcolor "#101010"
 set $normfgcolor "#dddddd"
 set $selbgcolor  "#224488"
 set $selfgcolor  "#cc9a1c"
-bindsym $mod+p exec --no-startup-id dmenu_run             -fn $dmenu_font -nb $normbgcolor -nf $normfgcolor -sb $selbgcolor -sf $selfgcolor -d $dmenu_pad
-bindsym $mod+o exec --no-startup-id ~/.i3/dmenu_tag       -fn $dmenu_font -nb $normbgcolor -nf $normfgcolor -sb $selbgcolor -sf $selfgcolor -d $dmenu_pad | xargs i3-msg workspace
-bindsym $mod+Shift+o exec --no-startup-id ~/.i3/dmenu_tag -fn $dmenu_font -nb $normbgcolor -nf $normfgcolor -sb $selbgcolor -sf $selfgcolor -d $dmenu_pad | xargs i3-msg move to workspace
-#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -fn $dmenu_font -nb $normbgcolor -nf $normfgcolor -sb $selbgcolor -sf $selfgcolor"
+
+bindsym $mod+p exec --no-startup-id \
+    dmenu_run -fn $dmenu_font \
+              -nb $normbgcolor \
+              -nf $normfgcolor \
+              -sb $selbgcolor \
+              -sf $selfgcolor \
+              -d $dmenu_pad
+bindsym $mod+Shift+p exec --no-startup-id \
+    dmenu_desktop -- -fn $dmenu_font \
+                     -nb $normbgcolor \
+                     -nf $normfgcolor \
+                     -sb $selbgcolor \
+                     -sf $selfgcolor \
+                     -d $dmenu_pad
+bindsym $mod+Control+p exec --no-startup-id \
+    dmenu -fn $dmenu_font \
+          -nb $normbgcolor \
+          -nf $normfgcolor \
+          -sb $selbgcolor \
+          -sf $selfgcolor \
+          -d $dmenu_pad < /dev/null \
+      | xargs -d $'\n' i3-msg -t command
+bindsym $mod+o exec --no-startup-id \
+    ~/.i3/dmenu_tag -fn $dmenu_font \
+                    -nb $normbgcolor \
+                    -nf $normfgcolor \
+                    -sb $selbgcolor \
+                    -sf $selfgcolor \
+                    -d $dmenu_pad \
+      | xargs i3-msg workspace
+bindsym $mod+Shift+o exec --no-startup-id \
+    ~/.i3/dmenu_tag -fn $dmenu_font \
+                    -nb $normbgcolor \
+                    -nf $normfgcolor \
+                    -sb $selbgcolor \
+                    -sf $selfgcolor \
+                    -d $dmenu_pad \
+      | xargs i3-msg move to workspace
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down
