@@ -120,28 +120,28 @@ mode "resize" {
 }
 
 set $volinc 3%
-bindsym XF86AudioRaiseVolume exec amixer --quiet set Master $volinc+
-bindsym XF86AudioLowerVolume exec amixer --quiet set Master $volinc-
-bindsym $altmod+XF86AudioRaiseVolume exec amixer --quiet set PCM $volinc+
-bindsym $altmod+XF86AudioLowerVolume exec amixer --quiet set PCM $volinc-
-bindsym XF86AudioMute        exec amixer --quiet set Master toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer --quiet set Master $volinc+
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer --quiet set Master $volinc-
+bindsym $altmod+XF86AudioRaiseVolume exec --no-startup-id amixer --quiet set PCM $volinc+
+bindsym $altmod+XF86AudioLowerVolume exec --no-startup-id amixer --quiet set PCM $volinc-
+bindsym XF86AudioMute        exec --no-startup-id amixer --quiet set Master toggle
 
-bindsym XF86MonBrightnessUp   exec gmux_brightness -inc
-bindsym XF86MonBrightnessDown exec gmux_brightness -dec
-bindsym XF86KbdBrightnessUp   exec keyboard_brightness -inc
-bindsym XF86KbdBrightnessDown exec keyboard_brightness -dec
+bindsym XF86MonBrightnessUp   exec --no-startup-id gmux_brightness -inc
+bindsym XF86MonBrightnessDown exec --no-startup-id gmux_brightness -dec
+bindsym XF86KbdBrightnessUp   exec --no-startup-id keyboard_brightness -inc
+bindsym XF86KbdBrightnessDown exec --no-startup-id keyboard_brightness -dec
 
 # pause and play inverted what I'd like them to be
-bindsym XF86AudioPlay  exec cmus-remote --pause
-bindsym XF86AudioPause exec cmus-remote --play
-bindsym XF86AudioNext exec cmus-remote --next
-bindsym XF86AudioPrev exec cmus-remote --prev
-bindsym Shift+XF86AudioNext exec cmus-remote --seek +1m
-bindsym Shift+XF86AudioPrev exec cmus-remote --seek -1m
-bindsym $altmod+XF86AudioNext exec cmus-remote --seek +5
-bindsym $altmod+XF86AudioPrev exec cmus-remote --seek -5
+bindsym XF86AudioPlay  exec --no-startup-id cmus-remote --pause
+bindsym XF86AudioPause exec --no-startup-id cmus-remote --play
+bindsym XF86AudioNext exec --no-startup-id cmus-remote --next
+bindsym XF86AudioPrev exec --no-startup-id cmus-remote --prev
+bindsym Shift+XF86AudioNext exec --no-startup-id cmus-remote --seek +1m
+bindsym Shift+XF86AudioPrev exec --no-startup-id cmus-remote --seek -1m
+bindsym $altmod+XF86AudioNext exec --no-startup-id cmus-remote --seek +5
+bindsym $altmod+XF86AudioPrev exec --no-startup-id cmus-remote --seek -5
 
-bindsym XF86Eject exec eject
+bindsym XF86Eject exec --no-startup-id eject
 
 for_window [class="mupen64plus"]   floating enable
 for_window [class="SDLJoytest-GL"] floating enable
