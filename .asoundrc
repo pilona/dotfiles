@@ -1,5 +1,10 @@
+defaults.pcm.!card "MID"
+defaults.ctl.!card "MID"
 #defaults.pcm.!card "SoundSticks"
 #defaults.ctl.!card "SoundSticks"
+#defaults.pcm.!card "NVidia"
+#defaults.ctl.!card "NVidia"
+
 
 ctl.equal {
     type equal;
