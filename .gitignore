@@ -12,3 +12,4 @@
 .*.pyc
 /[^.]*
 .pyhistory
+.*.un~
