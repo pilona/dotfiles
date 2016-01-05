@@ -37,7 +37,7 @@ fi
 export VISUAL=$EDITOR
 
 if [ -n "$DISPLAY" ]; then
-    export BROWSER=firefox
+    export BROWSER=chromium
     export QT_STYLE_OVERRIDE=gtk
 
     # These aliases are meaningless if not running under X11.
