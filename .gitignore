@@ -1,15 +1,7 @@
-.*_history
-.zcompdump
-.lesshst
-.local
-.newsbeuter/*
-.mutt/cache
-.reminders
-.vim/bundle
-.vim/.*
-.viminfo*
-.promptline.sh
-.*.pyc
-/[^.]*
-.pyhistory
-.*.un~
+# It's too noisy because of folders that some programs we don't give a hoot
+# about: zenmap, wireshark, etc.
+#
+# ignore non-dotfiles
+*
+# ignore dotfiles
+.*
