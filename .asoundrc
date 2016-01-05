@@ -15,7 +15,7 @@ pcm.plugequal {
     slave.pcm "plug:dmix";
 }
 
-pcm.!default {
-    type plug;
-    slave.pcm plugequal;
-}
+#pcm.!default {
+#    type plug;
+#    slave.pcm plugequal;
+#}
