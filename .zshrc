@@ -120,7 +120,7 @@ alias df='df -h'
 alias du='du -h'
 
 alias pdb='python -m pdb'
-alias pytrace='python -m trace --ignore-dir=/usr/lib/python3.* --trace'
+alias pytrace='python -m trace --ignore-dir /usr/lib/python3.* --trace'
 Python() (
     export PYTHONPATH="${HOME}/.python.d:${PYTHONPATH}"
     export PYTHONSTARTUP="${HOME}/.python.d/rc.py"
