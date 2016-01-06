@@ -1,0 +1,79 @@
+key std,shift   Return      raise,sh "st"
+key std,shift   q           quit
+key std         p           sh "dmenu_run -fn Terminus:pixelsize=24 -nb \\#202020 -nf \\#CCCCCC -sb \\#101010 -sf \\#CCCCCC"
+
+key std         Pointer_Button1 drag,raise
+key std         Pointer_Button3 drag,raise             1
+
+key std         Return      menu                      -1
+
+key std         1           pan,view,abs,popup         0   0
+key std         2           pan,view,abs,popup         1   0
+key std         3           pan,view,abs,popup         0   1
+key std         4           pan,view,abs,popup         1   1
+key std         5           pan,view,abs,popup         2   0
+key std         6           pan,view,abs,popup         0   2
+key std         7           pan,view,abs,popup         2   1
+key std         8           pan,view,abs,popup         1   2
+key std         9           pan,view,abs,popup         2   2
+key std         Left        pan,view,popup            -4   0
+key std         Right       pan,view,popup             4   0
+key std         Up          pan,view,popup             0  -4
+key std         Down        pan,view,popup             0   4
+
+# Cycle forwards and backwards between clients.
+key std         j       next,focus,raise,set_view,mouse,popup
+key std,        k       next,focus,raise,set_view,mouse,popup     1
+
+key std,shift   k       resize,raise,mouse             0  -16
+key std,shift   j       resize,raise,mouse             0   16
+key std,shift   h       resize,raise,mouse           -16    0
+key std,shift   l       resize,raise,mouse            16    0
+
+key std,control k       move,raise,mouse               0  -16
+key std,control j       move,raise,mouse               0   16
+key std,control h       move,raise,mouse             -16    0
+key std,control l       move,raise,mouse              16    0
+key std,control y       move,raise,mouse,abs           0    0
+key std,control b       move,raise,mouse,abs           0   -1
+key std,control u       move,raise,mouse,abs          -1    0
+key std,control n       move,raise,mouse,abs          -1   -1
+
+# Move client to the specified workspace.
+key std,shift   1       move,view,abs                  0   0
+key std,shift   2       move,view,abs                  1   0
+key std,shift   3       move,view,abs                  0   1
+key std,shift   4       move,view,abs                  1   1
+key std,shift   5       move,view,abs                  2   0
+key std,shift   6       move,view,abs                  0   2
+key std,shift   7       move,view,abs                  2   1
+key std,shift   8       move,view,abs                  1   2
+key std,shift   9       move,view,abs                  2   2
+# Move client to the workspace to the left, right, above, or below.
+key std,mod1    h       move,view                     -1   0
+key std,mod1    l       move,view                      1   0
+key std,mod1    k       move,view                      0  -1
+key std,mod1    j       move,view                      0   1
+
+# Send sigterm or sigkill
+key std,shift   c               kill
+key std,shift   Escape          kll,abs
+
+key std     m       maxim,raise
+
+key std     i       info,raise,mouse
+
+lock "slock"
+
+# Sithish color scheme:
+cb "black"
+
+cc "#442"
+
+ce "#333"
+cf "white"
+
+cg "#442"
+
+ch "#442"
+ci "white"
