@@ -545,6 +545,19 @@ Weather() {
     "$BROWSER" "http://weather.gc.ca/city/pages/on-118_metric_e.html"
 }
 
+OpenWeather() {
+   case $1 in
+      '') local url='http://openweathermap.org' ;;
+      'kanata') local url='http://openweathermap.org/city/5972863' ;;
+      'ottawa') local url='http://openweathermap.org/city/6094817' ;;
+   esac
+   "$BROWSER" "$url"
+}
+
+Radar() {
+    "$BROWSER" "http://weather.gc.ca/radar/index_e.html?id=xft"
+}
+
 Canal() {
     "$BROWSER" "http://www.ncc-ccn.gc.ca/rideau-canal-skateway/"
 }
