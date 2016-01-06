@@ -625,6 +625,10 @@ Route() {
     "$BROWSER" "http://www.octranspo1.com/routes?lang=en&date=$(date +%Y%m%d)&rte=$1"
 }
 
+chomp() {
+    sed 's/^[[:space:]]*//; s/^[[:space:]]*$//' "$@"
+}
+
 Duration() {
     mediainfo ${*:-*} \
       | awk 'BEGIN {
