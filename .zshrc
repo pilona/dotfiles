@@ -198,6 +198,10 @@ alias grep='grep -E --color=auto'
 
 alias MountFat='sudo mount -o uid=$(id -u),gid=$(id -g),fmask=7177,dmask=7077'
 
+
+if command -v nvim >/dev/null 2>&1; then
+    alias vim=nvim
+fi
 alias bsdtar='bsdtar -S -f -'
 alias bsdcpio='bsdcpio -m'
 # TODO: pax format by default.
