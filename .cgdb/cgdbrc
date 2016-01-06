@@ -1,0 +1,20 @@
+set ts=4
+
+map gc :continue
+map gd :down
+map gn :next
+map gs :step
+map gu :up
+map gU iuntil<CR><Esc>
+
+map F :finish
+map J :down
+map K :up
+map S :start
+
+map pa iinfo<Space>args<CR><Esc>
+map pb iinfo<Space>breakpoints<CR><Esc>
+map pf iinfo<Space>frame<CR><Esc>
+map pl iinfo<Space>locals<CR><Esc>
+map pf iinfo<Space>watchpoints<CR><Esc>
+map pW iwhere<CR><Esc>
