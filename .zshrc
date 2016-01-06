@@ -681,6 +681,14 @@ NewPassword() {
       | scrypt enc /dev/stdin ~/Documents/.passdb/"$1"
 }
 
+LinkCheck() {
+   wget --spider \
+        --execute robots=off \
+        --recursive \
+        --page-requisites \
+        "$@"
+}
+
 SYN-SENT() {
    ss -antp | grep SYN-SENT
 }
