@@ -1,0 +1,12 @@
+/* TODO: Remove when upstream Gtk 3 commit 2f51b2e is in the
+ * version of Gtk 3 packaged for Arch. */
+GtkScrolledWindow .undershoot.top,
+GtkScrolledWindow .undershoot.top:backdrop,
+GtkScrolledWindow .undershoot.bottom,
+GtkScrolledWindow .undershoot.bottom:backdrop,
+GtkScrolledWindow .undershoot.left,
+GtkScrolledWindow .undershoot.left:backdrop,
+GtkScrolledWindow .undershoot.right,
+GtkScrolledWindow .undershoot.right:backdrop {
+    background-color: transparent;
+}
