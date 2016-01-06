@@ -621,6 +621,10 @@ faketty() {
     script --quiet --command "$*" /dev/null
 }
 
+Route() {
+    "$BROWSER" "http://www.octranspo1.com/routes?lang=en&date=$(date +%Y%m%d)&rte=$1"
+}
+
 Duration() {
     mediainfo ${*:-*} \
       | awk 'BEGIN {
