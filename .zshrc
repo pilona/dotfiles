@@ -655,6 +655,10 @@ SYN-SENT() {
    ss -antp | grep SYN-SENT
 }
 
+MicrophoneScope() {
+    ffplay -f alsa -i "${default:-$1}" -showmode 1
+}
+
 alias sudo='sudo '  # Dirty trick to force alias expansion in sudo
 
 set -o vi
