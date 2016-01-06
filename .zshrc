@@ -652,7 +652,13 @@ case "$(cat /proc/$$/comm)" in
         autoload -U compinit && compinit
 
         KEYTIMEOUT=1
-        bindkey '^R' history-incremental-search-backward
+
+        bindkey -M vicmd '/' history-incremental-search-backward
+        bindkey -M vicmd '?' history-incremental-search-forward
+        bindkey -M isearch "$(tput cuu1)" history-incremental-search-backward
+        # For some reason, complains about binding to an empty key sequence
+        #bindkey -M isearch "$(tput cud1)" history-incremental-search-forward
+        bindkey -M isearch "\e[B" history-incremental-search-forward
         ;;
     bash)
         set +o histexpand
