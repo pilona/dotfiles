@@ -629,6 +629,16 @@ chomp() {
     sed 's/^[[:space:]]*//; s/^[[:space:]]*$//' "$@"
 }
 
+ROVNC() {
+    x0vncserver -SendCutText=0 \
+                -AcceptCutText=0 \
+                -AcceptPointerEvents=0 \
+                -AcceptKeyEvents=0 \
+                -ZlibLevel=9 \
+                -SecurityTypes=None \
+                "$@"
+}
+
 Duration() {
     mediainfo ${*:-*} \
       | awk 'BEGIN {
