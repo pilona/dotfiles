@@ -659,6 +659,29 @@ case "$(cat /proc/$$/comm)" in
         # For some reason, complains about binding to an empty key sequence
         #bindkey -M isearch "$(tput cud1)" history-incremental-search-forward
         bindkey -M isearch "\e[B" history-incremental-search-forward
+
+        # TODO: Make more concise.
+        #       See http://stackoverflow.com/questions/3622943/zsh-vi-mode-status-line.
+        vim_ins_mode="INSERT"
+        vim_cmd_mode="NORMAL"
+        vim_mode=$vim_ins_mode
+
+        zle-keymap-select() {
+            vim_mode="${${KEYMAP/vicmd/${vim_cmd_mode}}/(main|viins)/${vim_ins_mode}}"
+            __promptline
+            zle reset-prompt
+        }
+        zle -N zle-keymap-select
+
+        zle-line-finish() {
+            vim_mode=$vim_ins_mode
+        }
+        zle -N zle-line-finish
+
+        TRAPINT() {
+            vim_mode=$vim_ins_mode
+            return $((128 + $1))
+        }
         ;;
     bash)
         set +o histexpand
@@ -691,31 +714,6 @@ else
     #       not necessarily because in a Linux console.
     if ! [ -f ~/.promptline.sh ]; then
         vim +':PromptlineSnapshot ~/.promptline.sh airline' +qall
-    fi
-
-    if [ "$(cat /proc/$$/comm)" = "zsh" ]; then
-        # TODO: Make more concise.
-        #       See http://stackoverflow.com/questions/3622943/zsh-vi-mode-status-line.
-        vim_ins_mode="INSERT"
-        vim_cmd_mode="NORMAL"
-        vim_mode=$vim_ins_mode
-
-        zle-keymap-select() {
-            vim_mode="${${KEYMAP/vicmd/${vim_cmd_mode}}/(main|viins)/${vim_ins_mode}}"
-            __promptline
-            zle reset-prompt
-        }
-        zle -N zle-keymap-select
-
-        zle-line-finish() {
-            vim_mode=$vim_ins_mode
-        }
-        zle -N zle-line-finish
-
-        TRAPINT() {
-            vim_mode=$vim_ins_mode
-            return $((128 + $1))
-        }
     fi
 
     . ~/.promptline.sh
