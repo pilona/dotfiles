@@ -633,6 +633,24 @@ Duration() {
              }'
 }
 
+GetPassword() {
+    scrypt dec ~/Documents/.passdb/"$1" | xclip -selection clipboard
+}
+
+NewPassword() {
+    if [ -e ~/Documents/.passdb/"$1" ]; then
+        tput setaf $COLOR_RED
+        tput bold
+        echo "\"$1\" already exists!" 1>&2
+        tput sgr0
+        return 1
+    fi
+
+    pwgen ${2:-10} 1 \
+      | tee >(xclip -selection clipboard) \
+      | scrypt enc /dev/stdin ~/Documents/.passdb/"$1"
+}
+
 alias sudo='sudo '  # Dirty trick to force alias expansion in sudo
 
 set -o vi
