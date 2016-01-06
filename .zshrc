@@ -566,6 +566,14 @@ Canal() {
     "$BROWSER" "http://www.ncc-ccn.gc.ca/rideau-canal-skateway/"
 }
 
+W3C() {
+    "$BROWSER" "https://www.w3.org/wiki/HTML/Elements/$1"
+}
+
+MDN() {
+    "$BROWSER" "https://developer.mozilla.org/en/docs/Web/HTML/Element/$1"
+}
+
 Wiktionary() {
     # TODO: percent-encode
     "$BROWSER" "http://en.wiktionary.org/wiki/$1"
