@@ -622,10 +622,14 @@ Duration() {
                  total += $3 * 60 + $4
              }
              END {
-                if (total >= 3600)
-                    printf "%dh %dmn %ds", total/3600, total/60, total%60
-                else
-                    printf "%dmn %ds", total/60, total%60
+                hours = total / 3600
+                total %= 3600
+
+                minutes = total / 60
+                total %= 60
+
+                seconds = total
+                printf "%dh %dmn %ds\n", hours, minutes, seconds
              }'
 }
 
