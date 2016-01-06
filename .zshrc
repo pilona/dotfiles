@@ -200,6 +200,9 @@ alias MountFat='sudo mount -o uid=$(id -u),gid=$(id -g),fmask=7177,dmask=7077'
 
 alias bsdtar='bsdtar -S -f -'
 alias bsdcpio='bsdcpio -m'
+# TODO: pax format by default.
+alias tar='bsdtar'
+alias cpio='bsdcpio'
 
 if command -v bsdcpio >/dev/null 2>&1 && \
    ! command -v cpio  >/dev/null 2>&1; then
