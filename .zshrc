@@ -651,6 +651,10 @@ NewPassword() {
       | scrypt enc /dev/stdin ~/Documents/.passdb/"$1"
 }
 
+SYN-SENT() {
+   ss -antp | grep SYN-SENT
+}
+
 alias sudo='sudo '  # Dirty trick to force alias expansion in sudo
 
 set -o vi
