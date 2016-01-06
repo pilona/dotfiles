@@ -659,6 +659,10 @@ Duration() {
              }'
 }
 
+RubyCVE() {
+   "$BROWSER" "https://web.nvd.nist.gov/view/vuln/search-results?query=Ruby&search_type=all&cves=on"
+}
+
 GetPassword() {
     scrypt dec ~/Documents/.passdb/"$1" | xclip -selection clipboard
 }
