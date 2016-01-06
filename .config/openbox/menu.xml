@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+  <menu id="system-menu" label="System">
+    <item label="Openbox Configuration Manager">
+      <action name="Execute">
+        <command>obconf</command>
+      </action>
+    </item>
+    <separator />
+    <item label="Modify Openbox menu">
+      <action name="Execute">
+        <command>xfce4-terminal -e vim ~/.config/openbox/menu.xml</command>
+      </action>
+    </item>
+    <item label="Modify Openbox Run Control">
+      <action name="Execute">
+        <command>xfce4-terminal -e vim ~/.config/openbox/rc.xml</command>
+      </action>
+    </item>
+    <separator />
+    <item label="Reconfigure Openbox">
+      <action name="Reconfigure" />
+    </item>
+  </menu>
+
+  <menu id="root-menu" label="Openbox 3">
+    <separator label="Applications" />
+    <item label="Run Program">
+      <action name="Execute">
+        <command>dmenu_run -fn Terminus:pixelsize=24 -nb \#202020 -nf \#CCCCCC -sb \#101010 -sf \#CCCCCC</command>
+      </action>
+    </item>
+    <separator label="System" />
+    <menu id="system-menu" />
+    <separator />
+    <item label="Log Out">
+      <action name="Exit">
+        <prompt>yes</prompt>
+      </action>
+    </item>
+  </menu>
+</openbox_menu>
