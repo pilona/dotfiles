@@ -598,19 +598,18 @@ MXToolBox() {
     fi
 }
 
-Binaries() {
+_pacmanQlPrettySearch() {
+    target="$1"
+    shift
     pacman -Ql "$@" \
-      | grep bin/ \
+      | grep "$target" \
       | awk -F / '{print $NF}' \
       | column -c $COLUMNS
 }
 
-Manpages() {
-    pacman -Ql "$@" \
-      | grep man/ \
-      | awk -F / '{print $NF}' \
-      | column -c $COLUMNS
-}
+alias Binaries='_pacmanQlPrettySearch bin/'
+alias Manpages='_pacmanQlPrettySearch man/'
+alias Services='_pacmanQlPrettySearch '\''\.service$'\'
 
 faketty() {
     script --quiet --command "$*" /dev/null
