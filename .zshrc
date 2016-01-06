@@ -204,10 +204,20 @@ alias bsdcpio='bsdcpio -m'
 alias tar='bsdtar'
 alias cpio='bsdcpio'
 
-if command -v bsdcpio >/dev/null 2>&1 && \
-   ! command -v cpio  >/dev/null 2>&1; then
-    alias cpio=bsdcpio
-fi
+deprecated() {
+   local original=$1
+   shift
+
+   tput setaf $COLOR_YELLOW
+   echo "Command \"$original\" is deprecated; use \"$*\" instead"
+   tput sgr0
+
+   "$@"
+}
+
+alias zip='deprecated zip bsdtar --format zip -cf'
+alias unzip='deprecated unzip bsdtar -xf'
+alias virtualenv='deprecated virtualenv pyvenv'
 
 PQE() {
     pacman -Qe | cut -d ' ' -f 1 | column -c $COLUMNS | less
