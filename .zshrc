@@ -697,6 +697,10 @@ MicrophoneScope() {
     ffplay -f alsa -i "${default:-$1}" -showmode 1
 }
 
+GlyphDebug() {
+    FC_DEBUG=4 pango-view --font="$1" -t "$2" | grep family:
+}
+
 alias sudo='sudo '  # Dirty trick to force alias expansion in sudo
 
 set -o vi
