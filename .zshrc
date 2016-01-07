@@ -1,3 +1,5 @@
+export SHELL="$(realpath /proc/$$/exe)"
+
 case "$(cat /proc/$PPID/comm)" in
     # stupid VTE library bug
     xterm|xfce4-terminal)
@@ -709,7 +711,7 @@ unset MAILCHECK
 unset HISTFILE
 HISTSIZE=4096
 
-case "$(cat /proc/$$/comm)" in
+case "$(basename "$SHELL")" in
     zsh)
         setopt beep notify
         unsetopt autocd
