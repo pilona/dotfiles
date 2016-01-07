@@ -661,6 +661,11 @@ Duration() {
              }'
 }
 
+Directions() {
+    # TODO: urlencode
+    "$BROWSER" "https://www.google.com/maps/dir/$1/$2"
+}
+
 RubyCVE() {
    "$BROWSER" "https://web.nvd.nist.gov/view/vuln/search-results?query=Ruby&search_type=all&cves=on"
 }
