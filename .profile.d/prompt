@@ -2,18 +2,27 @@
 
 # TODO: Figure out how to query if terminal supports UTF-8
 if [ "$TERM" = linux ] || [ "$(tput colors)" -lt 256 ]; then
+    # Curses colour constants---terminfo(5), for terminal capability setaf.
+    txtrst="$(tput sgr0)"
+    txtcyn="$(tput setaf $COLOR_CYAN)"
+    txtblu="$(tput setaf $COLOR_BLUE)"
+    txtgrn="$(tput setaf $COLOR_GREEN)"
+    txtred="$(tput setaf $COLOR_RED)"
+    txtylw="$(tput setaf $COLOR_YELLOW)"
     case "$(basename "$SHELL")" in
         zsh)
-            PROMPT="[%{$fg[cyan]%}%n%{$fg[blue]%}@%{$fg[green]%}%m %{$fg[red]%}%1~%{$reset_color%}]%# "
-            RPROMPT="%{$reset_color%}[%{$fg[yellow]%}\$?=%?%{$reset_color%}]"
+            # %{} and \[\] are to get the character width right.
+            PROMPT="%{${txtrst}%}[%{${txtcyn}%}%n%{${txtblu}%}@%{${txtgrn}%}%m %{${txtred}%}%1~%{${txtrst}%}]%# "
+            RPROMPT="%{$txtrst%}[%{$txtylw%}\$?=%?%{$txtrst%}]"
             # 2-level prompt
-            #PROMPT="┌─[%{$fg[cyan]%}%n%{$reset_color%}][%{$fg[red]%}%1~%{$reset_color%}][%?]
+            #PROMPT="┌─[%{$txtcyan%}%n%{$txtrst%}][%{$txtred%}%1~%{$txtrst%}][%?]
             #└→ "
             ;;
         bash)
             PS1="\[$txtrst\][\[$txtcyn\]\u\[$txtblu\]@\[$txtgrn\]\h \[$txtred\]\W\[$txtrst\]]\$ "
             ;;
     esac
+    unset txtrst txtcyn txtblu txtgrn txtred txtylw
 else
     # TODO: Only do this if 256-colour and UTF-8 support present in terminal,
     #       not necessarily because in a Linux console.

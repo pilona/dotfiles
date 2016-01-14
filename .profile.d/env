@@ -5,14 +5,6 @@ export ENV="${HOME}/.rc"
 
 export SHELL="$(realpath /proc/$$/exe)"
 
-export LESS='FRXS'
-export LESS_TERMCAP_mb=$'\E[01;31m'
-export LESS_TERMCAP_md=$'\E[01;31m'
-export LESS_TERMCAP_me=$'\E[0m'
-export LESS_TERMCAP_se=$'\E[0m'
-export LESS_TERMCAP_so=$'\E[01;44;33m'
-export LESS_TERMCAP_ue=$'\E[0m'
-export LESS_TERMCAP_us=$'\E[01;32m'
 COLOR_RED=1
 COLOR_GREEN=2
 COLOR_YELLOW=3
@@ -20,7 +12,14 @@ COLOR_BLUE=4
 COLOR_MAGENTA=5
 COLOR_CYAN=6
 COLOR_WHITE=7
-
+export LESS='FRXS'
+export LESS_TERMCAP_mb="$(tput bold; tput setaf $COLOR_RED)"
+export LESS_TERMCAP_md="$(tput bold; tput setaf $COLOR_RED)"
+export LESS_TERMCAP_me="$(tput sgr0)"
+export LESS_TERMCAP_se="$(tput sgr0)"
+export LESS_TERMCAP_so="$(tput bold; tput setab $COLOR_BLUE; tput setaf $COLOR_YELLOW)"
+export LESS_TERMCAP_ue="$(tput sgr0)"
+export LESS_TERMCAP_us="$(tput bold; tput setaf $COLOR_GREEN)"
 
 # 256-color colourscheme (Solarized or Molokai) mess up terminal; ugly
 # colours.
