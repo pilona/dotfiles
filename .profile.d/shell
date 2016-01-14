@@ -5,6 +5,8 @@ unset HISTFILE
 HISTSIZE=4096
 
 set -o vi
+set -o nolog
+set +o notify
 
 case "$(cat /proc/$$/comm)" in
     zsh)  . ~/.profile.d/zsh  ;;
