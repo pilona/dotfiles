@@ -1,3 +1,5 @@
+# vim: ft=sh
+
 # FIXME: Side-effect of this is that if your login shell is interactive, you
 #        xinit, then spawn a shell inside X, the shims dir will be added to the
 #        PATH twice.

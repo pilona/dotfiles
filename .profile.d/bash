@@ -1,3 +1,5 @@
+# vim: ft=sh
+
 set +o histexpand
 
 complete -cf sudo

@@ -1,3 +1,5 @@
+# vim: ft=zsh
+
 # Hack to catch all non-interactive POSIX shells
 if ( set -e; false; true ); then
     #for hook in 'bootstrap' \

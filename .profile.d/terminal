@@ -1,3 +1,5 @@
+# vim: ft=zsh
+
 case "$(cat /proc/$PPID/comm)" in
     # stupid VTE library bug
     xterm|xfce4-terminal)
