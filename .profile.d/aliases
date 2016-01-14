@@ -1,0 +1,99 @@
+alias DumpID3Tags='id3 -q "title=\"%t\",\nartist=\"%a\",\nalbum=\"%l\",\ntrack=\"%n\",\nyear=\"%y\",\ngenre=\"%g\",\ncomment=\"%c\""'
+
+alias cscope='EDITOR=$VISUAL cscope'
+
+alias gcc='gcc -fdiagnostics-color=auto -std=gnu11'
+alias gdb='gdb -silent'
+
+alias ghci='ghci -v0'
+alias gpg='GPG_TTY="$TTY" gpg'
+alias gpgp='gpg --list-options show-photos'
+
+alias bc='bc -q -l'
+
+alias df='df -h'
+alias du='du -h'
+
+alias pdb='python -m pdb'
+alias pytrace='python -m trace --ignore-dir /usr/lib/python3.* --trace'
+
+alias info='info --vi-keys'
+
+alias pscgroups='ps xawf -eo pid,user,cgroup,args'
+
+alias c='cd'
+alias c..='cd ..'
+alias c...='cd ../..'
+alias c....='cd ../../..'
+alias c.....='cd ../../../..'
+alias c......='cd ../../../../..'
+alias cd..='cd ..'
+alias cd...='cd ../..'
+alias cd....='cd ../../..'
+alias cd.....='cd ../../../..'
+alias cd......='cd ../../../../..'
+alias lcd='cd'
+alias d='cd'
+alias t='cat'
+
+alias sshfs='sshfs -o idmap=user -o uid=1000 -o gid=100'
+
+alias tmux='tmux -f <(~/.tmuxrc)'
+
+alias win32='WINEARCH=win32 WINEPREFIX=~/.wine'
+
+alias Startpage='$BROWSER "https://startpage.com/do/mypage.pl?prf=42d1c9d47b691682365d62362ea73b49"'
+
+alias steam='STEAM_FRAME_FORCE_CLOSE=1 steam'
+
+alias xterm='xterm -rv -cr red'
+alias uxterm='uxterm -rv -cr red'
+alias emacs='emacs -nw'
+alias mplayer='mplayer -msglevel all=2'
+alias vlc='vlc --qt-minimal-view'
+alias clisp='clisp --quiet'
+alias javadebug='java -Xdebug -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=y'
+
+alias ping='ping -OD'
+alias ping6='ping6 -OD'
+
+alias ipa='ip address show scope global up'
+alias ip4='ip -4 address show scope global up'
+alias ip6='ip -6 address show scope global up'
+alias ipr='ip -4 route show scope global'
+
+alias l='ls -C'
+alias lt='ls -t'
+alias lx='ls -X'
+alias la='ls -A'
+alias ll='ls -l'
+alias lg='ls --group-directories-first'
+alias lD='ls -d'
+alias lu='ls -U'
+
+alias n='newsbeuter -q'
+
+alias grep='grep -E --color=auto'
+
+alias MountFat='sudo mount -o uid=$(id -u),gid=$(id -g),fmask=7177,dmask=7077'
+
+if command -v nvim >/dev/null 2>&1; then
+    alias vim=nvim
+fi
+alias bsdtar='bsdtar -S -f -'
+alias bsdcpio='bsdcpio -m'
+# TODO: pax format by default.
+alias tar='bsdtar'
+alias cpio='bsdcpio'
+
+alias zip='deprecated zip bsdtar --format zip -cf'
+alias unzip='deprecated unzip bsdtar -xf'
+alias virtualenv='deprecated virtualenv pyvenv'
+
+alias mutt='MAIL_ACCOUNT=$(mail_account) mutt'
+
+alias Binaries='_pacmanQlPrettySearch bin/'
+alias Manpages='_pacmanQlPrettySearch man/'
+alias Services='_pacmanQlPrettySearch '\''\.service$'\'
+
+alias sudo='sudo '  # Dirty trick to force alias expansion in sudo

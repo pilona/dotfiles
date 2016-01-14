@@ -1,0 +1,19 @@
+export SDL_VIDEO_FULLSCREEN_HEAD=0
+
+export BROWSER=chromium
+export QT_STYLE_OVERRIDE=gtk
+
+# These aliases are meaningless if not running under X11.
+# One can set DISPLAY explicitly and start them from a Linux VT
+# but that'll likely rarely happen, if at all.
+alias FixCtrlCaps='setxkbmap -option ctrl:nocaps'
+alias chromiump='chromium --incognito --proxy-server=socks5://localhost:1080'
+alias mupen64plus='mupen64plus --windowed'
+alias xclock='xclock -update 1 -bg palegreen'
+
+ClearClipboard() {
+    for selection in clipboard primary secondary; do
+        xclip -selection $selection < /dev/null
+    done
+    killall xclip
+}

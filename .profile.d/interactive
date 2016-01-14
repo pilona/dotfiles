@@ -1,0 +1,11 @@
+# Hack to catch all non-interactive POSIX shells
+if ( set -e; false; true ); then
+    #for hook in 'bootstrap' \
+    for hook in 'env' \
+                'terminal' \
+                'aliases' 'functions' \
+                'shell'
+    do
+        . ~/.profile.d/"$hook"
+    done
+fi

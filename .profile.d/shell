@@ -1,0 +1,13 @@
+unset MAILCHECK
+unset HISTFILE
+HISTSIZE=4096
+
+set -o vi
+
+case "$(cat /proc/$$/comm)" in
+    zsh)  . ~/.profile.d/zsh  ;;
+    bash) . ~/.profile.d/bash ;;
+esac
+
+. ~/.profile.d/prompt
+. ~/.profile.d/venv

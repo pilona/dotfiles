@@ -1,0 +1,11 @@
+# FIXME: Side-effect of this is that if your login shell is interactive, you
+#        xinit, then spawn a shell inside X, the shims dir will be added to the
+#        PATH twice.
+if [ -e ~/.rbenv ]; then
+   eval "$(~/.rbenv/bin/rbenv init -)"
+else
+   export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+fi
+if [ -e ~/.pyenv ]; then
+   eval "$(~/.pyenv/bin/pyenv init -)"
+fi
