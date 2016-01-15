@@ -1,0 +1,30 @@
+# vim: ft=sh
+
+setup_pyenv() {
+    git clone https://github.com/yyuu/pyenv.git ~/.pyenv
+    git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
+}
+
+setup_rbenv() {
+    git clone https://github.com/rbenv/rbenv ~/.rbenv
+    git clone https://github.com/rbenv/ruby-build ~/.rbenv/plugins/ruby-build
+    git clone https://github.com/rkh/rbenv-update ~/.rbenv/plugins/rbenv-update
+    git clone https://github.com/tpope/rbenv-ctags.git ~/.rbenv/plugins/rbenv-ctags
+}
+
+setup_vim() {
+    git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+    vim +PluginInstall +qall
+}
+
+(
+    set -e
+    set -C
+
+    { : >~/.profile.d/.bootstrapped.lock ; } 2>/dev/null || exit
+
+    # TODO: Atomic O_CREAT|O_EXCL and flock
+    for hook in pyenv rbenv vim; do
+        setup_$hook
+    done
+)
