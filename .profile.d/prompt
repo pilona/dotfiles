@@ -12,14 +12,14 @@ if [ "$TERM" = linux ] || [ "$(tput colors)" -lt 256 ]; then
     case "$(basename "$SHELL")" in
         zsh)
             # %{} and \[\] are to get the character width right.
-            PROMPT="%{${txtrst}%}[%{${txtcyn}%}%n%{${txtblu}%}@%{${txtgrn}%}%m %{${txtred}%}%1~%{${txtrst}%}]%# "
+            PROMPT="%{${txtrst}%}[%{${txtcyn}%}%n%{${txtblu}%}${SSH_CONNECTION:+"@%{${txtgrn}%}%m"} %{${txtred}%}%1~%{${txtrst}%}]%# "
             RPROMPT="%{$txtrst%}[%{$txtylw%}\$?=%?%{$txtrst%}]"
             # 2-level prompt
             #PROMPT="┌─[%{$txtcyan%}%n%{$txtrst%}][%{$txtred%}%1~%{$txtrst%}][%?]
             #└→ "
             ;;
         bash)
-            PS1="\[$txtrst\][\[$txtcyn\]\u\[$txtblu\]@\[$txtgrn\]\h \[$txtred\]\W\[$txtrst\]]\$ "
+            PS1="\[$txtrst\][\[$txtcyn\]\u\[$txtblu\]${SSH_CONNECTION:+@\[$txtgrn\]\h} \[$txtred\]\W\[$txtrst\]]\$ "
             ;;
     esac
     unset txtrst txtcyn txtblu txtgrn txtred txtylw
