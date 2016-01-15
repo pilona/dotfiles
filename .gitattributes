@@ -1,3 +1,6 @@
 .config/vlc/vlcrc                   diff=nodiff
 .config/xfce4/terminal/terminalrc   diff=nodiff
 .config/mupen64plus/mupen64plus.cfg diff=nodiff
+.config/supertuxkart/input.xml      diff=nodiff
+.config/Trolltech.conf              diff=nodiff
+lib/profile                         diff=nodiff
