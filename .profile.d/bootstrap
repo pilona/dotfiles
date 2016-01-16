@@ -12,6 +12,15 @@ setup_rbenv() {
     git clone https://github.com/tpope/rbenv-ctags.git ~/.rbenv/plugins/rbenv-ctags
 }
 
+setup_nvim() {
+    type nvim >/dev/null 2>&1 && return
+
+    git clone https://github.com/neovim/neovim ~/.local/src/neovim
+    make -C ~/.local/src/neovim \
+         CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX:PATH=${HOME}/.local" \
+         CMAKE_BUILD_TYPE=Release
+}
+
 setup_vim() {
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
     vim +PluginInstall +qall
@@ -23,8 +32,9 @@ setup_vim() {
 
     { : >~/.profile.d/.bootstrapped.lock ; } 2>/dev/null || exit
 
+    mkdir -p ~/.local/{src,bin}
     # TODO: Atomic O_CREAT|O_EXCL and flock
-    for hook in pyenv rbenv vim; do
+    for hook in pyenv rbenv vim nvim; do
         setup_$hook
     done
 )
