@@ -1,0 +1,20 @@
+{
+    ".vimrc": {
+        "type": "vimrc",
+        "_start": "vim"
+    },
+    ".asoundrc": {
+        "type": "asoundrc",
+        "start": "speaker-test"
+    },
+    ".projections.json": {
+        "type": "projections"
+    },
+    ".profile.d/*": {
+        "type": "profile",
+        "alternate": ".rc"
+    },
+    ".profile": {
+        "type": "profile"
+    }
+}
