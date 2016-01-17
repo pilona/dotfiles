@@ -522,5 +522,5 @@ GlyphDebug() {
 }
 
 title() {
-    printf '%s%s%s\n' "$(tput tsl)" "$*" "$(tput fsl)"
+    printf '%s%s%s\n' "$(tput tsl)" "${*:-$(cat)}" "$(tput fsl)"
 }
