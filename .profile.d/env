@@ -21,6 +21,11 @@ export LESS_TERMCAP_so="$(tput bold; tput setab $COLOR_BLUE; tput setaf $COLOR_Y
 export LESS_TERMCAP_ue="$(tput sgr0)"
 export LESS_TERMCAP_us="$(tput bold; tput setaf $COLOR_GREEN)"
 
+export PERL_LOCAL_LIB_ROOT='/home/alp/.local'
+export PERL_MB_OPT='--install_base "/home/alp/.local"'
+export PERL_MM_OPT='INSTALL_BASE=/home/alp/.local'
+export PERL5LIB="${HOME}/.local/lib/perl5:${PERL5LIB}"
+
 # 256-color colourscheme (Solarized or Molokai) mess up terminal; ugly
 # colours.
 if [ "$(tput colors)" -ge 256 ]; then
