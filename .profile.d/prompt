@@ -31,7 +31,7 @@ else
     # TODO: Only do this if 256-colour and UTF-8 support present in terminal,
     #       not necessarily because in a Linux console.
     if ! [ -f ~/.profile.d/promptline ]; then
-        vim +':PromptlineSnapshot ~/.profile.d/promptline airline' +qall
+        vim +'PromptlineSnapshot ~/.profile.d/promptline airline' +qall
     fi
 
     . ~/.profile.d/promptline
