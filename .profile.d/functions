@@ -497,7 +497,7 @@ NewPassword() {
     fi
 
     pwgen ${2:-10} 1 \
-      | tee >(xclip -selection clipboard) \
+      | xclip -filter -selection clipboard \
       | scrypt enc /dev/stdin ~/Documents/.passdb/"$1"
 }
 
