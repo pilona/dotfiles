@@ -21,6 +21,10 @@ if [ "$TERM" = linux ] || [ "$(tput colors)" -lt 256 ]; then
         bash)
             PS1="\[$txtrst\][\[$txtcyn\]\u\[$txtblu\]${SSH_CONNECTION:+@\[$txtgrn\]\h} \[$txtred\]\W\[$txtrst\]]\$ "
             ;;
+        mksh)
+            # TODO: Colour
+            PS1='[$(id -un)${SSH_CONNECTION:+@$(hostname)} $(if [ "$PWD" = "$HOME" ]; then echo "~"; else pwd; fi)]$(if [ `id -u` = 0 ]; then echo "#"; else echo "\$"; fi) '
+            ;;
     esac
     unset txtrst txtcyn txtblu txtgrn txtred txtylw
 else
