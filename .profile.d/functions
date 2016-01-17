@@ -520,3 +520,7 @@ MicrophoneScope() {
 GlyphDebug() {
     FC_DEBUG=4 pango-view --font="$1" -t "$2" | grep family:
 }
+
+title() {
+    printf '%s%s%s\n' "$(tput tsl)" "$*" "$(tput fsl)"
+}
