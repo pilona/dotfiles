@@ -1,0 +1,4 @@
+# vim: ft=sh
+
+set -o vi-esccomplete
+set -o vi-tabcomplete

@@ -11,6 +11,7 @@ set +o notify
 case "$(cat /proc/$$/comm)" in
     zsh)  . ~/.profile.d/zsh  ;;
     bash) . ~/.profile.d/bash ;;
+    mksh) . ~/.profile.d/mksh ;;
 esac
 
 . ~/.profile.d/prompt
