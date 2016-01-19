@@ -108,7 +108,7 @@ let g:airline#extensions#tmuxline#enabled = 0
 " TODO: Port vi mode slice to bash.
 " TODO: Move vi mode slice out of ~/.zshrc and into somewhere else, or push
 "       upstream.
-let g:promptline_preset = { 'a' : [ promptline#slices#host() ],
+let g:promptline_preset = { 'a' : [ promptline#slices#host({ 'only_if_ssh': 1 }) ],
                           \ 'b' : [ promptline#slices#user() ],
                           \ 'c' : [ promptline#slices#cwd() ],
                           \ 'z' : [ '$vim_mode' ],
