@@ -4,7 +4,7 @@ set $altmod Mod1
 font pango:Terminess Powerline 24px
 # Requires XFT-patched dmenu
 set $dmenu_font "Terminess Powerline:pixelsize=24"
-set $dmenu_pad "3"
+set $dmenu_lh "32"
 
 floating_modifier $mod
 
@@ -23,21 +23,22 @@ bindsym $mod+p exec --no-startup-id \
               -nf $normfgcolor \
               -sb $selbgcolor \
               -sf $selfgcolor \
-              -d $dmenu_pad
+              -lh $dmenu_lh
 bindsym $mod+Shift+p exec --no-startup-id \
     dmenu_desktop -- -fn $dmenu_font \
                      -nb $normbgcolor \
                      -nf $normfgcolor \
                      -sb $selbgcolor \
                      -sf $selfgcolor \
-                     -d $dmenu_pad
+                     -lh $dmenu_lh \
+                     -i
 bindsym $mod+Control+p exec --no-startup-id \
     dmenu -fn $dmenu_font \
           -nb $normbgcolor \
           -nf $normfgcolor \
           -sb $selbgcolor \
           -sf $selfgcolor \
-          -d $dmenu_pad < /dev/null \
+          -lh $dmenu_lh < /dev/null \
       | xargs -d $'\n' i3-msg -t command
 bindsym $mod+o exec --no-startup-id \
     ~/.i3/dmenu_tag -fn $dmenu_font \
@@ -45,7 +46,7 @@ bindsym $mod+o exec --no-startup-id \
                     -nf $normfgcolor \
                     -sb $selbgcolor \
                     -sf $selfgcolor \
-                    -d $dmenu_pad \
+                    -lh $dmenu_lh \
       | xargs i3-msg workspace
 bindsym $mod+Shift+o exec --no-startup-id \
     ~/.i3/dmenu_tag -fn $dmenu_font \
@@ -53,7 +54,7 @@ bindsym $mod+Shift+o exec --no-startup-id \
                     -nf $normfgcolor \
                     -sb $selbgcolor \
                     -sf $selfgcolor \
-                    -d $dmenu_pad \
+                    -lh $dmenu_lh \
       | xargs i3-msg move to workspace
 
 bindsym $mod+h focus left
