@@ -160,6 +160,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id amixer --quiet set Master $vol
 bindsym $altmod+XF86AudioRaiseVolume exec --no-startup-id amixer --quiet set PCM $volinc+
 bindsym $altmod+XF86AudioLowerVolume exec --no-startup-id amixer --quiet set PCM $volinc-
 bindsym XF86AudioMute        exec --no-startup-id amixer --quiet set Master toggle
+bindsym XF86AudioMicMute     exec --no-startup-id amixer --quiet set Capture toggle
 
 bindsym XF86MonBrightnessUp   exec --no-startup-id gmux_brightness -inc
 bindsym XF86MonBrightnessDown exec --no-startup-id gmux_brightness -dec
