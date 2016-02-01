@@ -549,3 +549,10 @@ SSHPublicKeys() {
         ssh-keygen -lf "$key"
     done
 }
+
+SSHAgent() {
+    {
+        export SSH_AGENT_PID=$(pidof ssh-agent)
+        export SSH_AUTH_SOCK=$(echo /tmp/ssh-*/agent.*)
+    } || eval "$(ssh-agent)"
+}
