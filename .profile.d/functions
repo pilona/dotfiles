@@ -521,6 +521,25 @@ GlyphDebug() {
     FC_DEBUG=4 pango-view --font="$1" -t "$2" | grep family:
 }
 
+chromiumi() {
+    local tmpdir="$(mktemp -d)"
+    sudo mount -t tmpfs \
+               -o mode=0700,uid="$(id -un)",gid="$(id -gn)" \
+               "$(basename "$tmpdir")" "$tmpdir"
+    echo "$tmpdir"
+    sudo \
+        unshare -m \
+            sudo tmpdir="$tmpdir" \
+                 -u "$(id -un)" \
+                 sh <<- EOF
+                sudo mount --make-private "$tmpdir"
+                sudo mount --move "$tmpdir" ~/.config/chromium
+                chromium "$@"
+EOF
+    sudo umount "$tmpdir"
+    rmdir "$tmpdir"
+}
+
 title() {
     printf '%s%s%s\n' "$(tput tsl)" "${*:-$(cat)}" "$(tput fsl)"
 }
