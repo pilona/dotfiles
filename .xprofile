@@ -12,9 +12,6 @@ keynav &
 
 xsetroot -solid '#7f7f7f'
 
-remind -h -a -f -k'notify-send Reminder %s' .reminders &
-export REMIND_PID="$!"
-
 wmname "${WM:=$1}"
 case "$WM" in
     dwm)
