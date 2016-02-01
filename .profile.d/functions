@@ -543,3 +543,9 @@ EOF
 title() {
     printf '%s%s%s\n' "$(tput tsl)" "${*:-$(cat)}" "$(tput fsl)"
 }
+
+SSHPublicKeys() {
+    for key in /etc/ssh/*.pub; do
+        ssh-keygen -lf "$key"
+    done
+}
