@@ -5,6 +5,7 @@ export PATH="$HOME/.pyenv/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cabal/bin:$PATH"
 export PATH="$PATH:/opt/x-tools/bin"
+export PATH="$PATH:/opt/heroku/bin"
 
 export MANPATH="$HOME/.cabal/share/man:$MANPATH"
 export MANPATH="$HOME/.local/share/man:$MANPATH"
