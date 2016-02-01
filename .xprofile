@@ -6,7 +6,8 @@ set -e
 setxkbmap -option ctrl:nocaps \
           -option compose:ralt \
           -option compose:rwin \
-          -option terminate:ctrl_alt_bksp
+          -option terminate:ctrl_alt_bksp \
+          -option altwin:swap_lalt_lwin
 keynav &
 
 xsetroot -solid '#7f7f7f'
