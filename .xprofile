@@ -36,6 +36,8 @@ esac
 xset s 300
 xss-lock -- slock &
 
+redshift-gtk &
+
 for key in TapButton{1,2,3}; do
     synclient ${key}=0
 done
