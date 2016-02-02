@@ -546,8 +546,25 @@ title() {
 
 SSHPublicKeys() {
     for key in /etc/ssh/*.pub; do
-        ssh-keygen -lf "$key"
-    done
+        ssh-keygen -v -lf "$key"
+    done 2>/dev/null \
+      | awk -c '{
+                    if ($1 ~ /^[0-9]+$/) {
+                        print $0
+                        key++
+                        visual_line = 0
+                    } else {
+                        visual_keys[key][visual_line++] = $0
+                    }
+                }
+
+                END {
+                    for (visual_line=0; visual_line<11; visual_line++) {
+                        for (i=1; i<=key; i++)
+                            printf "%s%s", (i == 1 ? "" : " "), visual_keys[i][visual_line]
+                        printf "\n"
+                    }
+                }'
 }
 
 SSHAgent() {
