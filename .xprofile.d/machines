@@ -1,0 +1,5 @@
+# vim: ft=sh
+
+for hook in ~/.xprofile.d/machines.d/*; do
+    [ -f "$hook" ] && . "$hook"
+done

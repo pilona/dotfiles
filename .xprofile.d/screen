@@ -2,6 +2,3 @@
 
 xset s 300
 xss-lock -- slock &
-
-# Way too high DPI set originally. This makes things more readable.
-xrandr --output LVDS-1 --dpi 130
