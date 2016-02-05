@@ -571,3 +571,7 @@ SSHAgent() {
         export SSH_AUTH_SOCK=$(echo /tmp/ssh-*/agent.*)
     } || eval "$(ssh-agent)"
 }
+
+Hangouts() {
+    "$BROWSER" 'https://hangouts.google.com/start'
+}
