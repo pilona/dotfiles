@@ -326,20 +326,6 @@ Github() {
     "$BROWSER" "${_base}/${_user}/${_repo}"
 }
 
-LinuxGitMsg() {
-    local _base
-    local _qs
-
-    _base="http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/log/"
-    _qs="$(python -c "from urllib.parse import urlencode; print(urlencode({'qt': 'grep', 'q': '$*'}))")"
-
-    "$BROWSER" "${_base}?${_qs}"
-}
-
-StableQueue() {
-    "$BROWSER" 'http://git.kernel.org/cgit/linux/kernel/git/stable/stable-queue.git/tree/'
-}
-
 Quote() {
     python -c "from urllib.parse import quote; print(quote('$*'))"
 }
