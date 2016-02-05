@@ -61,6 +61,7 @@ alias ipa='ip address show scope global up'
 alias ip4='ip -4 address show scope global up'
 alias ip6='ip -6 address show scope global up'
 alias ipr='ip -4 route show scope global'
+alias ip6r='ip -6 route show scope global'
 
 alias l='ls -C'
 alias lt='ls -t'
