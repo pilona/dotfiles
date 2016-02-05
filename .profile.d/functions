@@ -473,7 +473,7 @@ GetPassword() {
     scrypt dec ~/Documents/.passdb/"$1" | xclip -selection clipboard
 }
 
-NewPassword() {
+_scryptSave() {
     if [ -e ~/Documents/.passdb/"$1" ]; then
         tput setaf $COLOR_RED
         tput bold
@@ -482,9 +482,21 @@ NewPassword() {
         return 1
     fi
 
-    pwgen ${2:-10} 1 \
-      | xclip -filter -selection clipboard \
+    xclip -filter -selection clipboard \
       | scrypt enc /dev/stdin ~/Documents/.passdb/"$1"
+}
+
+NewPassword() {
+    pwgen ${2:-10} 1 | _scryptSave "$1"
+}
+
+NewPassphrase() {
+    python << EOF | _scryptSave "$1"
+from random import SystemRandom, shuffle
+with open('/usr/share/dict/american-english') as fp:
+    words = list(map(str.strip, fp))
+print(*SystemRandom().sample(words, 5))
+EOF
 }
 
 LinkCheck() {
