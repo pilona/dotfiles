@@ -3,7 +3,7 @@
 # TODO: ~/.profile only for login, and something else for non-login shells.
 export ENV="${HOME}/.rc"
 
-export SHELL="$(realpath /proc/$$/exe)"
+SHELL="$(realpath /proc/$$/exe)"
 
 COLOR_RED=1
 COLOR_GREEN=2
