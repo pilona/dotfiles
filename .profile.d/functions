@@ -575,3 +575,7 @@ SSHAgent() {
 Hangouts() {
     "$BROWSER" 'https://hangouts.google.com/start'
 }
+
+EXIF() {
+    gm identify -format '%[EXIF:*]' "$@"
+}
