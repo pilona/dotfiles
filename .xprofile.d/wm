@@ -1,0 +1,22 @@
+# vim: ft=sh
+
+# TODO: Break this out?
+
+wmname "${WM:=$1}"
+case "$WM" in
+    dwm)
+        # Set date, time, and remaining battery in DWM toolbar.
+        while true; do
+            xsetroot -name "$(date) | $(acpi -b | cut -d ' ' -f 5-)"
+            sleep 1
+        done &
+
+        export _JAVA_AWT_WM_NONREPARENTING=1
+        ;;
+
+    i3)
+        ;;
+    *)
+        xbindkeys
+        ;;
+esac

@@ -1,0 +1,4 @@
+# vim: ft=sh
+
+xsetroot -solid '#7f7f7f'
+#gm display -backdrop -window root ~/Pictures/wallpaper/1680x1050/linux_pissing_on_windows.png

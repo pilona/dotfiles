@@ -1,45 +1,6 @@
 #! /bin/sh
 
-set -e
-
-
-setxkbmap -option ctrl:nocaps \
-          -option compose:ralt \
-          -option compose:rwin \
-          -option terminate:ctrl_alt_bksp \
-          -option altwin:swap_lalt_lwin
-keynav &
-
-xsetroot -solid '#7f7f7f'
-
-wmname "${WM:=$1}"
-case "$WM" in
-    dwm)
-        # Set date, time, and remaining battery in DWM toolbar.
-        while true; do
-            xsetroot -name "$(date) | $(acpi -b | cut -d ' ' -f 5-)"
-            sleep 1
-        done &
-
-        export _JAVA_AWT_WM_NONREPARENTING=1
-        ;;
-
-    i3)
-        ;;
-    *)
-        xbindkeys
-        ;;
-esac
-
-xset s 300
-xss-lock -- slock &
-
-redshift-gtk &
-
-for key in TapButton{1,2,3}; do
-    synclient ${key}=0
+for hook in ~/.xprofile.d/*; do
+    # TODO: Exec as subshell instead, in case they aren't shell script?
+    [ -f "$hook" ] && . "$hook"
 done
-syndaemon -i 0.5 -k -R &
-
-# Trick Chromium into scaling things appropriately.
-xrandr --output LVDS-1 --dpi 130
