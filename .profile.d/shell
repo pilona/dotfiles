@@ -8,7 +8,7 @@ set -o vi
 set -o nolog
 set +o notify
 
-case "$(cat /proc/$$/comm)" in
+case "$(basename "$SHELL")" in
     zsh)  . ~/.profile.d/zsh  ;;
     bash) . ~/.profile.d/bash ;;
     mksh) . ~/.profile.d/mksh ;;
