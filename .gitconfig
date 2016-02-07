@@ -1,6 +1,10 @@
 [user]
 	email = alp@alexpilon.ca
 	name = Alex Pilon
+	# TODO: Retroactively sign commits
+	#       * http://stackoverflow.com/questions/13043357/git-sign-off-previous-commits/13043757#13043757
+	#           - use git config --get though
+	signingkey = EE98BA43
 
 [core]
 	editor = vim
