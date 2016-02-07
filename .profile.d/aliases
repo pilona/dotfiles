@@ -92,6 +92,7 @@ alias cpio='bsdcpio'
 alias zip='deprecated zip bsdtar --format zip -cf'
 alias unzip='deprecated unzip bsdtar -xf'
 alias virtualenv='deprecated virtualenv pyvenv'
+alias pkgfile='deprecated pkgfile pacman -F'
 
 alias mutt='MAIL_ACCOUNT=$(mail_account) mutt'
 
