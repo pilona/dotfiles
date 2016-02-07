@@ -224,10 +224,10 @@ bindsym $altmod+XF86AudioLowerVolume exec --no-startup-id amixer --quiet set PCM
 bindsym XF86AudioMute        exec --no-startup-id amixer --quiet set Master toggle
 bindsym XF86AudioMicMute     exec --no-startup-id amixer --quiet set Capture toggle
 
-bindsym XF86MonBrightnessUp   exec --no-startup-id gmux_brightness -inc
-bindsym XF86MonBrightnessDown exec --no-startup-id gmux_brightness -dec
-bindsym XF86KbdBrightnessUp   exec --no-startup-id keyboard_brightness -inc
-bindsym XF86KbdBrightnessDown exec --no-startup-id keyboard_brightness -dec
+bindsym XF86MonBrightnessUp   exec --no-startup-id xbacklight -inc 20
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20
+bindsym Shift+XF86MonBrightnessUp   exec --no-startup-id xbacklight -set 100
+bindsym Shift+XF86MonBrightnessDown exec --no-startup-id xbacklight -set 1
 
 # pause and play inverted what I'd like them to be
 bindsym XF86AudioPlay  exec --no-startup-id cmus-remote --pause
