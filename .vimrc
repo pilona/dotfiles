@@ -132,10 +132,6 @@ let g:syntastic_enable_balloons          = 1
 iabbrev Teh The
 iabbrev teh the
 
-cabbrev W w!
-cabbrev Q q!
-cabbrev X x!
-
 " TODO: Fix/set *Leader bindings so that these can be used. These are wanted
 "       because entering command mode and typing out commands in full is
 "       wrong.
