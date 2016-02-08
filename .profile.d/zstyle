@@ -1,0 +1,7 @@
+# vim: ft=zsh
+
+# Always do mid-word tab completion
+setopt complete_in_word
+
+# '' inside ' shorthand
+setopt rc_quotes
