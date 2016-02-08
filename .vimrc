@@ -113,9 +113,7 @@ let g:promptline_preset = { 'a' : [ promptline#slices#host({ 'only_if_ssh': 1 })
                           \ 'b' : [ promptline#slices#user() ],
                           \ 'c' : [ promptline#slices#cwd() ],
                           \ 'z' : [ '$vim_mode' ],
-                          \ 'warn' : [ promptline#slices#jobs(),
-                                     \ promptline#slices#last_exit_code(),
-                                     \ promptline#slices#battery() ] }
+                          \ 'warn' : [ promptline#slices#last_exit_code() ] }
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPMixed'
