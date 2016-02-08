@@ -1,6 +1,6 @@
 # vim: ft=zsh
 
-setopt beep notify
+setopt beep notify extendedglob
 unsetopt autocd
 set bell-style visual
 
