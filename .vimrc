@@ -149,6 +149,8 @@ match ExtraWhitespace /\s\+$/
 nnoremap <Leader>w :%s/\s\+$//<CR>
 vnoremap <Leader>w :s/\s\+$//<CR>
 
+nnoremap Q q:i
+
 "http://vim.wikia.com/wiki/Autoloading_Cscope_Database
 "http://stackoverflow.com/questions/12243233/how-to-auto-load-cscope-out-in-vim
 "http://derekingrouville.ca/2012/cscope-will-change-the-way-you-code/
