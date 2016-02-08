@@ -97,7 +97,7 @@ let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#tab_min_count = 2
 " TODO: Show buffer tabline when no tabs and when multiple buffers
 let g:airline#extensions#tabline#buffer_min_count = 2
-let g:airline#extensions#whitespace#checks = ['indent', 'trailing']
+let g:airline#extensions#whitespace#checks = ['indent', 'trailing', 'long']
 
 " Don't override external colour scheme choice upon startup
 let g:airline#extensions#tmuxline#enabled = 0
