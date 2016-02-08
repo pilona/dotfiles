@@ -142,11 +142,12 @@ cabbrev X x!
 map <LocalLeader>tc :tabnew %<CR>
 map <LocalLeader>td :tabclose<CR>
 
-map Y y$
+nnoremap Y y$
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
-map <Leader>w :%s/\s\+$//<CR>
+nnoremap <Leader>w :%s/\s\+$//<CR>
+vnoremap <Leader>w :s/\s\+$//<CR>
 
 "http://vim.wikia.com/wiki/Autoloading_Cscope_Database
 "http://stackoverflow.com/questions/12243233/how-to-auto-load-cscope-out-in-vim
