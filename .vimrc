@@ -149,6 +149,11 @@ match ExtraWhitespace /\s\+$/
 nnoremap <Leader>w :%s/\s\+$//<CR>
 vnoremap <Leader>w :s/\s\+$//<CR>
 
+nnoremap - <C-W>-
+nnoremap + <C-W>+
+nnoremap _ <C-W>_
+" Keep the = mapping though because it's very useful.
+
 nnoremap Q q:i
 
 cnoremap <C-O> <Up>
