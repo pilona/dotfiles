@@ -4,9 +4,6 @@ setopt beep notify extendedglob
 unsetopt autocd
 set bell-style visual
 
-# Disable beep
-#setterm -blength 0
-
 autoload -U bashcompinit && bashcompinit
 autoload -U compinit && compinit
 
