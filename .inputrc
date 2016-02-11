@@ -4,6 +4,10 @@ set editing-mode vi
 $if mode=vi
         set keymap vi-command
         Control-l: clear-screen
+        /: reverse-search-history
+        ?: forward-search-history
+        gg: beginning-of-history
+        G: end-of-history
 
         set keymap vi-insert
         Control-l: clear-screen
