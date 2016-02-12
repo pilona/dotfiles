@@ -7,9 +7,6 @@
 	#           - use git config --get though
 	signingkey = EE98BA43
 
-[core]
-	editor = vim
-
 [alias]
 	graph = log --graph --decorate --all --patch --cc
 	logg = log --graph --decorate --all --oneline
