@@ -18,3 +18,4 @@ bindkey -M isearch "^O" history-incremental-search-backward
 bindkey -M isearch "\e[B" history-incremental-search-forward
 
 . ~/.profile.d/zstyle
+. ~/.profile.d/zle

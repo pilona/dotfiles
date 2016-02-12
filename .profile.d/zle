@@ -1,0 +1,7 @@
+# vim: ft=zsh
+
+autoload -U edit-command-line
+zle -N edit-command-line
+for keymap in vicmd viins; do
+    bindkey -M $keymap '^F' edit-command-line
+done
