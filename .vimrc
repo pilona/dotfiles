@@ -157,6 +157,9 @@ cnoremap <C-O> <Up>
 
 nnoremap ZA :qa!<CR>
 
+" Stolen from Damian Conway
+nnoremap S :%s//g<Left><Left>
+
 "http://vim.wikia.com/wiki/Autoloading_Cscope_Database
 "http://stackoverflow.com/questions/12243233/how-to-auto-load-cscope-out-in-vim
 "http://derekingrouville.ca/2012/cscope-will-change-the-way-you-code/
