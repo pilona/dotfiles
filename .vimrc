@@ -155,6 +155,8 @@ cnoremap <C-O> <Up>
 " TODO: How to map without killing completion or a better mapping?
 "cnoremap <C-I> <Down>
 
+nnoremap ZA :qa!<CR>
+
 "http://vim.wikia.com/wiki/Autoloading_Cscope_Database
 "http://stackoverflow.com/questions/12243233/how-to-auto-load-cscope-out-in-vim
 "http://derekingrouville.ca/2012/cscope-will-change-the-way-you-code/
