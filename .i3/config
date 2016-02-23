@@ -180,6 +180,8 @@ bindsym $altmod+XF86AudioPrev exec --no-startup-id cmus-remote --seek -5
 
 bindsym XF86Eject exec --no-startup-id eject
 
+bindsym Print exec scrot
+
 for_window [class="mupen64plus"]   floating enable
 for_window [class="SDLJoytest-GL"] floating enable
 for_window [class="Vlc"]           floating enable
