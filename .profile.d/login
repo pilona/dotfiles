@@ -1,5 +1,6 @@
 # vim: ft=zsh
 
+export PATH="$HOME/.npm-packages/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.pyenv/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
@@ -7,6 +8,7 @@ export PATH="$HOME/.cabal/bin:$PATH"
 export PATH="$PATH:/opt/x-tools/bin"
 export PATH="$PATH:/opt/heroku/bin"
 
+export MANPATH="$HOME/.npm-packages/bin:$MANPATH"
 export MANPATH="$HOME/.cabal/share/man:$MANPATH"
 export MANPATH="$HOME/.local/share/man:$MANPATH"
 
