@@ -1,0 +1,5 @@
+# vim: ft=sh
+
+if [ -z "$DESKTOP_SESSION" ]; then
+    run-desktop.py --autostart
+fi
