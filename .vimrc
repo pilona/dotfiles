@@ -160,6 +160,12 @@ nnoremap ZA :qa!<CR>
 " Stolen from Damian Conway
 nnoremap S :%s//g<Left><Left>
 
+" <Return> is already not that far and ingrained muscle memory for creating a
+" new line—not that I couldn't unlearn it, yet this is right beside the
+" backwards delete—<C-H>, so convenient and somehow oddly sensible, and kind
+" of reminds of you of normal J doesn't it?
+inoremap <C-j> <Del>
+
 "http://vim.wikia.com/wiki/Autoloading_Cscope_Database
 "http://stackoverflow.com/questions/12243233/how-to-auto-load-cscope-out-in-vim
 "http://derekingrouville.ca/2012/cscope-will-change-the-way-you-code/
