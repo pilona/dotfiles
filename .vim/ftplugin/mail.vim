@@ -1,4 +1,9 @@
-set spell
+setlocal complete+=k,s,kspell
+setlocal completeopt+=longest
+setlocal spell
+
+inoremap <Tab> <C-N>
+inoremap <S-Tab> <C-P>
 
 " Move cursor past mail headers
 /^$/+1
