@@ -519,6 +519,10 @@ GlyphDebug() {
     FC_DEBUG=4 pango-view --font="$1" -t "$2" | grep family:
 }
 
+chromiumip() {
+    chromiumi --proxy-server=socks://localhost:1080
+}
+
 chromiumi() {
     local tmpdir="$(mktemp -d)"
     sudo mount -t tmpfs \
