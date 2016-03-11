@@ -500,11 +500,11 @@ EOF
 }
 
 LinkCheck() {
-   wget --spider \
-        --execute robots=off \
-        --recursive \
-        --page-requisites \
-        "$@"
+    command wget --spider \
+                 --execute robots=off \
+                 --recursive \
+                 --page-requisites \
+                 "$@"
 }
 
 SYN-SENT() {
