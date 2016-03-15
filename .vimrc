@@ -155,6 +155,11 @@ nnoremap ZA :qa!<CR>
 " Stolen from Damian Conway
 nnoremap S :%s//g<Left><Left>
 
+" TODO: <C-S-T> instead? Oddly enough, what's below is almost somehow
+"       sensible.
+nnoremap <C-n> :tabnew<CR>
+nnoremap <C-p> :-tabnew<CR>
+
 " Conflict with Pmenu bindings
 "inoremap <C-e> <C-o><C-e>
 "inoremap <C-y> <C-o><C-y>
