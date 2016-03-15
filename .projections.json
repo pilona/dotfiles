@@ -1,7 +1,16 @@
 {
-    ".vimrc": {
-        "type": "vimrc",
+    ".config/nvim/init.vim": {
+        "type": "vim",
         "_start": "vim"
+    },
+    ".config/nvim/ftplugin/*.vim": {
+        "type": "ftplugin"
+    },
+    ".config/nvim/plugin/*.vim": {
+        "type": "plugin"
+    },
+    ".config/nvim/bundle/": {
+        "type": "vundles"
     },
     ".asoundrc": {
         "type": "asoundrc",
