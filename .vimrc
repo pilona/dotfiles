@@ -155,6 +155,13 @@ nnoremap ZA :qa!<CR>
 " Stolen from Damian Conway
 nnoremap S :%s//g<Left><Left>
 
+" Conflict with Pmenu bindings
+"inoremap <C-e> <C-o><C-e>
+"inoremap <C-y> <C-o><C-y>
+" But what if I want to scroll rest of screen while inside Pmenu?
+inoremap <expr> <C-e> pumvisible() ? "\<C-e>" : "\<C-o>\<C-e>"
+inoremap <expr> <C-y> pumvisible() ? "\<C-y>" : "\<C-o>\<C-y>"
+
 " <Return> is already not that far and ingrained muscle memory for creating a
 " new line—not that I couldn't unlearn it, yet this is right beside the
 " backwards delete—<C-H>, so convenient and somehow oddly sensible, and kind
