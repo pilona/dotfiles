@@ -139,11 +139,6 @@ map <LocalLeader>td :tabclose<CR>
 
 nnoremap Y y$
 
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-nnoremap <Leader>w :%s/\s\+$//<CR>
-vnoremap <Leader>w :s/\s\+$//<CR>
-
 nnoremap - <C-W>-
 nnoremap + <C-W>+
 nnoremap _ <C-W>_
