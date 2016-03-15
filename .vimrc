@@ -153,6 +153,7 @@ cnoremap <C-O> <Up>
 nnoremap ZA :qa!<CR>
 
 " Stolen from Damian Conway
+nnoremap <silent> <BS> :nohlsearch<CR>
 nnoremap S :%s//g<Left><Left>
 
 " TODO: <C-S-T> instead? Oddly enough, what's below is almost somehow
