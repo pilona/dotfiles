@@ -66,10 +66,16 @@ if has("gui_running")
     set background=dark
     colorscheme solarized
 else
-    "let g:rehash256 = 1 " too pale
-    colorscheme molokai
-    " Default pale visual selection not readable.
-    highlight Visual ctermbg=cyan ctermfg=black guibg=cyan guifg=black
+    if &t_Co >= 256
+        "let g:rehash256 = 1 " too pale
+        colorscheme molokai
+        " Default pale visual selection not readable.
+        highlight Visual ctermbg=cyan ctermfg=black guibg=cyan guifg=black
+    else
+        if &diff
+            colorscheme darkblue
+        endif
+    endif
 endif
 
 set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
