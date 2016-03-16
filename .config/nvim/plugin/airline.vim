@@ -9,3 +9,4 @@ let g:airline_theme = 'airlineish'
 
 " Don't override external colour scheme choice upon startup
 let g:airline#extensions#tmuxline#enabled = 0
+let g:airline#extensions#ycm#enabled = 1
