@@ -92,6 +92,7 @@ set diffopt+=vertical
 set undofile
 
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 1
+let g:terminal_scrollback_buffer_size = 4096
 
 " TODO: Fix/set *Leader bindings so that these can be used. These are wanted
 "       because entering command mode and typing out commands in full is
