@@ -91,10 +91,6 @@ set cscopetag cscoperelative
 set diffopt+=vertical
 set undofile
 
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
-"let g:ycm_register_as_syntastic_checker = 0
-
 " TODO: Fix/set *Leader bindings so that these can be used. These are wanted
 "       because entering command mode and typing out commands in full is
 "       wrong.
