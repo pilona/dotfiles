@@ -1,6 +1,6 @@
 let g:ctrlp_map = '<Nop>'
 let g:ctrlp_cmd = 'CtrlPMixed'
-let g:ctrlp_working_path_mode = 'c'
+let g:ctrlp_working_path_mode = 'cr'
 let g:ctrlp_extensions = ['tag', 'mixed']
 
 nmap     <Space>  [ctrlp]
