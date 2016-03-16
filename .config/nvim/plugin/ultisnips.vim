@@ -7,4 +7,4 @@
 let g:UltiSnipsJumpForwardTrigger = '<C-n>'
 let g:UltiSnipsJumpBackwardTrigger = '<C-p>'
 " FIXME: Triggers on real newline
-"let g:UltiSnipsListSnippets = '<C-m>'
+let g:UltiSnipsListSnippets = '<Leader>m'
