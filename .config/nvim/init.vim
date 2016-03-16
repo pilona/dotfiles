@@ -144,29 +144,3 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 " backwards delete—<C-H>, so convenient and somehow oddly sensible, and kind
 " of reminds of you of normal J doesn't it?
 inoremap <C-j> <Del>
-
-"http://vim.wikia.com/wiki/Autoloading_Cscope_Database
-"http://stackoverflow.com/questions/12243233/how-to-auto-load-cscope-out-in-vim
-"http://derekingrouville.ca/2012/cscope-will-change-the-way-you-code/
-"http://vim.sourceforge.net/scripts/script.php?script_id=157
-"http://dslab.lzu.edu.cn:8080/members/zhangwei/doc/cscope-HOWTO.txt
-"http://www.vim.org/scripts/script.php?script_id=51
-
-" Bart's things
-" TODO: Add jargon file to dictionaries
-" TODO: Add timestamp shorthand
-" TODO: Add signature shorthand
-" TODO: Highlight profanity, etc
-" TODO: Mapping to move line with cursor, like when I often want to move a
-"       line up
-" TODO: tagbar instead of taglist
-" TODO: See if NERDTree is worth much
-" TODO: Rebuild vim with Python **3** support
-" TODO: Ambiwidth investigation, esp. for em-dashes
-" TODO: Remove encoding and line ending part of airline, as well as percentage
-"       part, and L/N symbol.
-"
-" Automatically leave insert mode
-"au CursorHoldI * stopinsert
-"au InsertEnter * let updaterestore=&updatetime | set updatetime=2000
-"au InsertLeave * let &updatetime=updaterestore
