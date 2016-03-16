@@ -77,7 +77,7 @@ command! -complete=custom,s:HAMLLintSwitches -nargs=? HAMLLint :call <SID>HAMLLi
 if g:vimhamllint_keymap == 1
   " Use same map as RuboCop because it's more convenient in such projects,
   " since you're a templating language for Ruby.
-  nmap <Leader>ru :silent HAMLLint<CR>
+  autocmd FileType haml nnoremap <Buffer> <LocalLeader>ru :silent HAMLLint<CR>
 endif
 
 let &cpo = s:save_cpo
