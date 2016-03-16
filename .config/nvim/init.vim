@@ -68,6 +68,8 @@ if has("gui_running")
 else
     "let g:rehash256 = 1 " too pale
     colorscheme molokai
+    " Default pale visual selection not readable.
+    highlight Visual ctermbg=cyan ctermfg=black guibg=cyan guifg=black
 endif
 
 set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
