@@ -1,0 +1,2 @@
+" TODO: Reindent after dump
+let g:projectionist_heuristics = {'__init__.py&app.py&models.py&config.py&views.py': {'templates/*': {'type': 'template'}, 'feeds/*': {'type': 'feeds'}, 'config/*': {'type': 'config'}, 'views/*': {'type': 'view'}, 'feeds.py': {'type': 'feeds'}, 'models.py': {'type': 'model'}, 'models/*.py': {'type': 'model'}, 'static/*': {'type': 'static'}, 'app.py': {'type': 'app'}, 'config.py': {'type': 'config'}, 'views.py': {'type': 'view'}}}
