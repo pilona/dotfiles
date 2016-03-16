@@ -89,6 +89,7 @@ set spelllang=en_ca
 "set timeoutlen=0 ttimeoutlen=0
 set cscopetag cscoperelative
 set diffopt+=vertical
+set undofile
 
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
