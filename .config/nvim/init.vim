@@ -120,6 +120,23 @@ cnoremap <C-O> <Up>
 " TODO: How to map without killing completion or a better mapping?
 "cnoremap <C-I> <Down>
 
+" TODO: Remap CTRL-J, <NL>, and CTRL-N because in normal mode they aren't
+" useful in the presence of just 'j'.
+" FIXME: Not repeatable?
+" FIXME: :silent is not really silent
+nnoremap <C-K> :silent move .-2<CR>
+nnoremap <C-J> :silent move .+1<CR>
+vnoremap <C-K> :silent move '<.-2<CR>
+vnoremap <C-J> :silent move '>.+1<CR>
+" TODO: [<C-> and <C->] mappings
+nnoremap ]<C-J> :silent move .+1<CR>==
+nnoremap [<C-K> :silent move .-2<CR>==
+" TODO: More reliable <Esc>
+"inoremap <C-J> <Esc>:silent m .+1<CR>==gi
+"inoremap <C-K> <Esc>:silent m .-2<CR>==gi
+vnoremap ]<C-J> :silent move '>.+1<CR>gv=gv
+vnoremap [<C-K> :silent move '<.-2<CR>gv=gv
+
 nnoremap ZA :qa!<CR>
 
 " Stolen from Damian Conway
