@@ -43,11 +43,17 @@ alias uxterm='uxterm -rv -cr red'
 alias emacs='emacs -nw'
 alias mplayer='mplayer -msglevel all=2'
 alias vlc='vlc --qt-minimal-view'
+# --on-all-workspaces?
+# --autosync=1 or 30?
+# --heartbeat to work around --stop-screensaver not working?
+# --wid=0 to draw to root window
+#alias mpv='mpv --no-border --force-window --ontop --idle'
 alias clisp='clisp --quiet'
 alias javadebug='java -Xdebug -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=y'
 
 alias ping='ping -OD'
-alias ping6='ping6 -OD'
+alias ping4='ping -4'
+alias ping6='ping -6'
 
 alias ipa='ip address show scope global up'
 alias ip4='ip -4 address show scope global up'
