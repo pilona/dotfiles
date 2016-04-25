@@ -26,7 +26,6 @@ alias c..='cd ..'
 alias cd..='cd ..'
 alias lcd='cd'
 alias d='cd'
-alias t='cat'
 
 alias sshfs='sshfs -o idmap=user -o uid=1000 -o gid=100'
 
@@ -62,6 +61,7 @@ alias ipr='ip -4 route show scope global'
 alias ip6r='ip -6 route show scope global'
 
 alias l='ls -C'
+alias t='lt'
 alias lt='ls -t'
 alias lx='ls -X'
 alias la='ls -A'
