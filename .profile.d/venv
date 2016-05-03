@@ -6,7 +6,7 @@
 if [ -e ~/.rbenv ]; then
    eval "$(~/.rbenv/bin/rbenv init -)"
 else
-   export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+   export GEM_HOME="$(ruby -e 'print Gem.user_dir')"
 fi
 if [ -e ~/.pyenv ]; then
    eval "$(~/.pyenv/bin/pyenv init -)"
