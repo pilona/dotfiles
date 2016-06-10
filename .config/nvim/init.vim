@@ -57,8 +57,6 @@ else
     if &t_Co >= 256
         "let g:rehash256 = 1 " too pale
         colorscheme molokai
-        " Default pale visual selection not readable.
-        highlight Visual ctermbg=cyan ctermfg=black guibg=cyan guifg=black
     else
         if &diff
             colorscheme darkblue
