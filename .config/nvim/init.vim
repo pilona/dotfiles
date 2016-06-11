@@ -151,9 +151,10 @@ nnoremap <silent> <C-p> :-tabnew +Startify<CR>
 "inoremap <C-e> <C-o><C-e>
 "inoremap <C-y> <C-o><C-y>
 " But what if I want to scroll rest of screen while inside Pmenu?
-inoremap <expr> <C-e> pumvisible() ? "\<C-e>" : "\<C-o>\<C-e>"
-inoremap <expr> <C-y> pumvisible() ? "\<C-y>" : "\<C-o>\<C-y>"
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
+"inoremap <expr> <C-e> pumvisible() ? "\<C-e>" : "\<C-o>\<C-e>"
+"inoremap <expr> <C-y> pumvisible() ? "\<C-y>" : "\<C-o>\<C-y>"
+" FIXME: Conflicts with vim-endwise
+"inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 
 " <Return> is already not that far and ingrained muscle memory for creating a
 " new line—not that I couldn't unlearn it, yet this is right beside the
