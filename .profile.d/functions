@@ -590,3 +590,7 @@ PATHs() {
     printf '%s$PATH:%s\n' "$(tput bold)" "$(tput sgr0)"
     echo "$PATH" | tr ':' '\n'
 }
+
+wttr() {
+    curl -s "wttr.in/${1:-ottawa}" | LESS=RXS less
+}
