@@ -594,3 +594,33 @@ PATHs() {
 wttr() {
     curl -s "wttr.in/${1:-ottawa}" | LESS=RXS less
 }
+
+_abspath() {
+    case "$1" in
+        /*) true ;;
+        *) false ;;
+    esac
+}
+
+_relpath() {
+    case "$1" in
+        ./*) true ;;
+        *) false ;;
+    esac
+}
+
+gdiff() {
+    if _abspath "$1" || ! _relpath "$1"; then
+        local left=./"$1"
+    else
+        local left="$1"
+    fi
+    shift
+    if _abspath "$1" || ! _relpath "$1"; then
+        local right=./"$1"
+    else
+        local right="$1"
+    fi
+    shift
+    git diff --no-index "$@" "${left:--}" "${right:--}"
+}
