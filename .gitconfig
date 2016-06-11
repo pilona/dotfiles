@@ -10,6 +10,7 @@
 [alias]
 	graph = log --graph --decorate --all --patch --cc
 	logg = log --graph --decorate --all --oneline
+	logd = log --graph --all --pretty='%C(auto)%h %C(bold blue)[%ai]%C(reset)%C(auto)%d %s %C(dim white)- %an'
 	type = cat-file -t
 	dump = cat-file -p
 	difff = diff --color --ignore-all-space --minimal
