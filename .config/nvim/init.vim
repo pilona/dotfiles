@@ -135,6 +135,9 @@ vnoremap [<C-K> :silent move '<.-2<CR>gv=gv
 
 nnoremap ZA :qa!<CR>
 
+nnoremap <silent> <Leader>t :tabs<CR>
+nnoremap <silent> <Leader>b :buffers<CR>
+
 " Stolen from Damian Conway
 nnoremap <silent> <BS> :nohlsearch<CR>
 nnoremap S :%s//g<Left><Left>
