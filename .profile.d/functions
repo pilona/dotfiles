@@ -585,3 +585,8 @@ Hangouts() {
 EXIF() {
     gm identify -format '%[EXIF:*]' "$@"
 }
+
+PATHs() {
+    printf '%s$PATH:%s\n' "$(tput bold)" "$(tput sgr0)"
+    echo "$PATH" | tr ':' '\n'
+}
