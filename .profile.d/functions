@@ -570,10 +570,12 @@ SSHPublicKeys() {
 }
 
 SSHAgent() {
-    {
-        export SSH_AGENT_PID=$(pidof ssh-agent)
+    export SSH_AGENT_PID=$(pidof ssh-agent)
+    if [ -n "$SSH_AGENT_PID" ]; then
         export SSH_AUTH_SOCK=$(echo /tmp/ssh-*/agent.*)
-    } || eval "$(ssh-agent)"
+    else
+        eval "$(ssh-agent)"
+    fi
 }
 
 Hangouts() {
