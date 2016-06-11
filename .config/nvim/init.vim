@@ -94,8 +94,7 @@ set autoread
 " TODO: Mappings for cycling through these
 set spelllang=en_ca
 "set spelllang=fr_ca  " FIXME: Region not supported
-" TODO: Figure out how to shorten mode switching time
-"set timeoutlen=0 ttimeoutlen=0
+set nottimeout ttimeoutlen=-1
 set cscopetag cscoperelative
 set diffopt+=vertical
 set undofile
