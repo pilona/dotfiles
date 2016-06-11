@@ -162,3 +162,7 @@ nnoremap <silent> <C-p> :-tabnew +Startify<CR>
 " of reminds of you of normal J doesn't it?
 inoremap <C-j> <C-o>J
 inoremap <C-l> <Del>
+
+" https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
+nnoremap <expr> n  'Nn'[v:searchforward]
+nnoremap <expr> N  'nN'[v:searchforward]
