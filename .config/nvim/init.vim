@@ -107,6 +107,7 @@ nnoremap Y y$
 nnoremap - <C-W>-
 nnoremap + <C-W>+
 nnoremap _ <C-W>_
+nnoremap <Bar> <C-w><Bar>
 " Keep the = mapping though because it's very useful.
 
 nnoremap Q q:i
