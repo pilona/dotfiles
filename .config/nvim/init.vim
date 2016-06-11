@@ -76,6 +76,7 @@ else
             colorscheme darkblue
         endif
     endif
+    set fillchars+=vert:█
 endif
 
 set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
