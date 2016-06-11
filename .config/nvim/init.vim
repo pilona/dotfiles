@@ -160,4 +160,5 @@ nnoremap <silent> <C-p> :-tabnew +Startify<CR>
 " new line—not that I couldn't unlearn it, yet this is right beside the
 " backwards delete—<C-H>, so convenient and somehow oddly sensible, and kind
 " of reminds of you of normal J doesn't it?
-inoremap <C-j> <Del>
+inoremap <C-j> <C-o>J
+inoremap <C-l> <Del>
