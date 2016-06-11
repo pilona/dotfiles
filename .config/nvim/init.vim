@@ -36,7 +36,6 @@ if has("gui_running")
     set guifont=Terminess\ Powerline\ 14
     set guioptions=
     set background=dark
-    colorscheme solarized
 else
     if &t_Co >= 256
         "let g:rehash256 = 1 " too pale
