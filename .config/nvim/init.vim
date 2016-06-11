@@ -5,7 +5,6 @@ call vundle#rc()
 
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'ap/vim-css-color'
-Plugin 'bling/vim-airline'
 Plugin 'chrisbra/csv.vim'
 Plugin 'chrisbra/NrrwRgn'
 Plugin 'edkolev/promptline.vim'
@@ -32,6 +31,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 filetype plugin indent on
 syntax on
