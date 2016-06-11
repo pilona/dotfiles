@@ -2,15 +2,13 @@
 
 from itertools import chain
 from time import sleep
-from datetime import datetime, timezone
+from datetime import datetime
 import subprocess
 import json
 
+
 def time_widget(t_sep=' '):
-    # Show timezone too. TODO: Does it show DST?
-    #dt = datetime.now(tz=timezone.utc).astimezone()
     dt = datetime.now().replace(microsecond=0)
-    t = dt.time()
     t_sep = ' '
     dt_fmt = dt.isoformat(t_sep)
     t_fmt = dt.isoformat(t_sep)
