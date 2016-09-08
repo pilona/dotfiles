@@ -50,3 +50,8 @@
 
 [pretty]
 	fixes = Fixes: %h (\"%s\")
+
+[merge]
+	tool = nvim
+[mergetool "nvim"]
+	cmd = nvim \"$MERGED\" -c \"normal ]nzRzt\"
