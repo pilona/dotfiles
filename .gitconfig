@@ -53,5 +53,8 @@
 
 [merge]
 	tool = nvim
+[mergetool]
+	keepBackup = false
+
 [mergetool "nvim"]
 	cmd = nvim \"$MERGED\" -c \"normal ]nzRzt\"
