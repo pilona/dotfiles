@@ -21,13 +21,10 @@
 	# Show $1 per se
 	dump = cat-file -p
 
-	difff = diff --color --ignore-all-space --minimal
-
 	# Commits from last pull GROUP BY author
 	changelog = shortlog @{1}..@
 	# Commits from last pull ORDER BY date
 	lastlog   = log      @{1}..@ --date-order
-	lastlogg  = log      @{1}..@ --graph --decorate --oneline
 
 [push]
 	default = current
