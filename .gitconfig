@@ -8,13 +8,24 @@
 	signingkey = 3692F8EFAA84B7A6ABB4B1D433560A4A4E517962
 
 [alias]
+	# Show full graph and patch of all commits
 	graph = log --graph --decorate --all --patch --cc
+
+	# and also all remotes, branches, etc.
 	logg = log --graph --decorate --all --oneline
+	# Same, but also show a timestamp and author
 	logd = log --graph --all --pretty='%C(auto)%h %C(bold blue)[%ai]%C(reset)%C(auto)%d %s %C(dim white)- %an'
+
+	# Show $1 type
 	type = cat-file -t
+	# Show $1 per se
 	dump = cat-file -p
+
 	difff = diff --color --ignore-all-space --minimal
+
+	# Commits from last pull GROUP BY author
 	changelog = shortlog @{1}..@
+	# Commits from last pull ORDER BY date
 	lastlog   = log      @{1}..@ --date-order
 	lastlogg  = log      @{1}..@ --graph --decorate --oneline
 
