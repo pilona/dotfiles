@@ -39,6 +39,9 @@
 	merged = branch --merged HEAD
 	unmerged = branch --no-merged HEAD
 
+[commit]
+	gpgSign = true
+
 [push]
 	default = current
 
