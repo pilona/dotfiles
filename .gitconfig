@@ -35,6 +35,10 @@
 	# Commits from last pull ORDER BY date
 	lastlog   = log      @{1}..@ --date-order
 
+	# Already merged commits
+	merged = branch --merged HEAD
+	unmerged = branch --no-merged HEAD
+
 [push]
 	default = current
 
