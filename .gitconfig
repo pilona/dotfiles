@@ -11,10 +11,19 @@
 	# Show full graph and patch of all commits
 	graph = log --graph --decorate --all --patch --cc
 
+	# Show the graph of local commits only
+	log- = log --graph --decorate --oneline
 	# and also all remotes, branches, etc.
 	logg = log --graph --decorate --all --oneline
 	# Same, but also show a timestamp and author
 	logd = log --graph --all --pretty='%C(auto)%h %C(bold blue)[%ai]%C(reset)%C(auto)%d %s %C(dim white)- %an'
+	# Just show the topology.
+	logt = log --graph --decorate --all --oneline --simplify-by-decoration
+	# Show the entire graph, and also the files touched by each commit.
+	logn = log --graph --decorate --all --oneline --name-status
+	# Show the minimum merges and non-common commits between $1 and $2.
+	# Use this for visualizing what you're merging.
+	logm = log --graph --decorate --oneline --cherry-pick --first-parent
 
 	# Show $1 type
 	type = cat-file -t
