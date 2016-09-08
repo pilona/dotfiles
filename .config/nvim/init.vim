@@ -89,6 +89,8 @@ let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 1
 let g:terminal_scrollback_buffer_size = 4096
 
 nnoremap Y y$
+nnoremap yY :%yank <C-r>=v:register<CR><CR>
+nnoremap dD :%delete <C-r>=v:register<CR><CR>
 
 nnoremap - <C-W>-
 nnoremap + <C-W>+
