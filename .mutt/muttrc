@@ -76,6 +76,8 @@ set crypt_autoencrypt        = no
 set crypt_replysign          = yes
 set crypt_replyencrypt       = yes
 set crypt_replysignencrypted = yes
+set crypt_use_gpgme          = yes
+set pgp_ignore_subkeys       = no
 
 unset markers
 # TODO: set crypto-hook for people for which PGP key choice is ambiguous, or
