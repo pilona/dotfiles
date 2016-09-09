@@ -21,9 +21,9 @@
 	logt = log --graph --decorate --all --oneline --simplify-by-decoration
 	# Show the entire graph, and also the files touched by each commit.
 	logn = log --graph --decorate --all --oneline --name-status
-	# Show the minimum merges and non-common commits between $1 and $2.
+	# Show the minimum merges and non-common commits from <rev1...rev2>
 	# Use this for visualizing what you're merging.
-	logm = log --graph --decorate --oneline --cherry-pick --first-parent
+	logm = log --graph --decorate --oneline --cherry-pick --first-parent --right-only
 
 	# Show $1 type
 	type = cat-file -t
