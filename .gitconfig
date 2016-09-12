@@ -11,6 +11,9 @@
 	# Show full graph and patch of all commits
 	graph = log --graph --decorate --all --patch --cc
 
+	# Just show the subject and commit hash
+	log1 = log --oneline
+
 	# Show the graph of local commits only
 	log- = log --graph --decorate --oneline
 	# and also all remotes, branches, etc.
@@ -24,6 +27,9 @@
 	# Show the minimum merges and non-common commits from <rev1...rev2>
 	# Use this for visualizing what you're merging.
 	logm = log --graph --decorate --oneline --cherry-pick --first-parent --right-only
+	# Only show those we want in this graph
+	# Useful when one wants a log- on some range, like if one just fetched
+	logp = log --graph --decorate --oneline --ancestry-path
 
 	# Show $1 type
 	type = cat-file -t
