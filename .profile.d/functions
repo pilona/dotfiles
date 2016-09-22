@@ -666,3 +666,13 @@ pause() {
 Man() {
     PAGER='nvim -c set\ ft=man -' man "$@"
 }
+
+LookIn() {
+    ffmpeg -f v4l2 -i /dev/video0 -f mpegts -r 1 'tcp://[::1]:5000?listen=1'
+}
+
+ListenIn() {
+    ffmpeg -f alsa -i "${@:-default}" \
+           -filter:a volume=30dB -c:a opus -b:a 128K \
+           -f webm 'tcp://[::1]:5000?listen=1'
+}
