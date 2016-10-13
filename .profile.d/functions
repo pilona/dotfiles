@@ -29,12 +29,21 @@ deprecated() {
    "$@"
 }
 
+pacman() {
+    # pacman as root is 99% of the time interactive, so
+    # don't use less, as it'll screw things up.
+    [ "$(id -un)" = 0 ] && return command pacman "$@"
+    # Otherwise, page, because it should never be
+    # interactive, and it often dumps me screen fulls.
+    command pacman --color=always "$@" | less
+}
+
 PQE() {
-    pacman -Qe | cut -d ' ' -f 1 | column -c $COLUMNS | less
+    command pacman -Qe | cut -d ' ' -f 1 | column -c $COLUMNS | less
 }
 
 PQESize() {
-    pacman -Qie \
+    command pacman -Qie \
       | awk 'BEGIN {
                  ORS=" "
                  OFMT="%.2f"
@@ -54,7 +63,7 @@ PQESize() {
 }
 
 PQESize2() {
-    pacman -Qie \
+    command pacman -Qie \
       | awk 'BEGIN { ORS = " " }
 
              $1 == "Name" { print $3 }
@@ -404,7 +413,7 @@ MXToolBox() {
 _pacmanQlPrettySearch() {
     target="$1"
     shift
-    pacman -Ql "$@" \
+    command pacman -Ql "$@" \
       | grep "$target" \
       | awk -F / '{print $NF}' \
       | column -c $COLUMNS
