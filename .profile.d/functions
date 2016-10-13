@@ -534,7 +534,9 @@ chromiumi() {
                "$(basename "$tmpdir")" "$tmpdir"
     echo "$tmpdir"
     sudo \
-        unshare -m \
+        unshare --mount \
+                --ipc \
+            -- \
             sudo tmpdir="$tmpdir" \
                  -u "$(id -un)" \
                  sh <<- EOF
