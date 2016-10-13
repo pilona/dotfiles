@@ -511,6 +511,10 @@ SYN-SENT() {
     ss -antp | grep SYN-SENT
 }
 
+SOCKS() {
+    ss -antpH '( dport = :socks )'
+}
+
 MicrophoneScope() {
     ffplay -f alsa -i "${default:-$1}" -showmode 1
 }
