@@ -508,7 +508,7 @@ LinkCheck() {
 }
 
 SYN-SENT() {
-   ss -antp | grep SYN-SENT
+    ss -antp | grep SYN-SENT
 }
 
 MicrophoneScope() {
