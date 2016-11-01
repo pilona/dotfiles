@@ -357,7 +357,7 @@ OpenWeather() {
 }
 
 Radar() {
-    "$BROWSER" "http://weather.gc.ca/radar/index_e.html?id=xft"
+    "$BROWSER" 'http://weather.gc.ca/radar/index_e.html?id=xft'
 }
 
 Canal() {
