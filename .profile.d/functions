@@ -539,7 +539,7 @@ chromiumip() {
 chromiumi() {
     local tmpdir="$(mktemp -d)"
     sudo mount -t tmpfs \
-               -o mode=0700,uid="$(id -un)",gid="$(id -gn)" \
+               -o mode=0700,uid="$(id -u)",gid="$(id -g)" \
                "$(basename "$tmpdir")" "$tmpdir"
     echo "$tmpdir"
     sudo \
