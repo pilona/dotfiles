@@ -648,3 +648,7 @@ gdiff() {
     shift
     git diff --no-index "$@" "${left:--}" "${right:--}"
 }
+
+Man() {
+    PAGER='nvim -c set\ ft=man -' man "$@"
+}
