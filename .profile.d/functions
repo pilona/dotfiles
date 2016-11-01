@@ -538,23 +538,31 @@ chromiumip() {
 
 chromiumi() {
     local tmpdir="$(mktemp -d)"
+    local cachedir="$(mktemp -d)"
     sudo mount -t tmpfs \
                -o mode=0700,uid="$(id -u)",gid="$(id -g)" \
                "$(basename "$tmpdir")" "$tmpdir"
+    sudo mount -t tmpfs \
+               -o mode=0700,uid="$(id -u)",gid="$(id -g)" \
+               "$(basename "$cachedir")" "$cachedir"
+    echo "$cachedir"
     echo "$tmpdir"
     sudo \
         unshare --mount \
                 --ipc \
             -- \
             sudo tmpdir="$tmpdir" \
+                 cachedir="$cachedir" \
                  -u "$(id -un)" \
                  sh <<- EOF
+                sudo mount --make-private "$cachedir"
                 sudo mount --make-private "$tmpdir"
+                sudo mount --move "$cachedir" ~/.cache/chromium
                 sudo mount --move "$tmpdir" ~/.config/chromium
                 chromium "$@"
 EOF
-    sudo umount "$tmpdir"
-    rmdir "$tmpdir"
+    sudo umount "$cachedir" "$tmpdir"
+    rmdir "$cachedir" "$tmpdir"
 }
 
 title() {
