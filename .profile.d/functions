@@ -360,6 +360,10 @@ Radar() {
     "$BROWSER" 'http://weather.gc.ca/radar/index_e.html?id=xft'
 }
 
+Infrared() {
+    "$BROWSER" 'http://weather.gc.ca/satellite/satellite_anim_e.html?sat=goes&area=ecan&type=1070'
+}
+
 Canal() {
     "$BROWSER" "http://www.ncc-ccn.gc.ca/rideau-canal-skateway/"
 }
