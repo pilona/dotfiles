@@ -1,3 +1,6 @@
+" Start from 1, not 0, because wraparound is confusing, even if 0 is closer to
+" the right/dominant hand.
+let g:startify_custom_indices = map(range(1,100), 'string(v:val)')
 let g:startify_bookmarks = [{'.': '.'}]
 let g:startify_change_to_vcs_root = 1
 let g:startify_commands = [
