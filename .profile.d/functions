@@ -648,6 +648,10 @@ gdiff() {
     git diff --no-index "$@" "${left:--}" "${right:--}"
 }
 
+PatchLeftovers() {
+    find -type f \( -name '*.rej' -o -name '*.orig' \) ${@:+-exec $* '{}' '+'}
+}
+
 Man() {
     PAGER='nvim -c set\ ft=man -' man "$@"
 }
