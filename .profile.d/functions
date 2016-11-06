@@ -652,6 +652,17 @@ PatchLeftovers() {
     find -type f \( -name '*.rej' -o -name '*.orig' \) ${@:+-exec $* '{}' '+'}
 }
 
+# I didn't write this, but don't remember whence it came either.
+pause() {
+    echo "Press any key to continue or '<Ctrl>-C' to exit."
+    (
+        tty_state="$(stty -g)"
+        stty -icanon
+        LC_ALL=C dd bs=1 count=1 >/dev/null 2>&1
+        stty "$tty_state"
+    ) </dev/tty
+}
+
 Man() {
     PAGER='nvim -c set\ ft=man -' man "$@"
 }
