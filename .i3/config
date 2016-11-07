@@ -119,6 +119,7 @@ bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace number 10
 # DWM-like snap to last tag set/workspace
 bindsym $mod+Tab workspace back_and_forth
+bindsym $mod+Shift+Tab move container to workspace back_and_forth
 # Traditional WM-like workspace cycling bindings
 #bindsym $mod+Shift+Tab workspace prev
 #bindsym $mod+Tab workspace next
