@@ -74,6 +74,13 @@ bindsym $mod+Ctrl+l move to output right
 bindsym $mod+Shift+comma move to output left
 bindsym $mod+Shift+period move to output right
 
+bindsym $mod+Ctrl+Shift+h move workspace to output left
+bindsym $mod+Ctrl+Shift+j move workspace to output down
+bindsym $mod+Ctrl+Shift+k move workspace to output up
+bindsym $mod+Ctrl+Shift+l move workspace to output right
+bindsym $mod+Ctrl+Shift+comma move workspace to output left
+bindsym $mod+Ctrl+Shift+period move workspace to output right
+
 # DWM-ish keybindings. Correspond to the layout one would have in my config
 # with the bstack patches applied, and a 0-master tag (*cough* workspace
 # *cough*).
