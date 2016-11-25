@@ -105,3 +105,6 @@ alias lsblk='lsblk -f -o +SIZE'
 
 # Freaking bash time is underpowered, and it's a no-op broken reserved word in zsh
 alias time='command time'
+
+alias ag='ag --pager=${PAGER:-less}'
+alias g='ag'
