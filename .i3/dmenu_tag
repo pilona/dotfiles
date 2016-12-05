@@ -1,11 +1,14 @@
 #! /usr/bin/python
 
+from collections import OrderedDict  # Python <3.6
 from subprocess import Popen, check_output, check_call, PIPE
 from json import loads
 import sys
 
-workspaces = loads(check_output(["i3-msg", "-t", "get_workspaces"]).decode())
-names = sorted(workspace['name'] for workspace in workspaces)
+workspaces = loads(check_output(["i3-msg", "-t", "get_workspaces"]).decode(),
+                   object_pairs_hook=OrderedDict)
+#names = sorted(workspace['name'] for workspace in workspaces)
+names = [workspace['name'] for workspace in workspaces]
 
 dmenu = Popen(["dmenu"] + sys.argv[1:], stdin=PIPE, stdout=PIPE)
 for name in names:
