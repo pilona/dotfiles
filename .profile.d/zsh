@@ -16,6 +16,8 @@ bindkey -M isearch "^O" history-incremental-search-backward
 # For some reason, complains about binding to an empty key sequence
 #bindkey -M isearch "$(tput cud1)" history-incremental-search-forward
 bindkey -M isearch "\e[B" history-incremental-search-forward
+bindkey -M viins '^P' up-history
+bindkey -M viins '^N' down-history
 
 . ~/.profile.d/zstyle
 . ~/.profile.d/zle
