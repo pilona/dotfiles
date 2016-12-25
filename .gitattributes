@@ -5,3 +5,4 @@
 .config/Trolltech.conf              diff=nodiff
 lib/profile                         diff=nodiff
 .local/share/love/mari0/options.txt diff=nodiff
+.config/retroarch/retroarch.cfg     diff=nodiff
