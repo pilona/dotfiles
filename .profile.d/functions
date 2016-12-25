@@ -23,7 +23,7 @@ deprecated() {
    shift
 
    tput setaf $COLOR_YELLOW
-   echo "Command \"$original\" is deprecated; use \"$*\" instead"
+   echo "Command \"$original\" is deprecated; use \"$*\" instead" 1>&2
    tput sgr0
 
    "$@"
