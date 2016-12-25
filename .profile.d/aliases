@@ -108,3 +108,8 @@ alias time='command time'
 
 alias ag='ag --pager=${PAGER:-less}'
 alias g='ag'
+
+# Force myself to use near-ubiquitous util-linux hexdump
+# NeoVim doesn't include it and don't rely on system having Vim
+alias xxd='deprecated xxd hexdump -C'
+alias hex='hexdump -C'
