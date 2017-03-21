@@ -220,6 +220,10 @@ hexlify() {
     fi
 }
 
+# _webdoc <HTML docs path> <documentation title> <looked up name>...
+# Show docs for names, at HTML doc path.
+# Self-document as documentation title.
+# TODO: zsh, bash completion
 _webdoc() {
     docs="$1"
     shift
