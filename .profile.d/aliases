@@ -113,3 +113,5 @@ alias g='ag'
 # NeoVim doesn't include it and don't rely on system having Vim
 alias xxd='deprecated xxd hexdump -C'
 alias hex='hexdump -C'
+
+alias vncviewer='vncviewer -DotWhenNoCursor -FullscreenSystemKeys'
