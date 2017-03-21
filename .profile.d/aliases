@@ -115,3 +115,6 @@ alias xxd='deprecated xxd hexdump -C'
 alias hex='hexdump -C'
 
 alias vncviewer='vncviewer -DotWhenNoCursor -FullscreenSystemKeys'
+
+alias ffmpeg='ffmpeg -hide_banner'
+alias ffprobe='ffprobe -hide_banner'
