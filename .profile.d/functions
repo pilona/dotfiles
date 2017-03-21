@@ -280,6 +280,12 @@ Javadoc() {
               done)
 }
 
+PGdoc() {
+    _webdoc /usr/share/doc/postgresql/html \
+            PGdoc \
+            "${@:-index}"
+}
+
 ImageSize() {
     if [ $# = 0 ]; then
         echo /dev/stdin
