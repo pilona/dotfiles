@@ -10,6 +10,10 @@ Python() (
     fi
 )
 
+rg() {
+    command rg "$@" | less
+}
+
 ls() {
     command ls --human-readable \
                --escape \
