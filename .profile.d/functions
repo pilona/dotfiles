@@ -568,6 +568,7 @@ chromiumi() {
             -- \
             sudo tmpdir="$tmpdir" \
                  -u "$(id -un)" \
+                 -g "$(id -gn)" \
                  sh <<- EOF
                 sudo mount --make-private "$tmpdir"
                 sudo mount -o bind "$tmpdir"/config ~/.config/chromium
