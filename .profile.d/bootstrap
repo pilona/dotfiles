@@ -49,8 +49,12 @@ nvim
 neomutt
 '
 
+# Bootstrapping functions are one-off. They should be able to work without
+# changing the state of the shell, because they only get run once. Otherwise,
+# by definition, they are not bootstrapping but common configuration!
 (
     set -e
+    # Prevent overwriting existing -> lock-in-a-shell
     set -C
 
     { : >~/.profile.d/.bootstrapped.lock ; } 2>/dev/null || exit
