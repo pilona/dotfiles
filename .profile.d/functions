@@ -226,8 +226,8 @@ hexlify() {
 # TODO: zsh, bash completion
 _webdoc() {
     docs="$1"
-    shift
     prefix="$2"
+    shift
     shift
 
     for arg in "$@"; do
