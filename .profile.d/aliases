@@ -6,8 +6,6 @@ alias gcc='gcc -fdiagnostics-color=auto -std=gnu11'
 alias gdb='gdb -silent'
 
 alias ghci='ghci -v0'
-alias gpg='GPG_TTY="$TTY" gpg'
-alias gpgp='gpg --list-options show-photos'
 
 alias bc='bc -q -l'
 
