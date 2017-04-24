@@ -232,7 +232,7 @@ _webdoc() {
 
     for arg in "$@"; do
         local target
-        target="${docs}/${arg}.html"
+        target="${docs:+$docs/}${arg}.html"
         if ! [ -f  "$target" ]; then
             echo "${prefix}: No such file or directory: \"$target\"" 1>&2
             return 1
@@ -240,7 +240,7 @@ _webdoc() {
     done
 
     while [ $# -gt 0 ]; do
-        "$BROWSER" "file://${docs}/${1}.html"
+        "$BROWSER" "file://${docs:+$docs/}${1}.html"
         shift
         while [ -z "$response" ] && [ $# -gt 0 ]; do
             # Emulate man
@@ -281,9 +281,34 @@ Javadoc() {
 }
 
 PGdoc() {
-    _webdoc /usr/share/doc/postgresql/html \
-            PGdoc \
-            "${@:-index}"
+    local basedir='/usr/share/doc/postgresql/html'
+    case "$1" in
+        -k)
+            shift
+            local cs="$(expr length "$basedir")"
+            find "$basedir" -type f \
+              | command grep -i "$*" \
+              | while read line; do
+                    echo "$line" | cut -c "$((cs + 2))"- | sed 's/\.html$//'
+                done
+            ;;
+        -K)
+            shift
+            find "$basedir" -type f \
+              | while read line; do
+                  if command grep -F -q -i -e "$*" "$line"; then
+                      _webdoc '' \
+                              PGdoc \
+                              "${line%.html}"
+                  fi
+                done
+            ;;
+        *)
+            _webdoc "$basedir" \
+                    PGdoc \
+                    "${@:-index}"
+            ;;
+    esac
 }
 
 ImageSize() {
