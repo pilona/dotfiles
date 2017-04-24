@@ -26,6 +26,29 @@ setup_vim() {
     vim +PluginInstall +qall
 }
 
+setup_neomutt() {
+    git clone https://github.com/neomutt/neomutt
+    cd neomutt
+    ./prepare --prefix="${HOME}/.local" \
+              --enable-everything \
+              --with-ssl \
+              --without-{gdbm,bdb,qdbm} \
+              --without-{kyoto,tokyo}cabinet \
+              --disable-pop \
+              --disable-po \
+              --disable-full-doc \
+              --enable-debug
+}
+
+hooks='
+pyenv
+rbenv
+nodenv
+vim
+nvim
+neomutt
+'
+
 (
     set -e
     set -C
@@ -34,7 +57,7 @@ setup_vim() {
 
     mkdir -p ~/.local/{src,bin}
     # TODO: Atomic O_CREAT|O_EXCL and flock
-    for hook in pyenv rbenv vim nvim; do
+    for hook in $hooks; do
         setup_$hook
     done
 )
