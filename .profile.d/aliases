@@ -99,7 +99,7 @@ alias Manpages='_pacmanQlPrettySearch man/'
 alias Services='_pacmanQlPrettySearch '\''\.service$'\'
 
 alias sudo='sudo '  # Dirty trick to force alias expansion in sudo
-alias lsblk='lsblk -f -o +SIZE'
+alias lsblk='lsblk -f -o +SIZE,MODEL'
 
 # Freaking bash time is underpowered, and it's a no-op broken reserved word in zsh
 alias time='command time'
