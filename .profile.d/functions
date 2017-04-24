@@ -708,3 +708,33 @@ ListenIn() {
            -filter:a volume=30dB -c:a opus -b:a 128K \
            -f webm 'tcp://[::1]:5000?listen=1'
 }
+
+# TODO: Hardware accel?
+Screencast() {
+    audio_device='sysdefault:CARD=B20'
+    # -thread_queue_size 128, 256, etc. rather than default 8 because of buffer overruns.
+    # FIXME: Is that a sign of future desync?
+    vthread_queue_size=256
+    athread_queue_size=128
+
+    case "$1" in
+        ''|-h|-help|--help)
+            echo 'usage: Screencast output_filename.mkv [<audio device>]' 1>&2
+            echo "audio device defaults to: $audio_device" 1>&2
+            return 1
+            ;;
+        *.mkv)
+            ;;
+        *)
+            echo 'Output file container type should be Matroska (.mkv)' 1>&2
+            return 1
+            ;;
+    esac
+
+    # TODO: Drop the -c:a copy to lower the bitrate?
+    ffmpeg -f x11grab -thread_queue_size $vthread_queue_size -r 25 -s 1920x1080 -i $DISPLAY \
+           -f alsa -thread_queue_size $athread_queue_size -i ${2:-$audio_device} \
+           -qp 0 -preset ultrafast \
+           -c:a copy \
+           "$1"
+}
