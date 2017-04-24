@@ -6,6 +6,7 @@ set bell-style visual
 
 autoload -U bashcompinit && bashcompinit
 autoload -U compinit && compinit
+eval "$(pandoc --bash-completion)"
 
 KEYTIMEOUT=1
 
