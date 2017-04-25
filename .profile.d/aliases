@@ -104,8 +104,9 @@ alias lsblk='lsblk -f -o +SIZE,MODEL'
 # Freaking bash time is underpowered, and it's a no-op broken reserved word in zsh
 alias time='command time'
 
-alias ag='ag --pager=${PAGER:-less}'
-alias g='ag'
+alias r='rg --pretty'
+alias g='rg --pretty'
+alias ag='deprecated ag rg --pretty -i'
 
 # Force myself to use near-ubiquitous util-linux hexdump
 # NeoVim doesn't include it and don't rely on system having Vim
