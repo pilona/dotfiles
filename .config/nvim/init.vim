@@ -27,7 +27,6 @@ Plugin 'majutsushi/tagbar'
 Plugin 'mbbill/undotree'
 Plugin 'mhinz/vim-startify'
 Plugin 'michaeljsmith/vim-indent-object'
-Plugin 'mileszs/ack.vim'
 Plugin 'ngmy/vim-rubocop'
 Plugin 'nvie/vim-flake8'
 Plugin 'paranoida/vim-airlineish'
@@ -91,6 +90,7 @@ set nottimeout ttimeoutlen=-1
 set cscopetag cscoperelative
 set diffopt+=vertical
 set undofile
+set grepprg=rg\ --vimgrep\ --no-heading
 
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 1
 let g:terminal_scrollback_buffer_size = 4096
