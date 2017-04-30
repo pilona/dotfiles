@@ -1,5 +1,11 @@
 filetype off
 
+" Bypass pyenv or virtualenv. Just use the user-local package, rather than
+" expecting the current Python env to be sane, especially if being developed
+" in, moreso if foreign.
+let g:python_host_prog = '/usr/bin/python2'
+let g:python3_host_prog = '/usr/bin/python3'
+
 set rtp+=~/.config/nvim/bundle/vundle/
 call vundle#rc()
 
