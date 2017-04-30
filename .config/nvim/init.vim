@@ -161,3 +161,5 @@ inoremap <C-l> <Del>
 " https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
 nnoremap <expr> n  'Nn'[v:searchforward]
 nnoremap <expr> N  'nN'[v:searchforward]
+
+nnoremap du :silent diffupdate<CR>
