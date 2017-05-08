@@ -10,7 +10,6 @@ set rtp+=~/.config/nvim/bundle/vundle/
 call vundle#rc()
 
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'chrisbra/csv.vim'
 Plugin 'chrisbra/NrrwRgn'
 Plugin 'chrisbra/Recover.vim'
 Plugin 'chrisbra/unicode.vim'
