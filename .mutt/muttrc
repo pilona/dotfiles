@@ -31,9 +31,11 @@ bind pager g top
 # Should only delete the message you can currently see in the pager.
 bind pager d delete-message
 # Mutt doesn't have modes or motions like Vi or Vim, so we emulate.
+bind index d noop
 bind index dd delete-message
 bind index dt delete-subthread
 bind index dp delete-thread  # p for parent, in a sense
+bind index u noop
 bind index uu undelete-message
 bind index ut undelete-subthread
 bind index up undelete-thread
@@ -49,6 +51,7 @@ bind pager,index \Cd half-down
 bind pager,index \Cu half-up
 bind pager,index \Ce next-line
 bind pager,index \Cy previous-line
+bind pager,index r noop
 bind pager,index rr reply
 bind pager,index rg group-reply
 bind pager,index rl list-reply
