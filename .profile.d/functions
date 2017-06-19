@@ -403,8 +403,20 @@ Infrared() {
     "$BROWSER" 'http://weather.gc.ca/satellite/satellite_anim_e.html?sat=goes&area=ecan&type=1070'
 }
 
+River() {
+    "$BROWSER" 'http://www.ottawariver.ca/river-levels-flows.php'
+}
+
 Canal() {
     "$BROWSER" "http://www.ncc-ccn.gc.ca/rideau-canal-skateway/"
+}
+
+Ski() {
+    "$BROWSER" 'http://www.ncc-ccn.gc.ca/places-to-visit/gatineau-park/ski-conditions'
+}
+
+Traffic() {
+    "$BROWSER" 'http://traffic.ottawa.ca/map/intersections?lang=en'
 }
 
 Scan() {
