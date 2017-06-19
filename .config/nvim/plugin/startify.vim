@@ -6,6 +6,7 @@ let g:startify_change_to_vcs_root = 1
 let g:startify_commands = [
     \ { 'u': ['Update plugins', 'PluginUpdate'] },
     \ { 'U': ['Unicode table', 'UnicodeTable'] },
+    \ { 'd': ['Digraph table', 'help digraph-table'] },
     \ { '+': ['Clipboard', 'normal eV"+p'] },
     \ { '*': ['Selection', 'normal eV"*p'] },
     \ ]
