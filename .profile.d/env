@@ -13,6 +13,7 @@ COLOR_BLUE=4
 COLOR_MAGENTA=5
 COLOR_CYAN=6
 COLOR_WHITE=7
+export PAGER='less'
 export LESS='FRXS'
 export LESS_TERMCAP_mb="$(tput bold; tput setaf $COLOR_RED)"
 export LESS_TERMCAP_md="$(tput bold; tput setaf $COLOR_RED)"
