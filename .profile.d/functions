@@ -526,7 +526,7 @@ RubyCVE() {
 }
 
 GetPassword() {
-    scrypt dec ~/Documents/.passdb/"$1" | xclip -selection clipboard
+    scrypt dec ~/Documents/.passdb/"$1" | xclip -selection clipboard -loops 1
 }
 
 _scryptSave() {
@@ -538,7 +538,7 @@ _scryptSave() {
         return 1
     fi
 
-    xclip -filter -selection clipboard \
+    xclip -filter -selection clipboard -loops 1 \
       | scrypt enc /dev/stdin ~/Documents/.passdb/"$1"
 }
 
