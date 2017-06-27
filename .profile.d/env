@@ -19,7 +19,7 @@ export LESS_TERMCAP_mb="$(tput bold; tput setaf $COLOR_RED)"
 export LESS_TERMCAP_md="$(tput bold; tput setaf $COLOR_RED)"
 export LESS_TERMCAP_me="$(tput sgr0)"
 export LESS_TERMCAP_se="$(tput sgr0)"
-export LESS_TERMCAP_so="$(tput bold; tput setab $COLOR_BLUE; tput setaf $COLOR_YELLOW)"
+export LESS_TERMCAP_so="$(tput bold; tput setab $COLOR_MAGENTA; tput setaf $COLOR_WHITE)"
 export LESS_TERMCAP_ue="$(tput sgr0)"
 export LESS_TERMCAP_us="$(tput bold; tput setaf $COLOR_GREEN)"
 
