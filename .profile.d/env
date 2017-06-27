@@ -5,6 +5,7 @@ export ENV="${HOME}/.rc"
 
 SHELL="$(realpath /proc/$$/exe)"
 
+# See <curses.h>/terminfo(5)
 COLOR_RED=1
 COLOR_GREEN=2
 COLOR_YELLOW=3
