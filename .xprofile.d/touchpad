@@ -1,1 +1,40 @@
 # vim: ft=sh
+
+# https://unix.stackexchange.com/questions/90572/how-can-i-set-mouse-sensitivity-not-just-mouse-acceleration?rq=1
+# https://wiki.ubuntu.com/X/InputCoordinateTransformation
+#
+# > By changing this property we can increase the pointer speed. It is a
+# > transformation matrix, used to calculate a pointer movement.
+# > From the link:
+# >
+# > > By default, the CTM for every input device in X is the identity matrix.
+# > > As an example, lets say you touch a touchscreen at point (400, 197) on
+# > > the screen:
+# >
+# > ⎡ 1 0 0 ⎤   ⎡ 400 ⎤   ⎡ 400 ⎤
+# > ⎜ 0 1 0 ⎥ · ⎜ 197 ⎥ = ⎜ 197 ⎥
+# > ⎣ 0 0 1 ⎦   ⎣  1  ⎦   ⎣  1  ⎦
+# >
+# > > The X and Y coordinates of the device event are input in the second
+# > > matrix of the calculation. The result of the calculation is where the X
+# > > and Y coordinates of the event are mapped to the screen. As shown, the
+# > > identity matrix maps the device coordinates to the screen coordinates
+# > > without any changes.
+# >
+# > So, we want to increase the values according to x and y, thus increasing
+# > the pointer speed. An example from my PC:
+# >
+# >     $ xinput set-prop 10 142 \
+# >                       2.400000, 0.000000, 0.000000, \
+# >                       0.000000, 2.400000, 0.000000, \
+# >                       0.000000, 0.000000, 1.000000
+#
+# So set the sensitivity to 30%.
+# TODO: Invert the effect of the pressure axis.
+# - on the laptop trackpoint, increased pressure increases sensitivity
+# - on the Unicomp trackpoint, increased pressure *de*creases sensitivity
+xinput set-prop 'pointer:Unicomp Inc Unicomp 10x Kbrd R7_2_w_PS_R7_38' \
+                'Coordinate Transformation Matrix' \
+                0.4   0   0 \
+                  0 0.4   0 \
+                  0   0   1
