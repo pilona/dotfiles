@@ -1,7 +1,1 @@
 # vim: ft=sh
-
-# No tap to click
-for key in TapButton{1,2,3}; do
-    synclient ${key}=0
-done
-syndaemon -i 0.5 -k -R &
