@@ -33,72 +33,6 @@ deprecated() {
    "$@"
 }
 
-pacman() {
-    # pacman as root is 99% of the time interactive, so
-    # don't use less, as it'll screw things up.
-    [ "$(id -un)" = 0 ] && return command pacman "$@"
-    # Otherwise, page, because it should never be
-    # interactive, and it often dumps me screen fulls.
-    command pacman --color=always "$@" | less
-}
-
-PQE() {
-    command pacman -Qe | cut -d ' ' -f 1 | column -c $COLUMNS | less
-}
-
-PQESize() {
-    command pacman -Qie \
-      | awk 'BEGIN {
-                 ORS=" "
-                 OFMT="%.2f"
-             }
-
-             $1 == "Name" { print $3 }
-             $1 " " $2 == "Installed Size" {
-                 if ($4 > 1024) {
-                     printf OFMT " %s\n", $4/1024, "MiB"
-                 } else {
-                     printf OFMT " %s\n", $4, $5
-                 }
-             }' \
-      | column -t \
-      | column -c $COLUMNS \
-      | less
-}
-
-PQESize2() {
-    command pacman -Qie \
-      | awk 'BEGIN { ORS = " " }
-
-             $1 == "Name" { print $3 }
-
-             $1 " " $2 == "Installed Size" {
-                 size = $(NF-1)
-                 size *= 1024
-                 print size "\n"
-             }' \
-      | sort -rnk 2 \
-      | awk 'BEGIN {
-                 suffix[0] = "B"
-                 suffix[1] = "KiB"
-                 suffix[2] = "MiB"
-                 suffix[3] = "GiB"
-             }
-             $0 !~ /^[[:space:]]*$/ {
-                 name = $1
-                 size = $2
-                 oom  = 0
-                 while (size > 1024) {
-                     size /= 1024
-                     oom++
-                 }
-                 printf "%s %.2f %s\n", name, size, suffix[oom]
-             }' \
-      | column -t \
-      | column -c $COLUMNS \
-      | less
-}
-
 mail_account() {
     if [ -z "$M" ]; then
         if _isSchoolTime; then
@@ -455,15 +389,6 @@ MXToolBox() {
     else
         echo 'usage: MXToolBox <domain>' 1>&2
     fi
-}
-
-_pacmanQlPrettySearch() {
-    target="$1"
-    shift
-    command pacman -Ql "$@" \
-      | grep "$target" \
-      | awk -F / '{print $NF}' \
-      | column -c $COLUMNS
 }
 
 faketty() {
