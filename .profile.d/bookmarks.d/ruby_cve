@@ -1,0 +1,5 @@
+# vim: ft=sh
+
+RubyCVE() {
+   "$BROWSER" "https://web.nvd.nist.gov/view/vuln/search-results?query=Ruby&search_type=all&cves=on"
+}

@@ -1,0 +1,5 @@
+# vim: ft=sh
+
+Canal() {
+    "$BROWSER" 'http://www.ncc-ccn.gc.ca/rideau-canal-skateway/'
+}

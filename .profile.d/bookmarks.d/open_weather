@@ -1,0 +1,10 @@
+# vim: ft=sh
+
+OpenWeather() {
+   case $1 in
+      '') local url='http://openweathermap.org' ;;
+      'kanata') local url='http://openweathermap.org/city/5972863' ;;
+      'ottawa') local url='http://openweathermap.org/city/6094817' ;;
+   esac
+   "$BROWSER" "$url"
+}

@@ -1,0 +1,10 @@
+# vim: ft=sh
+
+MXToolBox() {
+    if [ $# = 1 ]; then
+        "$BROWSER" "http://mxtoolbox.com/domain/$1/?source=findmonitors"
+    else
+        echo 'usage: MXToolBox <domain>' 1>&2
+        return 1
+    fi
+}

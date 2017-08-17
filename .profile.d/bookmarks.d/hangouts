@@ -1,0 +1,5 @@
+# vim: ft=sh
+
+Hangouts() {
+    "$BROWSER" 'https://hangouts.google.com/start'
+}

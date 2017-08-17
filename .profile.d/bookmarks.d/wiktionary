@@ -1,0 +1,6 @@
+# vim: ft=sh
+
+Wiktionary() {
+    # TODO: percent-encode
+    "$BROWSER" "http://en.wiktionary.org/wiki/$1"
+}

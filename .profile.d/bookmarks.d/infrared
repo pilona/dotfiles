@@ -1,0 +1,5 @@
+# vim: ft=sh
+
+Infrared() {
+    "$BROWSER" 'http://weather.gc.ca/satellite/satellite_anim_e.html?sat=goes&area=ecan&type=1070'
+}

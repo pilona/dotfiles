@@ -1,0 +1,6 @@
+# vim: ft=sh
+
+Directions() {
+    # TODO: urlencode
+    "$BROWSER" "https://www.google.com/maps/dir/$1/$2"
+}

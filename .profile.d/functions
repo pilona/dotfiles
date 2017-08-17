@@ -141,10 +141,6 @@ FilterShellComment() {
     grep -v -e '^[[:space:]]*#' -e '^[[:space:]]*$' "$@"
 }
 
-UnicodeLookup() {
-    [ -n "$BROWSER" ] && "$BROWSER" "http://unicode.org/cldr/utility/character.jsp?a=$1"
-}
-
 hexlify() {
     if [ $# != 1 ]; then
         echo "usage: $0 <string>" 1>&2
@@ -267,47 +263,6 @@ UT2004() {
     popd .
 }
 
-Termium() {
-    local _lang
-    local _base
-    _lang=eng
-    _base="http://www.btb.termiumplus.gc.ca/tpv2alpha/alpha-eng.html?lang=${_lang}"
-    if [ $# = 0 ]; then
-        "$BROWSER"  "$_base"
-    else
-        "$BROWSER" "${_base}&i=&index=alt&__index=alt&srchtxt=$(python -c "import urllib.request; print(urllib.request.quote(\"$*\"))")&comencsrch.x=0&comencsrch.y=0"
-    fi
-}
-
-OPL() {
-    # TODO: Support other search forms
-    local _base
-    local _type
-    local _query
-    local _locale
-    _base=http://ottawa.bibliocommons.com/search
-    _type=keyword
-    _locale=en_CA
-    _query="$(python -c 'from sys import argv; print("+".join(argv[1:]))' "$@")"
-    "$BROWSER" "${_base}?locale=${_locale}&t=${_type}&q=${_query}"
-}
-
-Github() {
-    local _base
-    local _user
-    local _repo
-
-    _base="https://github.com"
-    _user="${${1%%/*}:-pilona}"
-    if grep -qF / <<< "$1"; then
-        _repo="${1##*/}"
-    else
-        _repo=
-    fi
-
-    "$BROWSER" "${_base}/${_user}/${_repo}"
-}
-
 Quote() {
     python -c "from urllib.parse import quote; print(quote('$*'))"
 }
@@ -316,54 +271,12 @@ UnQuote() {
     python -c "from urllib.parse import unquote; print(unquote('$*'))"
 }
 
-Weather() {
-    "$BROWSER" "http://weather.gc.ca/city/pages/on-118_metric_e.html"
-}
-
-OpenWeather() {
-   case $1 in
-      '') local url='http://openweathermap.org' ;;
-      'kanata') local url='http://openweathermap.org/city/5972863' ;;
-      'ottawa') local url='http://openweathermap.org/city/6094817' ;;
-   esac
-   "$BROWSER" "$url"
-}
-
-Radar() {
-    "$BROWSER" 'http://weather.gc.ca/radar/index_e.html?id=xft'
-}
-
-Infrared() {
-    "$BROWSER" 'http://weather.gc.ca/satellite/satellite_anim_e.html?sat=goes&area=ecan&type=1070'
-}
-
-River() {
-    "$BROWSER" 'http://www.ottawariver.ca/river-levels-flows.php'
-}
-
-Canal() {
-    "$BROWSER" "http://www.ncc-ccn.gc.ca/rideau-canal-skateway/"
-}
-
-Ski() {
-    "$BROWSER" 'http://www.ncc-ccn.gc.ca/places-to-visit/gatineau-park/ski-conditions'
-}
-
-Traffic() {
-    "$BROWSER" 'http://traffic.ottawa.ca/map/intersections?lang=en'
-}
-
 Scan() {
     scanimage --device='fujitsu:ScanSnap S510M:502537' \
               --mode Color \
               --source 'ADF Duplex' \
               --resolution 150 \
               "$@"
-}
-
-Wiktionary() {
-    # TODO: percent-encode
-    "$BROWSER" "http://en.wiktionary.org/wiki/$1"
 }
 
 NmapSSL() {
@@ -383,14 +296,6 @@ PDFCat() {
     gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile="$output" "$@"
 }
 
-MXToolBox() {
-    if [ $# = 1 ]; then
-        "$BROWSER" "http://mxtoolbox.com/domain/$1/?source=findmonitors"
-    else
-        echo 'usage: MXToolBox <domain>' 1>&2
-    fi
-}
-
 faketty() {
     script --quiet --command "$*" /dev/null
 }
@@ -401,10 +306,6 @@ fnmatch() {
         $1) return 0 ;;
          *) return 1 ;;
     esac
-}
-
-Route() {
-    "$BROWSER" "http://www.octranspo1.com/routes?lang=en&date=$(date +%Y%m%d)&rte=$1"
 }
 
 chomp() {
@@ -439,15 +340,6 @@ Duration() {
                 seconds = total
                 printf "%dh %dmn %ds\n", hours, minutes, seconds
              }'
-}
-
-Directions() {
-    # TODO: urlencode
-    "$BROWSER" "https://www.google.com/maps/dir/$1/$2"
-}
-
-RubyCVE() {
-   "$BROWSER" "https://web.nvd.nist.gov/view/vuln/search-results?query=Ruby&search_type=all&cves=on"
 }
 
 GetPassword() {
@@ -568,10 +460,6 @@ SSHAgent() {
     else
         eval "$(ssh-agent)"
     fi
-}
-
-Hangouts() {
-    "$BROWSER" 'https://hangouts.google.com/start'
 }
 
 EXIF() {

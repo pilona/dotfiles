@@ -1,0 +1,5 @@
+# vim: ft=sh
+
+Ski() {
+    "$BROWSER" 'http://www.ncc-ccn.gc.ca/places-to-visit/gatineau-park/ski-conditions'
+}
