@@ -1,0 +1,5 @@
+# vim: ft=sh
+
+CanadianStyle() {
+    "$BROWSER" 'http://www.btb.termiumplus.gc.ca/tpv2guides/guides/tcdnstyl/index-eng.html?lang=eng&lettr=chap_catlog&page=../srchparbychap'
+}
