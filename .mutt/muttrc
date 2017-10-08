@@ -43,7 +43,6 @@ unsidebar_whitelist *
 
 #auto_view text/calendar
 auto_view text/html # view html automatically
-auto_view application/msword
 alternative_order text/plain text/enriched text/html # save html for last
 bind attach <return> view-mailcap
 

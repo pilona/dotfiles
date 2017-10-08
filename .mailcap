@@ -1,5 +1,4 @@
 text/html; chromium %s; test=test -n "$DISPLAY"
 text/html; links -dump -width 80 %s; copiousoutput;
-application/msword; antiword %s; copiousoutput
 application/pdf; zathura %s; test=test -n "$DISPLAY"
 image/*;       sxiv %s; test=test -n "$DISPLAY"
