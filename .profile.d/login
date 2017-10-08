@@ -11,6 +11,10 @@ export PATH="$PATH:/opt/heroku/bin"
 export MANPATH="$HOME/.cabal/share/man:$MANPATH"
 export MANPATH="$HOME/.local/share/man:$MANPATH"
 
+# Plain older user, not unfortunate developer
+# https://johnpapa.net/how-to-use-npm-global-without-sudo-on-osx/
+export NODE_PATH="$HOME/.npm-packages/lib/node_modules:$NODE_PATH"
+
 export WM=i3
 
 . ~/.profile.d/env
