@@ -86,6 +86,7 @@ bind pager,index ]t next-thread
 bind pager,index [t previous-thread
 bind pager,index ]p next-thread
 bind pager,index [p parent-message
+bind generic <F1> help
 
 
 set alias_file = ~/.mutt/aliases
