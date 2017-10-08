@@ -14,7 +14,8 @@
     },
     ".asoundrc": {
         "type": "asoundrc",
-        "start": "speaker-test"
+        "start": "speaker-test",
+        "console": "alsamixer"
     },
     ".projections.json": {
         "type": "projections"
