@@ -1,6 +1,18 @@
 # vim: syntax=neomuttrc
 
-source ~/.mutt/accounts/$MAIL_ACCOUNT
+set my_prefix = ~/.local
+
+source muttrc.limit-current-thread
+source muttrc.progress
+source muttrc.reply-with-xorig
+source muttrc.compose-to-sender
+source $my_prefix/share/doc/neomutt/samples/gpg.rc
+
+source accounts/$MAIL_ACCOUNT
+
+source muttrc.notmuch
+set nm_default_uri = notmuch://$HOME/Documents/Mail
+virtual-mailboxes "All INBOXes" "notmuch://?query=tag:inbox"
 
 set realname              = "Alex Pilon"
 set sort                  = threads
@@ -17,6 +29,17 @@ set user_agent = no
 
 # Not modifying files in mail dir except with Maildir-aware programs
 set maildir_header_cache_verify = no
+
+# Messes with colours
+source muttrc.sidebar
+set sidebar_divider_char = │
+set sidebar_short_path = yes
+# No accounts right now have subfolders where the parent is also a proper folder.
+# E.g.:
+# - [Gmail] and [Gmail]/Sent Messages
+# - Archives and Archives/Primus
+set sidebar_folder_indent = no
+unsidebar_whitelist *
 
 #auto_view text/calendar
 auto_view text/html # view html automatically
@@ -66,13 +89,7 @@ bind pager,index [p parent-message
 set alias_file = ~/.mutt/aliases
 source $alias_file
 
-source 'if [ $(tput colors) = 256 ]; then \
-            cat ~/.mutt/color/solarized-dark-256; \
-        fi |'
-
 set ignore_list_reply_to
-
-source /etc/Muttrc.gpg.dist
 
 # Above is a generic script from upstream. Override **here**, not there.
 set pgp_use_gpg_agent        = yes
@@ -162,3 +179,5 @@ set abort_unmodified = no
 # TODO: Redo last command, using some cheap macro and variable trick, if
 #       possible
 # TODO: Figure out how to make forwarded messages not include header
+
+source $my_prefix/share/doc/neomutt/colorschemes/solarized-dark-256.neomuttrc
