@@ -20,10 +20,14 @@
         "type": "projections"
     },
     ".profile.d/*": {
+        "type": "profile"
+    },
+    ".profile": {
         "type": "profile",
         "alternate": ".rc"
     },
-    ".profile": {
-        "type": "profile"
+    ".rc": {
+        "type": "profile",
+        "alternate": ".profile"
     }
 }
