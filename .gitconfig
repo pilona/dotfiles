@@ -45,6 +45,8 @@
 	merged = branch --merged HEAD
 	unmerged = branch --no-merged HEAD
 
+	ls = ls-tree --name-only HEAD
+
 [commit]
 	gpgSign = true
 
