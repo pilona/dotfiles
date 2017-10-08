@@ -8,6 +8,8 @@ if [ -e ~/.rbenv ]; then
 else
    export GEM_HOME="$(ruby -e 'print Gem.user_dir')"
 fi
+
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 if [ -e ~/.pyenv ]; then
    eval "$(~/.pyenv/bin/pyenv init -)"
 fi
