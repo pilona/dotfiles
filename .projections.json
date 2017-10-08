@@ -10,7 +10,7 @@
         "type": "plugin"
     },
     ".config/nvim/bundle/": {
-        "type": "vundles"
+        "type": "vundle"
     },
     ".asoundrc": {
         "type": "asoundrc",
