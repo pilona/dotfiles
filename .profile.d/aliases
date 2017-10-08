@@ -92,7 +92,7 @@ alias pkgfile='deprecated pkgfile pacman -F'
 alias vim='deprecated vim nvim'
 alias wget='deprecated wget curl -LO'
 
-alias mutt='MAIL_ACCOUNT=$(mail_account) mutt'
+alias mutt='MAIL_ACCOUNT=$(mail_account) neomutt'
 
 alias Binaries='_pacmanQlPrettySearch bin/'
 alias Manpages='_pacmanQlPrettySearch man/'

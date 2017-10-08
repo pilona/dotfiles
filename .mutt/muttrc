@@ -1,3 +1,5 @@
+# vim: syntax=neomuttrc
+
 source ~/.mutt/accounts/$MAIL_ACCOUNT
 
 set realname              = "Alex Pilon"
