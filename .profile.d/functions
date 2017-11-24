@@ -95,7 +95,7 @@ SafeLDD() {
 
 
 ExtractSrc() {
-    grep -h -o -e 'src="[^"]*' -e "src='[^']*" "$@" | cut -b 6-
+    command grep -h -o -e 'src="[^"]*' -e "src='[^']*" "$@" | cut -b 6-
 }
 
 WWWExtractSrc() {
