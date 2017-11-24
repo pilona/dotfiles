@@ -343,7 +343,7 @@ Duration() {
 }
 
 GetPassword() {
-    scrypt dec ~/Documents/.passdb/"$1" | xclip -selection clipboard -loops 1
+    scrypt dec ~/Documents/.passdb/"$1" | xclip -selection clipboard -loops 2
 }
 
 _scryptSave() {
