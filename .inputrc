@@ -19,3 +19,5 @@ $endif
 
 set keymap vi
 set editing-mode vi
+
+set enable-bracketed-paste on
