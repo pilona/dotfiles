@@ -388,6 +388,12 @@ SOCKS() {
     ss -antpH '( dport = :socks )'
 }
 
+Microphone() {
+    ffmpeg -f alsa -i "${default:-$1}" \
+           -c libopus -application voip \
+           -f opus "./$(date -Is)".opus
+}
+
 MicrophoneScope() {
     ffplay -f alsa -i "${default:-$1}" -showmode 1
 }
