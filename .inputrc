@@ -1,6 +1,10 @@
 $include /etc/inputrc
 
-set editing-mode vi
+# The most important thing, complete like zsh
+Tab: menu-complete
+set show-all-if-ambiguous on
+set menu-complete-display-prefix on
+
 $if mode=vi
         set keymap vi-command
         Control-l: clear-screen
@@ -12,3 +16,6 @@ $if mode=vi
         set keymap vi-insert
         Control-l: clear-screen
 $endif
+
+set keymap vi
+set editing-mode vi
