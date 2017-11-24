@@ -124,6 +124,10 @@ set strict_threads = yes  # e.g., Subject: Co-op report, joined both GENBAND and
 set tilde = yes  # less emulation
 unset markers
 
+# SpamAssassin
+spam "X-Spam-Status: (Yes|No), score=([0-9.]+)" "%2/SA"
+spam "X-Spam-Flag: (YES|NO)" "yes/SA"
+
 # TODO: client-side spam filtering.
 # TODO: bind imap-fetch-mail
 # TODO: exec collapse-all; set sort_aux = reverse-data, so
