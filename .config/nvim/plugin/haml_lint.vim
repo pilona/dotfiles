@@ -81,3 +81,4 @@ if g:vimhamllint_keymap == 1
 endif
 
 let &cpo = s:save_cpo
+let g:vimhamllint_hamllint_cmd = '~/.gem/ruby/2.4.0/bin/haml-lint'
