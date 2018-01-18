@@ -1,5 +1,5 @@
 # vim: ft=sh
 
 Route() {
-    "$BROWSER" "http://www.octranspo1.com/routes?lang=en&date=$(date +%Y%m%d)&rte=$1"
+    "$BROWSER" "https://www.octranspo.com/route/rte-timetable-text?rte=$1&lang=en&date=$(date +%Y%m%d)"
 }

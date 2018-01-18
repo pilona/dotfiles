@@ -6,7 +6,7 @@ OPL() {
     local _type
     local _query
     local _locale
-    _base=http://ottawa.bibliocommons.com/search
+    _base=https://ottawa.bibliocommons.com/search
     _type=keyword
     _locale=en_CA
     _query="$(python -c 'from sys import argv; print("+".join(argv[1:]))' "$@")"

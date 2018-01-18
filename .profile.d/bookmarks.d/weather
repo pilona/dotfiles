@@ -1,5 +1,5 @@
 # vim: ft=sh
 
 Weather() {
-    "$BROWSER" "http://weather.gc.ca/city/pages/on-118_metric_e.html"
+    "$BROWSER" "https://weather.gc.ca/city/pages/on-118_metric_e.html"
 }

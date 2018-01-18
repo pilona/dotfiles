@@ -1,5 +1,5 @@
 # vim: ft=sh
 
 Radar() {
-    "$BROWSER" 'http://weather.gc.ca/radar/index_e.html?id=xft'
+    "$BROWSER" 'https://weather.gc.ca/radar/index_e.html?id=xft'
 }

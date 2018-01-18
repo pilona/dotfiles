@@ -1,5 +1,5 @@
 # vim: ft=sh
 
 Traffic() {
-    "$BROWSER" 'http://traffic.ottawa.ca/map/intersections?lang=en'
+    "$BROWSER" 'https://traffic.ottawa.ca/map/intersections?lang=en'
 }

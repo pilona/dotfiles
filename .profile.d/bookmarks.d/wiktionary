@@ -2,5 +2,5 @@
 
 Wiktionary() {
     # TODO: percent-encode
-    "$BROWSER" "http://en.wiktionary.org/wiki/$1"
+    "$BROWSER" "https://en.wiktionary.org/wiki/$1"
 }

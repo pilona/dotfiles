@@ -1,5 +1,5 @@
 # vim: ft=sh
 
 River() {
-    "$BROWSER" 'http://www.ottawariver.ca/river-levels-flows.php'
+    "$BROWSER" 'https://www.ottawariver.ca/river-levels-flows.php'
 }

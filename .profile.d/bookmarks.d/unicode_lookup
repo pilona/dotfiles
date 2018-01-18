@@ -1,5 +1,5 @@
 # vim: ft=sh
 
 UnicodeLookup() {
-    "$BROWSER" "http://unicode.org/cldr/utility/character.jsp?a=$1"
+    "$BROWSER" "https://unicode.org/cldr/utility/character.jsp?a=$1"
 }

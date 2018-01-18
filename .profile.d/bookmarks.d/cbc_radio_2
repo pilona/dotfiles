@@ -1,5 +1,5 @@
 # vim: ft=sh
 
 CBCRadio2() {
-    mpv 'http://cbc_r2_tor.akacast.akamaistream.net/7/364/451661/v1/rc.akacast.akamaistream.net/cbc_r2_tor'
+    mpv 'https://cbc_r2_tor.akacast.akamaistream.net/7/364/451661/v1/rc.akacast.akamaistream.net/cbc_r2_tor'
 }
