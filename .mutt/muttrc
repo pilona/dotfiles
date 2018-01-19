@@ -8,6 +8,9 @@ source muttrc.reply-with-xorig
 source muttrc.compose-to-sender
 source $my_prefix/share/doc/neomutt/samples/gpg.rc
 
+source muttrc.new-mail
+set new_mail_command="notify-send 'New Email in $MAIL_ACCOUNT' '%n new messages, %u unread.'"
+
 source accounts/$MAIL_ACCOUNT
 
 source muttrc.notmuch

@@ -15,6 +15,7 @@ case "$WM" in
         ;;
 
     i3)
+        dunst &
         ;;
     *)
         xbindkeys
