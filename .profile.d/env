@@ -42,3 +42,5 @@ if [ -n "$DISPLAY" ]; then
 else
     export BROWSER=links
 fi
+
+export GPG_TTY="$(tty)"

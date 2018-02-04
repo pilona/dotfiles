@@ -17,6 +17,10 @@ export NODE_PATH="$HOME/.npm-packages/lib/node_modules:$NODE_PATH"
 
 export WM=i3
 
+if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
+    export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+fi
+
 . ~/.profile.d/env
 
 if [ "$(tty)" = /dev/tty1 ]; then

@@ -3,3 +3,5 @@
 if [ -z "$DESKTOP_SESSION" ]; then
     run-desktop.py --autostart
 fi
+
+gpg-connect-agent updatestartuptty /bye
