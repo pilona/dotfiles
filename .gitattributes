@@ -6,3 +6,4 @@
 lib/profile                         diff=nodiff
 .local/share/love/mari0/options.txt diff=nodiff
 .config/retroarch/retroarch.cfg     diff=nodiff
+.mozilla/firefox/na5h8tcm.default/prefs.js diff=nodiff
