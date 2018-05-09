@@ -577,3 +577,13 @@ Screencast() {
 CBCRadio2() {
     mpv 'http://cbc_r2_tor.akacast.akamaistream.net/7/364/451661/v1/rc.akacast.akamaistream.net/cbc_r2_tor'
 }
+
+awless() {
+    command aws --color on "$@" | less
+}
+
+EC2() {
+    awless ec2 describe-instances \
+               --query 'Reservations[*].Instances[*].{ID:InstanceId,Type:InstanceType,Name:Tags[?Key==`Name`] | [0].Value,IP:PublicIpAddress}' \
+               "$@"
+}
