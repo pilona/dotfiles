@@ -35,11 +35,14 @@ alias Startpage='$BROWSER "https://startpage.com/do/mypage.pl?prf=42d1c9d47b6916
 
 alias steam='STEAM_FRAME_FORCE_CLOSE=1 steam'
 
+# --on-top
 # --on-all-workspaces?
 # --autosync=1 or 30?
 # --heartbeat to work around --stop-screensaver not working?
 # --wid=0 to draw to root window
-#alias mpv='mpv --no-border --force-window --ontop --idle'
+#alias MPV.app='mpv --no-border --force-window --idle --keep-open'
+alias tct='mpv --quiet --vo=tct'
+alias mpved='mpv --wid=$(NetActiveWindow)'
 alias clisp='clisp --quiet'
 alias javadebug='java -Xdebug -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=y'
 
