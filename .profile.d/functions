@@ -534,6 +534,10 @@ Man() {
     PAGER='nvim -c set\ ft=man -' man "$@"
 }
 
+Man.vim() {
+    nvim man://"$1"
+}
+
 LookIn() {
     ffmpeg -f v4l2 -i /dev/video0 -f mpegts -r 1 'tcp://[::1]:5000?listen=1'
 }
