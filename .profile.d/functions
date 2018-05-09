@@ -432,6 +432,10 @@ EOF
     rmdir "$tmpdir"
 }
 
+xtitle() {
+    wmctrl -r :ACTIVE: -N "$*"
+}
+
 title() {
     printf '%s%s%s\n' "$(tput tsl)" "${*:-$(cat)}" "$(tput fsl)"
 }
