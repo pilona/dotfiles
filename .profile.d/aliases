@@ -68,7 +68,7 @@ alias lu='ls -U'
 alias l1='command ls -1'
 alias llt='ls -lt'
 
-alias n='newsbeuter -q'
+alias n='newsboat -q'
 
 alias grep='grep -E --color=auto'
 
