@@ -107,6 +107,7 @@ alias time='command time'
 alias r='rg --pretty'
 alias g='rg --pretty'
 alias ag='deprecated ag rg --pretty -i'
+alias rgg='rg --files --glob'
 
 # Force myself to use near-ubiquitous util-linux hexdump
 # NeoVim doesn't include it and don't rely on system having Vim
