@@ -118,3 +118,5 @@ alias vncviewer='vncviewer -DotWhenNoCursor -FullscreenSystemKeys'
 
 alias ffmpeg='ffmpeg -hide_banner'
 alias ffprobe='ffprobe -hide_banner'
+
+alias youtube-dl='youtube-dl --xattrs'
