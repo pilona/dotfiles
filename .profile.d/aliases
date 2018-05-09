@@ -11,6 +11,7 @@ alias bc='bc -q -l'
 
 alias df='df -h'
 alias du='du -h'
+alias free='free --human'
 
 alias pdb='ipython --pdb'
 alias pytrace="python -m trace --ignore-dir /usr/lib/python3.* --trace"
