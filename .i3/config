@@ -40,7 +40,8 @@ bindsym $mod+Control+p exec --no-startup-id \
           -lh $dmenu_lh < /dev/null \
       | xargs -d $'\n' i3-msg -t command
 bindsym $mod+o exec --no-startup-id \
-    ~/.i3/dmenu_tag -fn $dmenu_font \
+    ~/.i3/dmenu_tag -- \
+                    -fn $dmenu_font \
                     -nb $normbgcolor \
                     -nf $normfgcolor \
                     -sb $selbgcolor \
@@ -48,7 +49,8 @@ bindsym $mod+o exec --no-startup-id \
                     -lh $dmenu_lh \
       | xargs i3-msg workspace
 bindsym $mod+Shift+o exec --no-startup-id \
-    ~/.i3/dmenu_tag -fn $dmenu_font \
+    ~/.i3/dmenu_tag -- \
+                    -fn $dmenu_font \
                     -nb $normbgcolor \
                     -nf $normfgcolor \
                     -sb $selbgcolor \
@@ -56,7 +58,8 @@ bindsym $mod+Shift+o exec --no-startup-id \
                     -lh $dmenu_lh \
       | xargs i3-msg move to workspace
 bindsym $mod+Shift+t exec --no-startup-id \
-    ~/.i3/dmenu_title -fn $dmenu_font \
+    ~/.i3/dmenu_title -- \
+                      -fn $dmenu_font \
                       -nb $normbgcolor \
                       -nf $normfgcolor \
                       -sb $selbgcolor \

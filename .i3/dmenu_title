@@ -1,8 +1,13 @@
 #! /usr/bin/env python3
 
+from argparse import ArgumentParser, REMAINDER
 import subprocess
-from json import loads
-import sys
+
+
+argument_parser = ArgumentParser(description=__doc__)
+argument_parser.add_argument('dmenu_args', nargs=REMAINDER,
+                             help='Command line arguments'
+                                  ' to pass through to dmenu')
 
 net_active_window = subprocess.run(['xprop',
                                     '-root',
@@ -16,7 +21,8 @@ net_active_window = subprocess.run(['xprop',
                               .stdout \
                               .rsplit('\t', maxsplit=1)[-1]
 
-title = subprocess.run(["dmenu"] + sys.argv[1:],
+dmenu_args = argument_parser.parse_args().dmenu_args
+title = subprocess.run(["dmenu"] + dmenu_args[1:],
                        check=True,
                        stdin=subprocess.DEVNULL,
                        stdout=subprocess.PIPE,

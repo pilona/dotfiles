@@ -1,24 +1,43 @@
 #! /usr/bin/python
 
-from collections import OrderedDict  # Python <3.6
-from subprocess import Popen, check_output, check_call, PIPE
-from json import loads
-import sys
+'''
+Feed i3 workspace list into dmenu, and print selected
+'''
 
-workspaces = loads(check_output(["i3-msg", "-t", "get_workspaces"]).decode(),
-                   object_pairs_hook=OrderedDict)
-#names = sorted(workspace['name'] for workspace in workspaces)
-names = [workspace['name'] for workspace in workspaces]
+from typing import Iterable, List
+from subprocess import Popen, check_output, PIPE
+from argparse import ArgumentParser, REMAINDER
+import json
 
-dmenu = Popen(["dmenu"] + sys.argv[1:], stdin=PIPE, stdout=PIPE)
-for name in names:
-    dmenu.stdin.write(name.encode() + b'\n')
 
-stdout, stderr = dmenu.communicate()
-if dmenu.returncode == 0:
-    message = stdout
-    file = sys.stdout
-else:
-    message = stderr
-    file = sys.stderr
-print(message.decode().strip(), file=file)
+argument_parser = ArgumentParser(description=__doc__)
+argument_parser.add_argument('dmenu_args', nargs=REMAINDER,
+                             help='Command line arguments'
+                                  ' to pass through to dmenu')
+
+
+def workspace_names() -> Iterable[str]:
+    workspaces = json.loads(
+        check_output(["i3-msg", "-t", "get_workspaces"]).decode()
+    )
+    return [workspace['name'] for workspace in workspaces]
+
+
+def dmenu(lines: Iterable[str], dmenu_args: List[str]) -> str:
+    dmenu = Popen(["dmenu"] + dmenu_args,
+                  stdin=PIPE,
+                  stdout=PIPE)
+    for line in lines:
+        dmenu.stdin.write(line.encode() + b'\n')
+    stdout, stderr = dmenu.communicate()
+    if dmenu.returncode == 0:
+        return stdout.decode().strip()
+    else:
+        argument_parser.exit(status=dmenu.returncode,
+                             message=stderr)
+
+
+if __name__ == '__main__':
+    args = argument_parser.parse_args()
+    print(dmenu(workspace_names(),
+                args.dmenu_args[1:]))
