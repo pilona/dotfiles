@@ -1,3 +1,11 @@
 [global]
     font = xos4 Terminus 28
     geometry = "0x24-0+38"
+    show_indicators = true
+    dmenu = ~/.local/bin/dmenu -fn xos4 Terminess Powerline:pixelsize=32 -nb #101010 -nf #dddddd -sb #224488 -sf #cc9a1c -lh 38 -f
+    browser = ~/.local/bin/chromium
+
+[shortcuts]
+    close = mod4+Next
+    history = mod4+Prior
+    context = mod4+Menu
