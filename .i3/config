@@ -25,7 +25,8 @@ bindsym $mod+p exec --no-startup-id \
               -nf $normfgcolor \
               -sb $selbgcolor \
               -sf $selfgcolor \
-              -lh $dmenu_lh
+              -lh $dmenu_lh \
+              -f
 bindsym $mod+Shift+p exec --no-startup-id \
     dmenu_desktop -- -fn $dmenu_font \
                      -nb $normbgcolor \
@@ -33,14 +34,16 @@ bindsym $mod+Shift+p exec --no-startup-id \
                      -sb $selbgcolor \
                      -sf $selfgcolor \
                      -lh $dmenu_lh \
-                     -i
+                     -i \
+                     -f
 bindsym $mod+Control+p exec --no-startup-id \
     dmenu -fn $dmenu_font \
           -nb $normbgcolor \
           -nf $normfgcolor \
           -sb $selbgcolor \
           -sf $selfgcolor \
-          -lh $dmenu_lh < /dev/null \
+          -lh $dmenu_lh \
+          -f < /dev/null \
       | xargs -d $'\n' i3-msg -t command
 bindsym $mod+o exec --no-startup-id \
     ~/.i3/dmenu_tag -- \
@@ -50,6 +53,7 @@ bindsym $mod+o exec --no-startup-id \
                     -sb $selbgcolor \
                     -sf $selfgcolor \
                     -lh $dmenu_lh \
+                    -f \
       | xargs i3-msg workspace
 bindsym $mod+Shift+o exec --no-startup-id \
     ~/.i3/dmenu_tag -- \
@@ -59,6 +63,7 @@ bindsym $mod+Shift+o exec --no-startup-id \
                     -sb $selbgcolor \
                     -sf $selfgcolor \
                     -lh $dmenu_lh \
+                    -f \
       | xargs i3-msg move to workspace
 bindsym $mod+Shift+t exec --no-startup-id \
     ~/.i3/dmenu_title -- \
@@ -68,6 +73,7 @@ bindsym $mod+Shift+t exec --no-startup-id \
                       -sb $selbgcolor \
                       -sf $selfgcolor \
                       -lh $dmenu_lh \
+                      -f \
       | xargs i3-msg workspace
 bindsym $mod+f exec --no-startup-id \
     ~/.i3/dmenu_win -- \
