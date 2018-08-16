@@ -10,6 +10,9 @@ set $dmenu_lines "41"
 
 floating_modifier $mod
 
+focus_follows_mouse yes
+mouse_warping none
+
 bindsym $mod+Shift+Return exec --no-startup-id st
 
 bindsym $mod+Shift+c kill
