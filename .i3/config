@@ -150,6 +150,7 @@ bindsym $mod+x layout splith
 
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
+bindsym $mod+Ctrl+space sticky toggle
 
 bindsym $mod+comma focus output left
 bindsym $mod+period focus output right
