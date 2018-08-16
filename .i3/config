@@ -192,6 +192,7 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 bindsym $mod+Shift+q exit
+bindsym $mod+$altmod+l --release exec --no-startup-id slock
 
 bindsym $mod+r reload
 bindsym $mod+Shift+r restart
