@@ -4,6 +4,7 @@ set $altmod Mod1
 font pango:Terminess Powerline 24px
 set $dmenu_font "Terminess Powerline:pixelsize=24"
 set $dmenu_lh "32"
+set $dmenu_lines "41"
 
 floating_modifier $mod
 
@@ -66,6 +67,32 @@ bindsym $mod+Shift+t exec --no-startup-id \
                       -sf $selfgcolor \
                       -lh $dmenu_lh \
       | xargs i3-msg workspace
+bindsym $mod+f exec --no-startup-id \
+    ~/.i3/dmenu_win -- \
+                    -a \
+                    -- \
+                    -fn $dmenu_font \
+                    -nb $normbgcolor \
+                    -nf $normfgcolor \
+                    -sb $selbgcolor \
+                    -sf $selfgcolor \
+                    -lh $dmenu_lh \
+                    -i \
+                    -f \
+                    -l $dmenu_lines
+bindsym $mod+Shift+f exec --no-startup-id \
+    ~/.i3/dmenu_win -- \
+                    -R \
+                    -- \
+                    -fn $dmenu_font \
+                    -nb $normbgcolor \
+                    -nf $normfgcolor \
+                    -sb $selbgcolor \
+                    -sf $selfgcolor \
+                    -lh $dmenu_lh \
+                    -i \
+                    -f \
+                    -l $dmenu_lines
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down
