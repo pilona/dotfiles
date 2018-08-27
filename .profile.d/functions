@@ -629,3 +629,13 @@ EC2SG() {
                                                                       Proto:IpProtocol}}' \
             "$@"
 }
+
+TLSCert() {
+    openssl s_client ${3:+-starttls $3} \
+                     -servername "$1" \
+                     -connect "$1:${2:-443}" \
+                     </dev/null \
+      | sed -n '/BEGIN CERTIFICATE/,/END CERTIFICATE/p' \
+      | openssl x509 -noout -text \
+      | less
+}
