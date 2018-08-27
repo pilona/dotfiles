@@ -322,6 +322,30 @@ ROVNC() {
                 "$@"
 }
 
+RWVNC() {
+    x0vncserver -ZlibLevel=9 \
+                -SecurityTypes=Plain \
+                -PlainUsers="$(id -u)" \
+                "$@"
+}
+
+# Don't have '--' parsing, much less proper command line parsing.
+SSHVNC() (
+    #local ssh_pid
+    ssh -L 5900:localhost:5900 \
+        -f \
+        "$@" \
+        DISPLAY=:0.0 \
+        x0vncserver -ZlibLevel=9 \
+                    -SecurityTypes=Plain \
+                    -PlainUsers='"$(id -u)"'
+    #ssh_pid="$!"
+    #trap return CHLD
+    #trap "kill $ssh_pid" INT
+    vncviewer -SecurityTypes=Plain localhost
+    #kill "$ssh_pid"
+)
+
 Duration() {
     mediainfo ${*:-*} \
       | awk 'BEGIN {
