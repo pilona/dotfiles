@@ -55,6 +55,7 @@ image/jpg=sxiv.desktop
 image/png=sxiv.desktop
 image/tiff=sxiv.desktop
 image/x-bmp=sxiv.desktop
+x-scheme-handler/mailto=chromium.desktop
 
 [Added Associations]
 audio/aac=mpv.desktop;
