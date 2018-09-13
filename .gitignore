@@ -3,5 +3,6 @@
 #
 # ignore non-dotfiles
 *
+/.*_history
 # ignore dotfiles
 .*
