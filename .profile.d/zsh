@@ -6,6 +6,7 @@ set bell-style visual
 
 autoload -U bashcompinit && bashcompinit
 autoload -U compinit && compinit
+command -v aws_zsh_completer.sh >/dev/null 2>&1 && . aws_zsh_completer.sh
 eval "$(pandoc --bash-completion)"
 
 KEYTIMEOUT=1
