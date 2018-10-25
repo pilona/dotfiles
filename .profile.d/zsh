@@ -11,6 +11,8 @@ eval "$(pandoc --bash-completion)"
 
 KEYTIMEOUT=1
 
+# Y = y$, not yy
+bindkey -M vicmd 'Y' vi-yank-eol
 bindkey -M vicmd '/' history-incremental-search-backward
 bindkey -M vicmd '?' history-incremental-search-forward
 bindkey -M isearch "$(tput cuu1)" history-incremental-search-backward
