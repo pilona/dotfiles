@@ -13,7 +13,7 @@ argument_parser.add_argument('dmenu_args', nargs=REMAINDER,
 
 args = argument_parser.parse_args()
 
-windows = {title.strip(): winid
+windows = {(title and title[0] or '').strip(): winid
            for line
            in subprocess.run(['wmctrl', '-l'],
                              check=True,
@@ -23,7 +23,8 @@ windows = {title.strip(): winid
                              universal_newlines=True)
                         .stdout
                         .splitlines()
-           for winid, _desktop, _hostname, title
+           # Windows may not always have a title.
+           for winid, _desktop, _hostname, *title
            in (line.split(maxsplit=3),)}
 titles = subprocess.run(["dmenu"] + args.dmenu_args[1:],
                        check=True,
