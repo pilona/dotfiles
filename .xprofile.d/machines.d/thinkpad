@@ -2,6 +2,5 @@
 
 case "$(cat /sys/devices/virtual/dmi/id/product_version)" in
     ThinkPad*)
-        setxkbmap -option altwin:swap_lalt_lwin
         ;;
 esac

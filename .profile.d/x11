@@ -12,7 +12,6 @@ alias mupen64plus='mupen64plus --windowed'
 alias xclock='xclock -update 1 -bg palegreen'
 
 FixKeyboard() (
-    . ~/.xprofile.d/machines.d/thinkpad
     . ~/.xprofile.d/keyboard
     . ~/.xprofile.d/touchpad
 )
