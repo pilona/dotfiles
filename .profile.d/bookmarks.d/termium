@@ -11,3 +11,39 @@ Termium() {
         "$BROWSER" "${_base}&i=&index=alt&__index=alt&srchtxt=$(python -c "import urllib.request; print(urllib.request.quote(\"$*\"))")&comencsrch.x=0&comencsrch.y=0"
     fi
 }
+
+Abbreviation() {
+    # Dirty less trick to preload search so we can “n” to each next search.
+    LESS="${LESS}"'+/^-\K$' \
+    abbreviation_en="$*" psql termium -Xq <<'PSQL' | less -FRXS
+        \set abbreviation_en `printf '%s' "$abbreviation_en"`
+        \x on
+        SELECT * FROM termium.raw
+        WHERE abbreviation_en = :'abbreviation_en'
+        ORDER BY term_en, subject_en;
+PSQL
+}
+
+Translate() {
+    # Dirty less trick to preload search so we can “n” to each next search.
+    LESS="${LESS}"'+/^-\K$' \
+    term_en="$*" psql termium -Xq <<'PSQL' | less -FRXS
+        \set term_en `printf '%s' "$term_en"`
+        \x on
+        SELECT * FROM termium.raw
+        WHERE term_en = :'term_en'
+        ORDER BY domaine_fr, terme_fr;
+PSQL
+}
+
+Traduire() {
+    # Dirty less trick to preload search so we can “n” to each next search.
+    LESS="${LESS}"'+/^-\K$' \
+    terme_fr="$*" psql termium -Xq <<'PSQL' | less -FRXS
+        \set terme_fr `printf '%s' "$terme_fr"`
+        \x on
+        SELECT * FROM termium.raw
+        WHERE terme_fr = :'terme_fr'
+        ORDER BY subject_en, term_en;
+PSQL
+}
