@@ -88,6 +88,8 @@ let g:terminal_scrollback_buffer_size = 4096
 nnoremap Y y$
 nnoremap yY :%yank <C-r>=v:register<CR><CR>
 nnoremap dD :%delete <C-r>=v:register<CR><CR>
+" TODO: Repeatable/command version?
+nmap cC dDi
 
 nnoremap - <C-W>-
 nnoremap + <C-W>+
@@ -130,4 +132,18 @@ inoremap <C-l> <Del>
 nnoremap <expr> n  'Nn'[v:searchforward]
 nnoremap <expr> N  'nN'[v:searchforward]
 
+" https://github.com/mhinz/vim-galore#dont-lose-selection-when-shifting-sidewards
+xnoremap < <gv
+xnoremap > >gv
+" https://bluz71.github.io/2017/05/15/vim-tips-tricks.html#make-dot-work-over-visual-line-selections
+xnoremap . :normal .<CR>
+" Make macros work on each selected line individually, rather than making the
+" selection a prefix/input state; assume macros were recorded starting in
+" normal mode, and only meant to be run from normal mode.
+xnoremap @ :'<,'>:normal @
+
 nnoremap du :silent diffupdate<CR>
+
+" https://ddrscott.github.io/blog/2016/yank-without-jank/
+vnoremap <expr>y "my\"" . v:register . "y`y"
+vnoremap <expr>Y "my\"" . v:register . "Y`y"
