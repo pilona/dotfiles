@@ -1,0 +1,11 @@
+"unlet b:current_syntax
+"
+"syn include @SQL syntax/sql.vim
+"syntax region sqlJavascriptString
+"     \ matchgroup=javaScriptStringT
+"     \ start=~`\%(\%(--[^\r\n]*[\r\n]\)\|\_s\)*\%(ALTER\|BEGIN\|CALL\|COMMENT\|COMMIT\|CONNECT\|COPY\|CREATE\|DELETE\|DROP\|END\|EXPLAIN\|GRANT\|INSERT\|LOCK\|REFRESH\|RESET\|REVOKE\|ROLLBACK\|SELECT\|SET\|TRUNCATE\|UPDATE\|WITH\)~rs=s+1
+"     \ end=+`+
+"     \ contains=@SQL
+"
+"let b:current_syntax = "javascript"
+"     "\ start=~`\(--[^\r\n]*[\r\n]\)*\_s*\(ALTER\|BEGIN\|CALL\|COMMENT\|COMMIT\|CONNECT\|COPY\|CREATE\|DELETE\|DROP\|END\|EXPLAIN\|GRANT\|INSERT\|LOCK\|REFRESH\|RESET\|REVOKE\|ROLLBACK\|SELECT\|SET\|TRUNCATE\|UPDATE\|WITH\)~
