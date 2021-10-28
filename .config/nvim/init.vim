@@ -66,6 +66,8 @@ endif
 set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 set shiftround
 set autoindent
+set indentkeys-=0#
+set cinkeys-=0#
 set hlsearch
 set wildmenu
 set wildmode=longest:full
