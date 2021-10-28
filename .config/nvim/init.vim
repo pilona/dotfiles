@@ -47,21 +47,17 @@ Plugin 'vim-airline/vim-airline-themes'
 filetype plugin indent on
 syntax on
 
-if has("gui_running")
-    set guifont=Terminess\ Powerline\ 14
-    set guioptions=
-    set background=dark
+
+if &t_Co >= 256
+    "let g:rehash256 = 1 " too pale
+    colorscheme molokai
+    "colorscheme base16-monokai
 else
-    if &t_Co >= 256
-        "let g:rehash256 = 1 " too pale
-        colorscheme molokai
-    else
-        if &diff
-            colorscheme darkblue
-        endif
+    if &diff
+        colorscheme darkblue
     endif
-    set fillchars+=vert:█
 endif
+set fillchars+=vert:█
 
 set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 set shiftround
