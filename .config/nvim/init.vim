@@ -24,11 +24,17 @@ Plugin 'justinmk/vim-dirvish'
 Plugin 'mbbill/undotree'
 Plugin 'mhinz/vim-startify'
 Plugin 'michaeljsmith/vim-indent-object'
+Plugin 'navarasu/onedark.nvim'
 Plugin 'ngmy/vim-rubocop'
 Plugin 'nvie/vim-flake8'
+Plugin 'nvim-treesitter/nvim-treesitter'
 Plugin 'paranoida/vim-airlineish'
 Plugin 'PotatoesMaster/i3-vim-syntax'
-Plugin 'SirVer/ultisnips'
+Plugin 'reedes/vim-wordy'
+Plugin 'rliang/termedit.nvim'
+Plugin 'RRethy/nvim-base16'
+Plugin 'sainnhe/sonokai'
+Plugin 'tanvirtin/monokai.nvim'
 Plugin 'thinca/vim-visualstar'
 Plugin 'tomasr/molokai'
 Plugin 'tommcdo/vim-exchange'
@@ -45,8 +51,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
 filetype plugin indent on
-syntax on
-
+" tree-sitter does it for us at the right time
+"syntax on
 
 set guifont=Menlo:h24
 if &t_Co >= 256
@@ -70,7 +76,8 @@ set wildmenu
 set wildmode=longest:full
 set wmh=0
 set laststatus=2
-set foldmethod=syntax
+" tree-sitter now
+"set foldmethod=syntax
 set hidden
 set incsearch
 set autoread
