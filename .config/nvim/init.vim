@@ -148,3 +148,5 @@ nnoremap du :silent diffupdate<CR>
 " https://ddrscott.github.io/blog/2016/yank-without-jank/
 vnoremap <expr>y "my\"" . v:register . "y`y"
 vnoremap <expr>Y "my\"" . v:register . "Y`y"
+
+au TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=150, on_visual=true}
