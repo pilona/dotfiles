@@ -1,0 +1,102 @@
+filetype plugin indent on
+syntax on
+
+set guifont=Menlo:h24
+if &t_Co < 256 && &diff
+    colorscheme darkblue
+endif
+set fillchars+=vert:█
+
+set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+set shiftround
+set autoindent
+set indentkeys-=0#
+set cinkeys-=0#
+set hlsearch
+set wildmenu
+set wildmode=longest:full
+set wmh=0
+set laststatus=2
+set foldmethod=syntax
+set hidden
+set incsearch
+set autoread
+set spelllang=en_ca
+set nottimeout ttimeoutlen=-1
+set cscopetag cscoperelative
+set diffopt+=vertical
+set undofile
+"set listchars=eol:⏎:tab:↹·,extends:⇉,precedes:⇇,nbsp:␠,trail:␠,nbsp:␣
+set showbreak=↳\                " shown at the start of a wrapped line
+set sidescroll=1
+set grepprg=rg\ --vimgrep\ --no-heading
+set title
+set inccommand=nosplit
+set printoptions=paper:letter,header:0
+set listchars=tab:␉─,
+set list
+
+"let g:python_host_prog = '/usr/bin/python2'
+"let g:python3_host_prog = '/usr/bin/python3'
+let g:terminal_scrollback_buffer_size = 4096
+
+nnoremap Y y$
+nnoremap yY :%yank <C-r>=v:register<CR><CR>
+nnoremap dD :%delete <C-r>=v:register<CR><CR>
+nmap cC dDi
+nnoremap - <C-W>-
+nnoremap + <C-W>+
+nnoremap _ <C-W>_
+nnoremap <Bar> <C-w><Bar>
+nnoremap Q q:i
+cnoremap <C-O> <Up>
+nnoremap ZA :qa!<CR>
+nnoremap <silent> <Leader>t :tabs<CR>
+nnoremap <silent> <Leader>b :buffers<CR>
+nnoremap <silent> <BS> :nohlsearch<CR>
+nnoremap S :%s//g<Left><Left>
+nnoremap <expr> n  'Nn'[v:searchforward]
+nnoremap <expr> N  'nN'[v:searchforward]
+xnoremap < <gv
+xnoremap > >gv
+xnoremap . :normal .<CR>
+xnoremap @ :'<,'>:normal @
+nnoremap du :silent diffupdate<CR>
+vnoremap <expr>y "my\"" . v:register . "y`y"
+vnoremap <expr>Y "my\"" . v:register . "Y`y"
+nnoremap gs <nop>
+nnoremap <C-t> :sp +terminal<CR>
+nnoremap <C-s-t> :tabnew +terminal<CR>
+nnoremap [oL :set spelllang=en_CA<CR>
+nnoremap ]oL :set spelllang=fr_CA<CR>
+nnoremap <Leader>w :%s/\v\s+$//<CR>
+vnoremap <Leader>w :s/\v\s+$//<CR>
+
+au TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=150, on_visual=true}
+au BufWinEnter quickfix nnoremap <buffer> Q :q<CR>
+aut TermOpen,TermEnter term://* startinsert
+aut TermLeave term://* stopinsert
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+match ExtraWhitespace /[^\t]\zs\t/
+
+" TODO: autogroups instead.
+autocmd FileType diff syntax match diffRemoved /\v\[-.[^]]*-\]/
+autocmd FileType diff syntax match diffAdded /\v\{\+.[^}]*\+\}/
+autocmd FileType gitrebase set nowrap
+autocmd FileType mail setlocal complete+=k,s,kspell
+autocmd FileType mail setlocal completeopt+=longest
+autocmd FileType mail setlocal spell
+autocmd FileType mail inoremap <buffer> <Tab> <C-N>
+autocmd FileType mail inoremap <buffer> <S-Tab> <C-P>
+autocmd FileType mail normal gg
+autocmd FileType mail /^$/+1
+autocmd FileType make set noexpandtab
+autocmd FileType python set colorcolumn=80
+autocmd FileType python highlight Tab ctermbg=red guibg=red
+autocmd FileType text setlocal complete+=k,s,kspell
+autocmd FileType text setlocal completeopt+=longest
+autocmd FileType text setlocal spell
+autocmd FileType text inoremap <buffer> <Tab> <C-N>
+autocmd FileType text inoremap <buffer> <S-Tab> <C-P>
