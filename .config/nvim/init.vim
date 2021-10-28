@@ -48,6 +48,7 @@ filetype plugin indent on
 syntax on
 
 
+set guifont=Menlo:h24
 if &t_Co >= 256
     "let g:rehash256 = 1 " too pale
     colorscheme molokai
