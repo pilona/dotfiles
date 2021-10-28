@@ -1,1 +1,0 @@
-/home/alp/.local/src/neomutt/doc/neomutt-syntax.vim
