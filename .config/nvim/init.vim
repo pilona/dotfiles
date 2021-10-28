@@ -114,11 +114,6 @@ nnoremap <silent> <Leader>b :buffers<CR>
 nnoremap <silent> <BS> :nohlsearch<CR>
 nnoremap S :%s//g<Left><Left>
 
-" TODO: <C-S-T> instead? Oddly enough, what's below is almost somehow
-"       sensible.
-nnoremap <silent> <C-n> :tabnew +Startify<CR>
-nnoremap <silent> <C-p> :-tabnew +Startify<CR>
-
 " Conflict with Pmenu bindings
 "inoremap <C-e> <C-o><C-e>
 "inoremap <C-y> <C-o><C-y>

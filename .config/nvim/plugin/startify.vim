@@ -16,3 +16,6 @@ let g:startify_commands = [
 command -nargs=0 Sp :split +Startify<CR>
 command -nargs=0 VSp :vsplit +Startify<CR>
 command -nargs=0 Tp :tabnew +Startify<CR>
+
+nnoremap <silent> <C-n> :tabnew +Startify<CR>
+nnoremap <silent> <C-p> :-tabnew +Startify<CR>
