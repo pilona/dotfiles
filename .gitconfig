@@ -71,6 +71,10 @@
 [http]
 	postBuffer = 10485760
 
+[diff]
+	colorMoved = true
+	colorMovedWS = ignore-all-space
+
 [diff "nodiff"]
 	command = true
 
