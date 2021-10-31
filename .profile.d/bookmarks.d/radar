@@ -1,5 +1,5 @@
 # vim: ft=sh
 
 Radar() {
-    "$BROWSER" 'https://weather.gc.ca/radar/index_e.html?id=xft'
+    "$BROWSER" 'https://weather.gc.ca/map_e.html?layers=radar&zoom=10&center=45.33800941%2C-75.46185641&basemap=transport#wb-cont'
 }
