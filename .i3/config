@@ -241,7 +241,8 @@ bindsym $altmod+XF86AudioPrev exec --no-startup-id cmus-remote --seek -5
 
 bindsym XF86Eject exec --no-startup-id eject
 
-bindsym Print exec --no-startup-id sh -c "exec gm import -window root $(date -Ins).png"
+bindsym Print exec --no-startup-id ~/.i3/screenshot
+bindsym --release Shift+Print exec --no-startup-id ~/.i3/record
 
 bindsym $mod+Next exec --no-startup-id dunstctl close
 bindsym $mod+Prior exec --no-startup-id dunstctl history-pop

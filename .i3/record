@@ -1,0 +1,2 @@
+#! /bin/sh
+exec st -e sh -c 'ffmpeg -f x11grab -select_region 1 -i "$DISPLAY" -c h264 -y "$(date -Ins).mp4"; cat'

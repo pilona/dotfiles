@@ -1,0 +1,2 @@
+#! /bin/sh
+exec gm import -window root "$(date -Ins).png"
