@@ -14,8 +14,7 @@ Termium() {
 
 Abbreviation() {
     # Dirty less trick to preload search so we can “n” to each next search.
-    LESS="${LESS}"'+/^-\K$' \
-    abbreviation_en="$*" psql termium -Xq <<'PSQL' | less -FRXS
+    abbreviation_en="$*" psql termium -Xq <<'PSQL' | less -"${LESS:-FRXS}"'+/^-\K$'
         \set abbreviation_en `printf '%s' "$abbreviation_en"`
         \x on
         SELECT * FROM termium.raw
@@ -27,7 +26,7 @@ PSQL
 Translate() {
     # Dirty less trick to preload search so we can “n” to each next search.
     LESS="${LESS}"'+/^-\K$' \
-    term_en="$*" psql termium -Xq <<'PSQL' | less -FRXS
+    term_en="$*" psql termium -Xq <<'PSQL' | less -"${LESS:-FRXS}"'+/^-\K$'
         \set term_en `printf '%s' "$term_en"`
         \x on
         SELECT * FROM termium.raw
@@ -39,7 +38,7 @@ PSQL
 Traduire() {
     # Dirty less trick to preload search so we can “n” to each next search.
     LESS="${LESS}"'+/^-\K$' \
-    terme_fr="$*" psql termium -Xq <<'PSQL' | less -FRXS
+    terme_fr="$*" psql termium -Xq <<'PSQL' | less -"${LESS:-FRXS}"'+/^-\K$'
         \set terme_fr `printf '%s' "$terme_fr"`
         \x on
         SELECT * FROM termium.raw
