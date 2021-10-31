@@ -84,3 +84,6 @@
 
 [mergetool "nvim"]
 	cmd = nvim \"$MERGED\" -c \"normal ]nzRzt\"
+
+[init]
+	defaultBranch = main
