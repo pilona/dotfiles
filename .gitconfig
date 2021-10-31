@@ -62,6 +62,8 @@
 
 [commit]
 	gpgSign = true
+[tag]
+	gpgSign = true
 
 [push]
 	default = current
