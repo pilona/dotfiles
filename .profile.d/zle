@@ -5,3 +5,8 @@ zle -N edit-command-line
 for keymap in vicmd viins; do
     bindkey -M $keymap '^F' edit-command-line
 done
+
+for keymap in vicmd viins; do
+    bindkey -M $keymap -r '^R'
+    bindkey -M $keymap    '^R' history-incremental-search-backward
+done
