@@ -46,3 +46,8 @@ Traduire() {
         ORDER BY subject_en, term_en;
 PSQL
 }
+
+# Translate EN → FR. Also a pun, “En français!”.
+alias ENFR=Translate
+# Translate FR → EN. Also a pun, “French!”.
+alias FREN=Traduire
