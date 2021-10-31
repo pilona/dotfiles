@@ -19,7 +19,7 @@
 	# and also all remotes, branches, etc.
 	logg = log --graph --all --oneline
 	# Same, but also show a timestamp and author
-	logd = log --graph --all --pretty='%C(auto)%h %C(bold blue)[%ai]%C(reset)%C(auto)%d %s %C(dim white)- %an'
+	logd = log --graph --all --pretty='%C(auto)%h %C(bold blue)[%ai]%C(reset)%C(auto)%d %s %C(dim white)- %an (%G?)'
 	# Just show the topology.
 	logt = log --graph --all --oneline --simplify-by-decoration
 	# Show the entire graph, and also the files touched by each commit.
