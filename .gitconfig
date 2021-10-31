@@ -48,6 +48,18 @@
 
 	ls = ls-tree --name-only HEAD
 
+	showw = show --color-words
+	showws = show --color-words -w
+	showc = show --color-words='\\S' -w
+
+	diffw = diff --color-words
+	diffws = diff --color-words -w
+	diffc = diff --color-words='\\S' -w
+
+	logw = log --color-words --patch
+	logws = log --color-words -w --patch
+	logc = log --color-words='\\S' -w --patch
+
 [commit]
 	gpgSign = true
 
