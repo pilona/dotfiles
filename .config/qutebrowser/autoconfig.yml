@@ -1,0 +1,22 @@
+config_version: 2
+settings:
+  bindings.commands:
+    global:
+      normal:
+        ',v': hint links spawn mpv {hint-url}
+        <Ctrl+e>: scroll down
+        <Ctrl+y>: scroll up
+        cm: clear-messages
+  content.autoplay:
+    global: false
+  content.javascript.enabled:
+    global: false
+  content.prefers_reduced_motion:
+    global: true
+  fonts.default_size:
+    global: 18px
+  qt.args:
+    global:
+    - autoplay-policy=user-gesture-required
+  qt.highdpi:
+    global: true
